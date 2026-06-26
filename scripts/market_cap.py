@@ -195,7 +195,7 @@ def enrich_market_cap(events: list) -> list:
     計算邏輯：
     - 有股數 → 市值(億元) = 收盤 × 股數 / 1e8，cap_is_estimate=False
     - 無股數 → 以 收盤 × 成交股數 / 1e8 作人氣代理，cap_is_estimate=True
-    - 都無法取得 → 保持 0.0（cal_is_estimate 維持原值）
+    - 都無法取得 → 保持 0.0（cap_is_estimate 維持原值）
     """
     if not events:
         return events
@@ -203,6 +203,7 @@ def enrich_market_cap(events: list) -> list:
     ids = [e.id for e in events]
     shares_map = load_shares()
     close_map = _latest_close(ids)
+    volume_map = _latest_volume(ids)
 
     result = []
     for e in events:
@@ -213,8 +214,7 @@ def enrich_market_cap(events: list) -> list:
             cap = round(close * shares / 1e8, 2)
             result.append(dataclasses.replace(e, market_cap=cap, cap_is_estimate=False))
         elif close is not None:
-            vol_map = _latest_volume([e.id])
-            vol = vol_map.get(e.id)
+            vol = volume_map.get(e.id)
             if vol is not None:
                 cap = round(close * vol / 1e8, 2)
                 result.append(dataclasses.replace(e, market_cap=cap, cap_is_estimate=True))
