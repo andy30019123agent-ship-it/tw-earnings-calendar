@@ -24,7 +24,7 @@ from scripts.build_message import build_calendar_message, build_latest_json
 from scripts.fetch_calendar import CalendarFetchError
 from scripts.fetch_calendar import fetch_events  # noqa: F401 — module-level for monkeypatch
 from scripts.lib.dates import next_week_window
-from scripts.market_cap import enrich_market_cap  # noqa: F401 — module-level for monkeypatch
+from scripts.market_cap import enrich_market_cap, load_shares, refresh_shares  # noqa: F401 — module-level for monkeypatch
 from scripts.push import push_all  # noqa: F401 — module-level for monkeypatch
 
 # 讓測試可以 monkeypatch 此路徑
@@ -59,6 +59,13 @@ def run_weekly(today: date | None = None) -> dict:
         failure_notice = "⚠️ 下週行事曆抓取失敗，稍後人工補"
         push_all(failure_notice)
         raise
+
+    # ── 1.5 首次執行 seed 股數快取（快取空時才抓，避免每次發網路請求） ─────
+    if not load_shares():
+        try:
+            refresh_shares()
+        except Exception as exc:
+            print(f"[WARN] refresh_shares 失敗，繼續以估算市值：{exc}", file=sys.stderr)
 
     # ── 2. 補市值 ─────────────────────────────────────────────────────────
     events = enrich_market_cap(events)

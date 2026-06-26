@@ -13,6 +13,8 @@ def test_run_weekly_writes_latest_and_pushes(monkeypatch, tmp_path):
     e = CalendarEvent("2330", "台積電", "上市", "半導體", "2026-07-01", "法說會", 285000.0, False)
     monkeypatch.setattr(rw, "fetch_events", lambda s, en: [e])
     monkeypatch.setattr(rw, "enrich_market_cap", lambda evs: evs)
+    monkeypatch.setattr(rw, "load_shares", lambda: {"2330": 25930380458})
+    monkeypatch.setattr(rw, "refresh_shares", lambda: None)
     pushed = {}
     monkeypatch.setattr(rw, "push_all", lambda t: pushed.update(text=t))
     monkeypatch.setattr(rw, "LATEST_PATH", tmp_path / "latest.json")
@@ -26,6 +28,8 @@ def test_run_weekly_returns_summary_dict(monkeypatch, tmp_path):
     """回傳 dict 必有 count 欄位。"""
     monkeypatch.setattr(rw, "fetch_events", lambda s, en: [])
     monkeypatch.setattr(rw, "enrich_market_cap", lambda evs: evs)
+    monkeypatch.setattr(rw, "load_shares", lambda: {"2330": 25930380458})
+    monkeypatch.setattr(rw, "refresh_shares", lambda: None)
     monkeypatch.setattr(rw, "push_all", lambda t: None)
     monkeypatch.setattr(rw, "LATEST_PATH", tmp_path / "latest.json")
     out = rw.run_weekly(today=date(2026, 6, 27))
@@ -37,6 +41,8 @@ def test_run_weekly_empty_window_pushes_no_events_message(monkeypatch, tmp_path)
     """空窗口（無事件）應推「暫無」訊息，不得推空字串或靜默。"""
     monkeypatch.setattr(rw, "fetch_events", lambda s, en: [])
     monkeypatch.setattr(rw, "enrich_market_cap", lambda evs: evs)
+    monkeypatch.setattr(rw, "load_shares", lambda: {"2330": 25930380458})
+    monkeypatch.setattr(rw, "refresh_shares", lambda: None)
     pushed = {}
     monkeypatch.setattr(rw, "push_all", lambda t: pushed.update(text=t))
     monkeypatch.setattr(rw, "LATEST_PATH", tmp_path / "latest.json")
@@ -56,6 +62,8 @@ def test_run_weekly_fetch_error_pushes_failure_notice_and_raises(monkeypatch, tm
 
     monkeypatch.setattr(rw, "fetch_events", bad_fetch)
     monkeypatch.setattr(rw, "enrich_market_cap", lambda evs: evs)
+    monkeypatch.setattr(rw, "load_shares", lambda: {"2330": 25930380458})
+    monkeypatch.setattr(rw, "refresh_shares", lambda: None)
     pushed = {}
     monkeypatch.setattr(rw, "push_all", lambda t: pushed.update(text=t))
     monkeypatch.setattr(rw, "LATEST_PATH", tmp_path / "latest.json")
@@ -71,3 +79,41 @@ def test_run_weekly_fetch_error_pushes_failure_notice_and_raises(monkeypatch, tm
 
     # 不應寫 latest.json（fetch 失敗不產出資料）
     assert not (tmp_path / "latest.json").exists(), "fetch 失敗時不應寫 latest.json"
+
+
+# ── 股數快取 seed 行為 ─────────────────────────────────────────────────────
+
+def test_run_weekly_seeds_shares_when_cache_empty(monkeypatch, tmp_path):
+    """快取空（{}）時，run_weekly 應呼叫 refresh_shares 做初次 seed。"""
+    e = CalendarEvent("2330", "台積電", "上市", "半導體", "2026-07-01", "法說會", 285000.0, False)
+    monkeypatch.setattr(rw, "fetch_events", lambda s, en: [e])
+    monkeypatch.setattr(rw, "enrich_market_cap", lambda evs: evs)
+    monkeypatch.setattr(rw, "load_shares", lambda: {})  # 模擬空快取
+
+    refresh_called = []
+    monkeypatch.setattr(rw, "refresh_shares", lambda: refresh_called.append(True))
+
+    monkeypatch.setattr(rw, "push_all", lambda t: None)
+    monkeypatch.setattr(rw, "LATEST_PATH", tmp_path / "latest.json")
+
+    rw.run_weekly(today=date(2026, 6, 27))
+
+    assert refresh_called, "快取空時應呼叫 refresh_shares 做 seed"
+
+
+def test_run_weekly_skips_refresh_when_cache_present(monkeypatch, tmp_path):
+    """快取非空時，run_weekly 不應呼叫 refresh_shares（避免每次都打 API）。"""
+    e = CalendarEvent("2330", "台積電", "上市", "半導體", "2026-07-01", "法說會", 285000.0, False)
+    monkeypatch.setattr(rw, "fetch_events", lambda s, en: [e])
+    monkeypatch.setattr(rw, "enrich_market_cap", lambda evs: evs)
+    monkeypatch.setattr(rw, "load_shares", lambda: {"2330": 25930380458})  # 模擬有資料
+
+    refresh_called = []
+    monkeypatch.setattr(rw, "refresh_shares", lambda: refresh_called.append(True))
+
+    monkeypatch.setattr(rw, "push_all", lambda t: None)
+    monkeypatch.setattr(rw, "LATEST_PATH", tmp_path / "latest.json")
+
+    rw.run_weekly(today=date(2026, 6, 27))
+
+    assert not refresh_called, "快取非空時不應呼叫 refresh_shares"
