@@ -1,0 +1,622 @@
+/* ── Reset & base ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-bg: #f8f9fa;
+  --color-surface: #ffffff;
+  --color-border: #e2e8f0;
+  --color-text: #1a202c;
+  --color-text-muted: #718096;
+  --color-primary: #2563eb;
+  --color-primary-light: #eff6ff;
+  --color-conf: #7c3aed;
+  --color-conf-bg: #f5f3ff;
+  --color-earn: #059669;
+  --color-earn-bg: #ecfdf5;
+  --color-header-bg: #1e3a5f;
+  --color-header-text: #ffffff;
+  --radius: 10px;
+  --shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  font-size: 16px;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Noto Sans TC', 'Segoe UI',
+    sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Layout ── */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+.app-header {
+  background: var(--color-header-bg);
+  color: var(--color-header-text);
+  padding: 20px 16px 18px;
+  text-align: center;
+}
+
+.app-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.app-subtitle {
+  font-size: 0.8rem;
+  margin-top: 4px;
+  opacity: 0.75;
+  letter-spacing: 0.04em;
+}
+
+.app-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+  max-width: 680px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.app-footer {
+  text-align: center;
+  padding: 14px 16px;
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+  border-top: 1px solid var(--color-border);
+  margin-top: 8px;
+}
+
+/* ── Section titles ── */
+.section-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.range-label {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--color-text-muted);
+}
+
+/* ── Calendar Card ── */
+.calendar-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: var(--shadow);
+}
+
+.calendar-days {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.day-group {
+  padding-top: 4px;
+}
+
+.day-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 6px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.event-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.event-item {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 7px 10px;
+  background: var(--color-primary-light);
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+
+.event-code {
+  font-weight: 700;
+  color: var(--color-primary);
+  min-width: 36px;
+}
+
+.event-name {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.event-industry,
+.event-mktcap {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+/* ── Tags ── */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 1px 7px;
+  border-radius: 99px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.tag-conf {
+  background: var(--color-conf-bg);
+  color: var(--color-conf);
+}
+
+.tag-earn {
+  background: var(--color-earn-bg);
+  color: var(--color-earn);
+}
+
+/* ── Report List ── */
+.report-list-section {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: var(--shadow);
+}
+
+.report-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.report-item {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.report-item:last-child {
+  border-bottom: none;
+}
+
+.report-link {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 10px 4px;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.15s;
+  border-radius: 6px;
+}
+
+.report-link:hover,
+.report-link:focus-visible {
+  background: var(--color-bg);
+  outline: none;
+}
+
+.report-code {
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--color-primary);
+  min-width: 36px;
+}
+
+.report-name {
+  flex: 1;
+  min-width: 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.report-date {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+/* ── States ── */
+.placeholder {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  padding: 12px 0;
+}
+
+.error-note {
+  font-size: 0.82rem;
+  color: #dc2626;
+  margin-bottom: 8px;
+}
+
+/* ── App Nav ── */
+.app-nav {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  margin-top: 10px;
+}
+
+.app-nav-link {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  padding: 3px 12px;
+  border-radius: 99px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: background 0.15s, color 0.15s;
+}
+
+.app-nav-link:hover,
+.app-nav-link.active {
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+}
+
+/* ── Nav back link ── */
+.nav-back {
+  display: inline-block;
+  font-size: 0.8rem;
+  color: var(--color-primary);
+  text-decoration: none;
+  padding: 2px 0;
+  margin-right: 12px;
+}
+
+.nav-back:hover {
+  text-decoration: underline;
+}
+
+/* ── Secondary button ── */
+.btn-secondary {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 8px 20px;
+  border-radius: 6px;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+
+.btn-secondary:hover {
+  background: #dbeafe;
+}
+
+/* ── Report Library ── */
+.library-wrap {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: var(--shadow);
+}
+
+.library-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.library-header .section-title {
+  margin-bottom: 0;
+}
+
+.library-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  color: var(--color-text);
+  background: var(--color-bg);
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.search-input:focus {
+  border-color: var(--color-primary);
+}
+
+.group-toggle {
+  display: flex;
+  gap: 6px;
+}
+
+.toggle-btn {
+  padding: 5px 14px;
+  border-radius: 99px;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg);
+  color: var(--color-text-muted);
+  font-size: 0.78rem;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.toggle-btn.active {
+  background: var(--color-primary);
+  color: #ffffff;
+  border-color: var(--color-primary);
+}
+
+.library-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.library-group-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: 2px;
+}
+
+/* ── Report View ── */
+.report-view-wrap {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: var(--shadow);
+}
+
+.report-view-nav {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 14px;
+}
+
+.report-view-header {
+  margin-bottom: 18px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.report-view-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.report-view-code {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.report-view-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.report-view-type {
+  font-size: 0.72rem;
+}
+
+.report-view-date {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+}
+
+/* ── Prose (rendered markdown) ── */
+.prose {
+  font-size: 0.92rem;
+  line-height: 1.75;
+  color: var(--color-text);
+}
+
+.prose h2,
+.prose h3,
+.prose h4 {
+  font-weight: 700;
+  margin: 1.2em 0 0.5em;
+  color: var(--color-text);
+}
+
+.prose h2 { font-size: 1.05rem; }
+.prose h3 { font-size: 0.97rem; }
+.prose h4 { font-size: 0.9rem; }
+
+.prose p {
+  margin: 0.7em 0;
+}
+
+.prose ul,
+.prose ol {
+  padding-left: 1.4em;
+  margin: 0.7em 0;
+}
+
+.prose li {
+  margin: 0.25em 0;
+}
+
+.prose strong {
+  font-weight: 700;
+}
+
+.prose em {
+  font-style: italic;
+  color: var(--color-text-muted);
+}
+
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  margin: 1em 0;
+  overflow-x: auto;
+  display: block;
+}
+
+.prose th,
+.prose td {
+  padding: 6px 10px;
+  border: 1px solid var(--color-border);
+  text-align: left;
+}
+
+.prose th {
+  background: var(--color-bg);
+  font-weight: 600;
+}
+
+.prose blockquote {
+  border-left: 2px solid var(--color-border);
+  background: var(--color-bg);
+  margin: 0.8em 0;
+  padding: 6px 12px;
+  border-radius: 0 4px 4px 0;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.prose hr {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  margin: 1.2em 0;
+}
+
+.prose code {
+  font-family: 'SFMono-Regular', Consolas, monospace;
+  font-size: 0.85em;
+  background: var(--color-bg);
+  padding: 1px 5px;
+  border-radius: 3px;
+}
+
+/* ── Report View Footer ── */
+.report-view-footer {
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 1px solid var(--color-border);
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+/* ── Not found state ── */
+.report-not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 16px;
+  text-align: center;
+  gap: 8px;
+}
+
+.report-not-found-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.report-not-found-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.report-not-found-hint {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  max-width: 260px;
+}
+
+/* ── Desktop breakpoint ── */
+@media (min-width: 600px) {
+  .app-title {
+    font-size: 1.5rem;
+  }
+
+  .app-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .app-main {
+    padding: 24px 16px;
+    gap: 20px;
+  }
+
+  .event-item {
+    font-size: 0.9rem;
+  }
+
+  .report-name {
+    font-size: 0.95rem;
+  }
+
+  .library-controls {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .search-input {
+    flex: 1;
+  }
+
+  .prose {
+    font-size: 0.95rem;
+  }
+
+  .report-view-name {
+    font-size: 1.1rem;
+  }
+}

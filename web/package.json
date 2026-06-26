@@ -1,0 +1,26 @@
+{
+  "name": "web",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "prebuild": "node -e \"const fs=require('fs');fs.mkdirSync('public/data',{recursive:true});try{fs.copyFileSync('../data/latest.json','public/data/latest.json')}catch(e){fs.writeFileSync('public/data/latest.json',JSON.stringify({events:[],range:[]}))}\"",
+    "build": "vite build",
+    "lint": "oxlint",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "marked": "^18.0.5",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.2",
+    "oxlint": "^1.69.0",
+    "vite": "^8.1.0",
+    "vitest": "^4.1.9"
+  }
+}
