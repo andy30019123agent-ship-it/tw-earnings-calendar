@@ -4,10 +4,14 @@ on:
     branches: [main]
     paths: ["web/**", "data/latest.json"]
   workflow_dispatch:
+  workflow_run:
+    workflows: ["weekly-calendar"]
+    types: [completed]
 permissions: { contents: read, pages: write, id-token: write }
 jobs:
   build:
     runs-on: ubuntu-latest
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4

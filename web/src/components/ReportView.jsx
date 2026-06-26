@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import { loadReports } from '../lib/reports'
-
-const TYPE_LABEL = { 快報: '快報', 詳報: '詳報', 提醒: '提醒' }
+import { TYPE_LABEL, typeColorClass } from '../lib/reportTypes'
 
 export default function ReportView({ filename }) {
   const [report, setReport] = useState(undefined) // undefined = loading, null = not found
@@ -58,7 +57,7 @@ export default function ReportView({ filename }) {
     )
   }
 
-  const typeClass = report.type === '法說會' ? 'conf' : 'earn'
+  const typeClass = typeColorClass(report.type)
 
   return (
     <article className="report-view-wrap">

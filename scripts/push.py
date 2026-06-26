@@ -18,6 +18,37 @@ def _post(url, payload):
         return False
 
 
+def _chunk(text, limit):
+    """Split text into chunks of at most `limit` chars, splitting on newlines.
+    If a single line exceeds limit, it is hard-split at the limit boundary."""
+    if len(text) <= limit:
+        return [text]
+    chunks = []
+    current = []
+    current_len = 0
+    for line in text.split('\n'):
+        line_with_nl = len(line) + 1  # +1 for the '\n' we rejoin with
+        if current and current_len + line_with_nl > limit:
+            chunks.append('\n'.join(current))
+            current = []
+            current_len = 0
+        if line_with_nl > limit:
+            # flush pending lines first
+            if current:
+                chunks.append('\n'.join(current))
+                current = []
+                current_len = 0
+            # hard-split the oversized line
+            for i in range(0, len(line), limit):
+                chunks.append(line[i:i + limit])
+        else:
+            current.append(line)
+            current_len += line_with_nl
+    if current:
+        chunks.append('\n'.join(current))
+    return chunks
+
+
 def push_telegram(text):
     """Push text to Telegram. Returns True on success, False if secrets missing or on error."""
     token = os.getenv("TG_BOT_TOKEN")
@@ -27,12 +58,11 @@ def push_telegram(text):
         return False
 
     url = f"https://api.telegram.org/bot{token}/sendMessage"
-    payload = {
-        "chat_id": chat_id,
-        "text": text
-    }
-
-    return _post(url, payload)
+    for chunk in _chunk(text, 4000):
+        payload = {"chat_id": chat_id, "text": chunk}
+        if not _post(url, payload):
+            return False
+    return True
 
 
 def push_discord(text):
@@ -42,11 +72,11 @@ def push_discord(text):
     if not webhook:
         return False
 
-    payload = {
-        "content": text
-    }
-
-    return _post(webhook, payload)
+    for chunk in _chunk(text, 1900):
+        payload = {"content": chunk}
+        if not _post(webhook, payload):
+            return False
+    return True
 
 
 def push_all(text):

@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { loadReports } from '../lib/reports'
-
-const TYPE_LABEL = { 快報: '快報', 詳報: '詳報', 提醒: '提醒' }
+import { TYPE_LABEL, typeColorClass } from '../lib/reportTypes'
 
 export default function ReportLibrary() {
   const [reports, setReports] = useState(null) // null = loading
@@ -115,7 +114,7 @@ export default function ReportLibrary() {
                       <span className="report-code">{r.id}</span>
                       <span className="report-name">{r.name}</span>
                       <span
-                        className={`report-type tag tag-${r.type === '法說會' ? 'conf' : 'earn'}`}
+                        className={`report-type tag tag-${typeColorClass(r.type)}`}
                       >
                         {TYPE_LABEL[r.type] ?? r.type ?? '—'}
                       </span>
