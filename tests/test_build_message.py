@@ -23,3 +23,12 @@ def test_latest_json_shape():
     j = build_latest_json(EVTS, "2026-06-29", "2026-07-05")
     assert j["range"] == ["2026-06-29","2026-07-05"]
     assert len(j["events"]) == 3
+
+def test_estimate_marker():
+    evt = CalendarEvent("6666","某股","上櫃","其他","2026-07-01","法說會",1234.0,True)
+    msg = build_calendar_message([evt], "2026-06-29", "2026-07-05")
+    assert "(估)" in msg
+
+def test_latest_json_has_updated():
+    j = build_latest_json(EVTS, "2026-06-29", "2026-07-05")
+    assert "updated" in j
