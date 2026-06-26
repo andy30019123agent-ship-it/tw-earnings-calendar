@@ -34,6 +34,17 @@ export default function CalendarCard() {
           if (!groups[d]) groups[d] = []
           groups[d].push(ev)
         }
+        // 各日期內依市值降冪排序（0/未知排最後）
+        for (const d of Object.keys(groups)) {
+          groups[d].sort((a, b) => {
+            const ca = a.market_cap || 0
+            const cb = b.market_cap || 0
+            if (ca === 0 && cb === 0) return 0
+            if (ca === 0) return 1
+            if (cb === 0) return -1
+            return cb - ca
+          })
+        }
         // 排序日期
         const sorted = Object.fromEntries(
           Object.entries(groups).sort(([a], [b]) => (a > b ? 1 : -1))
@@ -86,9 +97,11 @@ export default function CalendarCard() {
                     {ev.industry && (
                       <span className="event-industry">{ev.industry}</span>
                     )}
-                    {ev.market_cap && (
-                      <span className="event-mktcap">{ev.market_cap}</span>
-                    )}
+                    {ev.market_cap ? (
+                      <span className="event-mktcap">
+                        {Math.round(ev.market_cap)} 億{ev.cap_is_estimate ? '(估)' : ''}
+                      </span>
+                    ) : null}
                   </li>
                 ))}
               </ul>

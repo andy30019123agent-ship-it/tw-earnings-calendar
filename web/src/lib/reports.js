@@ -36,7 +36,7 @@ export function parseFrontmatter(raw) {
  */
 export async function loadReports() {
   // Vite 5+ glob API: query + import
-  const modules = import.meta.glob('../reports/*.md', { query: '?raw', import: 'default' })
+  const modules = import.meta.glob('../../reports/*.md', { query: '?raw', import: 'default' })
 
   const reports = await Promise.all(
     Object.entries(modules).map(async ([path, loader]) => {
