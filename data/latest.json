@@ -1,0 +1,339 @@
+{
+  "updated": "2026-06-27T05:46:11.561358+08:00",
+  "range": [
+    "2026-06-29",
+    "2026-07-05"
+  ],
+  "events": [
+    {
+      "id": "1103",
+      "name": "嘉泥",
+      "market": "上市",
+      "industry": "",
+      "date": "2026-06-30",
+      "type": "法說會",
+      "market_cap": 111.61,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "1437",
+      "name": "勤益控",
+      "market": "上市",
+      "industry": "",
+      "date": "2026-06-29",
+      "type": "法說會",
+      "market_cap": 60.76,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "1439",
+      "name": "雋揚",
+      "market": "上市",
+      "industry": "",
+      "date": "2026-06-29",
+      "type": "法說會",
+      "market_cap": 22.03,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "1783",
+      "name": "和康生",
+      "market": "上市",
+      "industry": "",
+      "date": "2026-06-29",
+      "type": "法說會",
+      "market_cap": 34.17,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "2520",
+      "name": "冠德",
+      "market": "上市",
+      "industry": "",
+      "date": "2026-06-29",
+      "type": "法說會",
+      "market_cap": 207.84,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "2546",
+      "name": "根基",
+      "market": "上市",
+      "industry": "",
+      "date": "2026-06-29",
+      "type": "法說會",
+      "market_cap": 120.6,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "2820",
+      "name": "華票",
+      "market": "上市",
+      "industry": "",
+      "date": "2026-06-29",
+      "type": "法說會",
+      "market_cap": 239.05,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "2886",
+      "name": "兆豐金",
+      "market": "上市",
+      "industry": "",
+      "date": "2026-06-29",
+      "type": "法說會",
+      "market_cap": 6845.6,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "2887",
+      "name": "台新新光金",
+      "market": "上市",
+      "industry": "",
+      "date": "2026-06-29",
+      "type": "法說會",
+      "market_cap": 7932.38,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "2890",
+      "name": "永豐金",
+      "market": "上市",
+      "industry": "",
+      "date": "2026-06-30",
+      "type": "法說會",
+      "market_cap": 5673.74,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "3054",
+      "name": "立萬利",
+      "market": "上市",
+      "industry": "",
+      "date": "2026-06-29",
+      "type": "法說會",
+      "market_cap": 49.68,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "3563",
+      "name": "牧德",
+      "market": "上市",
+      "industry": "",
+      "date": "2026-06-30",
+      "type": "法說會",
+      "market_cap": 431.74,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "3717",
+      "name": "聯嘉投控",
+      "market": "上市",
+      "industry": "",
+      "date": "2026-06-30",
+      "type": "法說會",
+      "market_cap": 49.05,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "4169",
+      "name": "泰宗",
+      "market": "上市",
+      "industry": "",
+      "date": "2026-06-29",
+      "type": "法說會",
+      "market_cap": 127.55,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "5288",
+      "name": "豐祥-KY",
+      "market": "上市",
+      "industry": "",
+      "date": "2026-06-30",
+      "type": "法說會",
+      "market_cap": 122.32,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "6456",
+      "name": "GIS-KY",
+      "market": "上市",
+      "industry": "",
+      "date": "2026-06-29",
+      "type": "法說會",
+      "market_cap": 229.8,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "6770",
+      "name": "力積電",
+      "market": "上市",
+      "industry": "",
+      "date": "2026-06-29",
+      "type": "法說會",
+      "market_cap": 3651.76,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "6776",
+      "name": "展碁國際",
+      "market": "上市",
+      "industry": "",
+      "date": "2026-06-29",
+      "type": "法說會",
+      "market_cap": 49.09,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "6854",
+      "name": "錼創科技-KY創",
+      "market": "上市",
+      "industry": "",
+      "date": "2026-06-30",
+      "type": "法說會",
+      "market_cap": 142.39,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "6923",
+      "name": "中台",
+      "market": "上市",
+      "industry": "",
+      "date": "2026-06-30",
+      "type": "法說會",
+      "market_cap": 66.6,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "7610",
+      "name": "聯友金屬-創",
+      "market": "上市",
+      "industry": "",
+      "date": "2026-06-30",
+      "type": "法說會",
+      "market_cap": 983.86,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "7803",
+      "name": "雲象科技-創",
+      "market": "上市",
+      "industry": "",
+      "date": "2026-06-30",
+      "type": "法說會",
+      "market_cap": 20.49,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "8422",
+      "name": "可寧衛*",
+      "market": "上市",
+      "industry": "",
+      "date": "2026-06-30",
+      "type": "法說會",
+      "market_cap": 383.46,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "9945",
+      "name": "潤泰新",
+      "market": "上市",
+      "industry": "",
+      "date": "2026-07-02",
+      "type": "法說會",
+      "market_cap": 756.56,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "3434",
+      "name": "哲固",
+      "market": "上櫃",
+      "industry": "",
+      "date": "2026-06-29",
+      "type": "法說會",
+      "market_cap": 10.37,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "3526",
+      "name": "凡甲",
+      "market": "上櫃",
+      "industry": "",
+      "date": "2026-07-01",
+      "type": "法說會",
+      "market_cap": 200.19,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "3663",
+      "name": "鑫科",
+      "market": "上櫃",
+      "industry": "",
+      "date": "2026-07-03",
+      "type": "法說會",
+      "market_cap": 78.55,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "4126",
+      "name": "太醫",
+      "market": "上櫃",
+      "industry": "",
+      "date": "2026-06-29",
+      "type": "法說會",
+      "market_cap": 58.01,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "5438",
+      "name": "東友",
+      "market": "上櫃",
+      "industry": "",
+      "date": "2026-06-30",
+      "type": "法說會",
+      "market_cap": 21.33,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "6791",
+      "name": "虎門科技",
+      "market": "上櫃",
+      "industry": "",
+      "date": "2026-06-29",
+      "type": "法說會",
+      "market_cap": 20.85,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "6870",
+      "name": "騰雲",
+      "market": "上櫃",
+      "industry": "",
+      "date": "2026-06-30",
+      "type": "法說會",
+      "market_cap": 60.08,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "8032",
+      "name": "光菱",
+      "market": "上櫃",
+      "industry": "",
+      "date": "2026-06-29",
+      "type": "法說會",
+      "market_cap": 23.11,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "8436",
+      "name": "大江",
+      "market": "上櫃",
+      "industry": "",
+      "date": "2026-06-29",
+      "type": "法說會",
+      "market_cap": 134.8,
+      "cap_is_estimate": false
+    }
+  ]
+}
