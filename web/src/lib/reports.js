@@ -9,7 +9,7 @@ export function parseFrontmatter(raw) {
   const result = {}
 
   // 必須以 --- 開頭才有 frontmatter
-  const match = raw.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/m)
+  const match = raw.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/)
   if (!match) {
     return { body: raw }
   }
@@ -39,10 +39,11 @@ export async function loadReports() {
   const modules = import.meta.glob('../reports/*.md', { query: '?raw', import: 'default' })
 
   const reports = await Promise.all(
-    Object.entries(modules).map(async ([, loader]) => {
+    Object.entries(modules).map(async ([path, loader]) => {
       const raw = await loader()
       const meta = parseFrontmatter(raw)
       const html = marked(meta.body || '')
+      const filename = path.split('/').pop()
       return {
         id: meta.id ?? '',
         name: meta.name ?? '',
@@ -50,6 +51,7 @@ export async function loadReports() {
         type: meta.type ?? '',
         body: meta.body ?? '',
         html,
+        filename,
       }
     })
   )
