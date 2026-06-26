@@ -4,12 +4,17 @@
 財報/董事會未來預告官方源尚不可靠（見 docs/datasource-notes.md），
 本期只供法說會事件，財報留待後續任務。
 """
+import html
 import re
 from datetime import datetime
 from typing import Optional
 
 from scripts.lib.http import get_text
 from scripts.lib.models import CalendarEvent
+
+
+class CalendarFetchError(Exception):
+    """MOPS 抓取失敗時拋出，避免靜默產出空表。"""
 
 _MOPS_URL = "https://mopsov.twse.com.tw/mops/web/ajax_t100sb02_1"
 _MOPS_REFERER = "https://mopsov.twse.com.tw/mops/web/t100sb02_1"
@@ -34,11 +39,10 @@ def _roc_to_iso(date_text: str) -> Optional[str]:
         return None
 
 
-def _strip_tags(html: str) -> str:
-    """移除 HTML 標籤與 &nbsp;，回傳純文字（去首尾空白）。"""
-    text = re.sub(r"<[^>]+>", "", html)
-    text = text.replace("&nbsp;", " ")
-    return text.strip()
+def _strip_tags(html_str: str) -> str:
+    """移除 HTML 標籤，解碼所有 HTML 實體（含 &nbsp;、&#12040;、&amp; 等），回傳純文字（去首尾空白）。"""
+    text = re.sub(r"<[^>]+>", "", html_str)
+    return html.unescape(text).replace("\xa0", " ").strip()
 
 
 def _is_common_stock(code: str) -> bool:
@@ -112,10 +116,9 @@ def parse_events(
     return events
 
 
-def _build_body(typek: str) -> bytes:
-    """組 MOPS POST body（整年查詢）。"""
-    # 固定查當前民國年（2026 = 115）
-    roc_year = datetime.now().year - 1911
+def _build_body(typek: str, end_iso: str) -> bytes:
+    """組 MOPS POST body（整年查詢）。民國年從 end_iso 推導，支援跨年查詢。"""
+    roc_year = int(end_iso[:4]) - 1911
     body = (
         f"encodeURIComponent=1&step=1&firstin=1"
         f"&TYPEK={typek}&year={roc_year}&month="
@@ -133,13 +136,18 @@ def fetch_events(start_iso: str, end_iso: str) -> list[CalendarEvent]:
     Returns:
         符合條件的 CalendarEvent 清單（market_cap=0.0 待 Task 3 補填）。
     """
-    headers = {"Referer": _MOPS_REFERER}
+    headers = {
+        "Referer": _MOPS_REFERER,
+        "Content-Type": "application/x-www-form-urlencoded",
+    }
     all_events: list[CalendarEvent] = []
 
     for typek, market_label in _MARKET_MAP.items():
-        raw = get_text(_MOPS_URL, data=_build_body(typek), headers=headers)
+        raw = get_text(_MOPS_URL, data=_build_body(typek, end_iso), headers=headers)
         if not raw:
-            continue
+            raise CalendarFetchError(
+                f"MOPS 抓取 {market_label}（{typek}）失敗，無法繼續，不推出空表。"
+            )
         events = parse_events(raw, start_iso, end_iso, market=market_label)
         all_events.extend(events)
 
