@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { loadReports } from '../lib/reports'
-import { TYPE_LABEL, typeColorClass } from '../lib/reportTypes'
+import { TYPE_LABEL, TYPE_ORDER, typeColorClass } from '../lib/reportTypes'
 
 // 相對時間：今天 / 昨天 / N 天前（以台北日期計）
 function relativeDay(dateStr) {
@@ -19,7 +19,6 @@ function relativeDay(dateStr) {
   return `${Math.floor(diff / 30)} 個月前`
 }
 
-// 法說日顯示成 M/D
 function shortDate(dateStr) {
   if (!dateStr) return ''
   const m = dateStr.match(/^\d{4}-(\d{2})-(\d{2})/)
@@ -31,8 +30,9 @@ export default function ReportLibrary() {
   const [reports, setReports] = useState(null) // null = loading
   const [err, setErr] = useState(false)
   const [query, setQuery] = useState('')
-  const [typeFilter, setTypeFilter] = useState('all') // all | 快報 | 詳細
-  const [groupBy, setGroupBy] = useState('date') // 'date' | 'stock'
+  const [suggestOpen, setSuggestOpen] = useState(false)
+  const [typeFilter, setTypeFilter] = useState('all')
+  const [groupBy, setGroupBy] = useState('date')
 
   useEffect(() => {
     loadReports()
@@ -43,11 +43,31 @@ export default function ReportLibrary() {
       })
   }, [])
 
+  // 自動建議：依輸入比對「有報告的個股」，去重、最多 8 筆
+  const suggestions = useMemo(() => {
+    if (!reports) return []
+    const q = query.trim().toLowerCase()
+    if (!q) return []
+    const seen = new Map()
+    for (const r of reports) {
+      const id = String(r.id)
+      if (
+        id.toLowerCase().includes(q) ||
+        r.name.toLowerCase().includes(q)
+      ) {
+        if (!seen.has(id)) seen.set(id, { id, name: r.name, count: 1 })
+        else seen.get(id).count++
+      }
+    }
+    return [...seen.values()].slice(0, 8)
+  }, [reports, query])
+
   const filtered = useMemo(() => {
     if (!reports) return []
     const q = query.trim().toLowerCase()
     return reports.filter((r) => {
-      if (typeFilter !== 'all' && r.type !== typeFilter) return false
+      const t = r.type === '詳細' ? '法說會' : r.type
+      if (typeFilter !== 'all' && t !== typeFilter) return false
       if (!q) return true
       return (
         String(r.id).toLowerCase().includes(q) ||
@@ -84,12 +104,6 @@ export default function ReportLibrary() {
     )
   }
 
-  const TYPE_CHIPS = [
-    { key: 'all', label: '全部' },
-    { key: '快報', label: '快報' },
-    { key: '詳細', label: '詳細' },
-  ]
-
   return (
     <div className="library-wrap">
       <div className="library-header">
@@ -103,14 +117,42 @@ export default function ReportLibrary() {
       {err && <p className="error-note">報告載入失敗，請稍後再試。</p>}
 
       <div className="library-controls">
-        <input
-          className="search-input"
-          type="search"
-          placeholder="搜尋代號或名稱…"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          aria-label="搜尋報告"
-        />
+        <div className="search-box">
+          <input
+            className="search-input"
+            type="search"
+            placeholder="搜尋代號或名稱（例：23 → 2330 台積電）"
+            value={query}
+            onChange={(e) => {
+              setQuery(e.target.value)
+              setSuggestOpen(true)
+            }}
+            onFocus={() => setSuggestOpen(true)}
+            onBlur={() => setTimeout(() => setSuggestOpen(false), 150)}
+            aria-label="搜尋報告"
+          />
+          {suggestOpen && suggestions.length > 0 && (
+            <ul className="suggest-list">
+              {suggestions.map((s) => (
+                <li key={s.id}>
+                  <button
+                    type="button"
+                    className="suggest-item"
+                    onMouseDown={(e) => e.preventDefault()}
+                    onClick={() => {
+                      setQuery(String(s.id))
+                      setSuggestOpen(false)
+                    }}
+                  >
+                    <span className="suggest-code">{s.id}</span>
+                    <span className="suggest-name">{s.name}</span>
+                    <span className="suggest-count">{s.count} 篇</span>
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
       </div>
 
       {/* 篩選器 */}
@@ -118,13 +160,19 @@ export default function ReportLibrary() {
         <div className="filter-row">
           <span className="filter-label">類型</span>
           <div className="filter-chips">
-            {TYPE_CHIPS.map((c) => (
+            <button
+              className={`filter-chip${typeFilter === 'all' ? ' active' : ''}`}
+              onClick={() => setTypeFilter('all')}
+            >
+              全部
+            </button>
+            {TYPE_ORDER.map((t) => (
               <button
-                key={c.key}
-                className={`filter-chip${typeFilter === c.key ? ' active' : ''}`}
-                onClick={() => setTypeFilter(c.key)}
+                key={t}
+                className={`filter-chip${typeFilter === t ? ' active' : ''}`}
+                onClick={() => setTypeFilter(t)}
               >
-                {c.label}
+                {t}
               </button>
             ))}
           </div>
