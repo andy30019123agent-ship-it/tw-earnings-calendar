@@ -40,10 +40,10 @@ body {
   -webkit-font-smoothing: antialiased;
   min-height: 100dvh;
   background:
-    radial-gradient(circle at 14% 12%, rgba(255, 170, 210, 0.55), transparent 45%),
-    radial-gradient(circle at 86% 8%, rgba(255, 200, 224, 0.5), transparent 46%),
-    radial-gradient(circle at 50% 106%, rgba(255, 190, 220, 0.55), transparent 52%),
-    linear-gradient(165deg, #fff0f6 0%, #ffe3ee 52%, #ffd4e4 100%);
+    radial-gradient(circle at 16% 10%, rgba(255, 214, 206, 0.5), transparent 46%),
+    radial-gradient(circle at 84% 8%, rgba(255, 225, 232, 0.5), transparent 46%),
+    radial-gradient(circle at 50% 108%, rgba(255, 218, 224, 0.45), transparent 54%),
+    linear-gradient(165deg, #fff8f5 0%, #fff1f2 55%, #ffe8ec 100%);
   background-attachment: fixed;
 }
 
@@ -536,15 +536,21 @@ body {
   color: var(--color-text);
 }
 
-.prose h2 { font-size: 1.08rem; }
-.prose h3 { font-size: 0.99rem; }
+.prose h2 {
+  font-size: 1.1rem;
+  margin-top: 1.6em;
+  padding-bottom: 0.35em;
+  border-bottom: 1px solid var(--glass-hairline);
+}
+.prose h3 { font-size: 1rem; color: var(--color-primary); }
 .prose h4 { font-size: 0.9rem; }
 
 .prose p { margin: 0.7em 0; }
 
 .prose ul, .prose ol { padding-left: 1.4em; margin: 0.7em 0; }
 .prose li { margin: 0.3em 0; }
-.prose strong { font-weight: 800; }
+/* 內文重點＝亮紅色（Andy 指定） */
+.prose strong { font-weight: 800; color: #e11d48; }
 .prose em { font-style: italic; color: var(--color-text-muted); }
 
 .prose table {

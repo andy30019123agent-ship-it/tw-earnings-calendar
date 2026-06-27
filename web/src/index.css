@@ -12,7 +12,7 @@ html, body, #root {
   min-height: 100dvh;
 }
 
-/* Soft pink fallback so areas beyond the fixed gradient match */
+/* Soft warm-blush fallback so areas beyond the fixed gradient match */
 html {
-  background-color: #ffd4e4;
+  background-color: #ffe8ec;
 }
