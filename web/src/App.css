@@ -605,6 +605,48 @@ body {
   outline-offset: 2px;
 }
 
+/* ── 日期區間 ── */
+.date-range {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.date-input {
+  padding: 6px 10px;
+  min-height: 34px;
+  border-radius: 8px;
+  border: 1px solid var(--glass-hairline);
+  background: rgba(255, 255, 255, 0.6);
+  color: var(--color-text);
+  font-size: 0.78rem;
+  font-family: inherit;
+  font-variant-numeric: tabular-nums;
+}
+
+.date-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(190, 24, 93, 0.12);
+}
+
+.date-sep { color: var(--color-text-muted); font-size: 0.8rem; }
+
+.date-clear {
+  width: 28px;
+  height: 28px;
+  border-radius: 99px;
+  border: 1px solid var(--glass-hairline);
+  background: rgba(255, 255, 255, 0.6);
+  color: var(--color-text-muted);
+  font-size: 0.7rem;
+  cursor: pointer;
+  transition: background 0.15s var(--ease);
+}
+
+.date-clear:hover { background: rgba(190, 24, 93, 0.1); color: var(--color-primary); }
+
 /* ── 報告卡片 ── */
 .report-cards {
   display: flex;

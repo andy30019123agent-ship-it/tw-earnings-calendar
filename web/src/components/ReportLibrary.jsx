@@ -33,6 +33,8 @@ export default function ReportLibrary() {
   const [suggestOpen, setSuggestOpen] = useState(false)
   const [typeFilter, setTypeFilter] = useState('all')
   const [groupBy, setGroupBy] = useState('date')
+  const [dateFrom, setDateFrom] = useState('')
+  const [dateTo, setDateTo] = useState('')
 
   useEffect(() => {
     loadReports()
@@ -68,13 +70,15 @@ export default function ReportLibrary() {
     return reports.filter((r) => {
       const t = r.type === '詳細' ? '法說會' : r.type
       if (typeFilter !== 'all' && t !== typeFilter) return false
+      if (dateFrom && r.date < dateFrom) return false
+      if (dateTo && r.date > dateTo) return false
       if (!q) return true
       return (
         String(r.id).toLowerCase().includes(q) ||
         r.name.toLowerCase().includes(q)
       )
     })
-  }, [reports, query, typeFilter])
+  }, [reports, query, typeFilter, dateFrom, dateTo])
 
   const grouped = useMemo(() => {
     if (groupBy === 'stock') {
@@ -192,6 +196,41 @@ export default function ReportLibrary() {
             >
               依股票
             </button>
+          </div>
+        </div>
+        <div className="filter-row">
+          <span className="filter-label">期間</span>
+          <div className="date-range">
+            <input
+              type="date"
+              className="date-input"
+              value={dateFrom}
+              max={dateTo || undefined}
+              onChange={(e) => setDateFrom(e.target.value)}
+              aria-label="起始日期"
+            />
+            <span className="date-sep">～</span>
+            <input
+              type="date"
+              className="date-input"
+              value={dateTo}
+              min={dateFrom || undefined}
+              onChange={(e) => setDateTo(e.target.value)}
+              aria-label="結束日期"
+            />
+            {(dateFrom || dateTo) && (
+              <button
+                type="button"
+                className="date-clear"
+                onClick={() => {
+                  setDateFrom('')
+                  setDateTo('')
+                }}
+                aria-label="清除日期"
+              >
+                ✕
+              </button>
+            )}
           </div>
         </div>
       </div>
