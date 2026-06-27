@@ -7,22 +7,22 @@
 
 :root {
   /* Surfaces use frosted glass over a dark financial gradient */
-  --color-text: #0f172a;
-  --color-text-muted: #5b6b82;
-  --color-primary: #1d4ed8;
-  --color-primary-soft: rgba(29, 78, 216, 0.10);
+  --color-text: #2a0f1a;
+  --color-text-muted: #8a5a6e;
+  --color-primary: #be185d;
+  --color-primary-soft: rgba(190, 24, 93, 0.10);
   --color-conf: #6d28d9;
   --color-conf-bg: rgba(124, 58, 237, 0.12);
   --color-earn: #047857;
   --color-earn-bg: rgba(5, 150, 105, 0.14);
-  --color-header-text: #15315b;
+  --color-header-text: #7a2046;
 
-  /* Glass tokens (white frost over a soft powder-blue gradient) */
+  /* Glass tokens (white frost over a soft pink gradient) */
   --glass-bg: rgba(255, 255, 255, 0.66);
   --glass-bg-strong: rgba(255, 255, 255, 0.82);
   --glass-border: rgba(255, 255, 255, 0.9);
-  --glass-hairline: rgba(30, 64, 128, 0.12);
-  --glass-shadow: 0 12px 34px rgba(37, 78, 153, 0.16),
+  --glass-hairline: rgba(150, 40, 90, 0.12);
+  --glass-shadow: 0 12px 34px rgba(170, 50, 105, 0.16),
     inset 0 1px 0 rgba(255, 255, 255, 0.75);
   --glass-blur: blur(18px) saturate(150%);
 
@@ -40,10 +40,10 @@ body {
   -webkit-font-smoothing: antialiased;
   min-height: 100dvh;
   background:
-    radial-gradient(circle at 14% 12%, rgba(125, 191, 255, 0.55), transparent 45%),
-    radial-gradient(circle at 86% 8%, rgba(165, 230, 251, 0.5), transparent 46%),
-    radial-gradient(circle at 50% 106%, rgba(186, 214, 255, 0.55), transparent 52%),
-    linear-gradient(165deg, #eef5ff 0%, #e2eefc 52%, #d4e6fb 100%);
+    radial-gradient(circle at 14% 12%, rgba(255, 170, 210, 0.55), transparent 45%),
+    radial-gradient(circle at 86% 8%, rgba(255, 200, 224, 0.5), transparent 46%),
+    radial-gradient(circle at 50% 106%, rgba(255, 190, 220, 0.55), transparent 52%),
+    linear-gradient(165deg, #fff0f6 0%, #ffe3ee 52%, #ffd4e4 100%);
   background-attachment: fixed;
 }
 
@@ -79,7 +79,7 @@ body {
 .app-subtitle {
   font-size: 0.8rem;
   margin-top: 5px;
-  color: rgba(21, 49, 91, 0.66);
+  color: rgba(122, 32, 70, 0.66);
   letter-spacing: 0.06em;
 }
 
@@ -98,7 +98,7 @@ body {
   text-align: center;
   padding: 18px 16px 26px;
   font-size: 0.72rem;
-  color: rgba(21, 49, 91, 0.55);
+  color: rgba(122, 32, 70, 0.55);
   margin-top: 4px;
 }
 
@@ -339,7 +339,7 @@ body {
   background: rgba(255, 255, 255, 0.45);
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
-  box-shadow: 0 2px 10px rgba(37, 78, 153, 0.1);
+  box-shadow: 0 2px 10px rgba(170, 50, 105, 0.12);
   transition: background 0.2s var(--ease), color 0.2s var(--ease),
     transform 0.2s var(--ease);
 }
@@ -425,7 +425,7 @@ body {
 
 .search-input:focus {
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.15);
+  box-shadow: 0 0 0 3px rgba(190, 24, 93, 0.15);
 }
 
 .group-toggle { display: flex; gap: 8px; }
@@ -519,6 +519,15 @@ body {
   font-size: 0.93rem;
   line-height: 1.78;
   color: var(--color-text);
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* 長網址（如來源彙整）必須斷行，否則撐破卡片寬度 */
+.prose a {
+  color: var(--color-primary);
+  overflow-wrap: anywhere;
+  word-break: break-all;
 }
 
 .prose h2, .prose h3, .prose h4 {
