@@ -2,10 +2,36 @@ import { useEffect, useMemo, useState } from 'react'
 import { loadReports } from '../lib/reports'
 import { TYPE_LABEL, typeColorClass } from '../lib/reportTypes'
 
+// 相對時間：今天 / 昨天 / N 天前（以台北日期計）
+function relativeDay(dateStr) {
+  if (!dateStr) return ''
+  const today = new Date(
+    new Date().toLocaleString('en-US', { timeZone: 'Asia/Taipei' })
+  )
+  today.setHours(0, 0, 0, 0)
+  const d = new Date(`${dateStr}T00:00:00+08:00`)
+  if (Number.isNaN(d.getTime())) return ''
+  const diff = Math.round((today - d) / 86400000)
+  if (diff <= 0) return '今天'
+  if (diff === 1) return '昨天'
+  if (diff < 7) return `${diff} 天前`
+  if (diff < 30) return `${Math.floor(diff / 7)} 週前`
+  return `${Math.floor(diff / 30)} 個月前`
+}
+
+// 法說日顯示成 M/D
+function shortDate(dateStr) {
+  if (!dateStr) return ''
+  const m = dateStr.match(/^\d{4}-(\d{2})-(\d{2})/)
+  if (!m) return dateStr
+  return `${Number(m[1])}/${Number(m[2])}`
+}
+
 export default function ReportLibrary() {
   const [reports, setReports] = useState(null) // null = loading
   const [err, setErr] = useState(false)
   const [query, setQuery] = useState('')
+  const [typeFilter, setTypeFilter] = useState('all') // all | 快報 | 詳細
   const [groupBy, setGroupBy] = useState('date') // 'date' | 'stock'
 
   useEffect(() => {
@@ -20,15 +46,16 @@ export default function ReportLibrary() {
   const filtered = useMemo(() => {
     if (!reports) return []
     const q = query.trim().toLowerCase()
-    if (!q) return reports
-    return reports.filter(
-      (r) =>
+    return reports.filter((r) => {
+      if (typeFilter !== 'all' && r.type !== typeFilter) return false
+      if (!q) return true
+      return (
         String(r.id).toLowerCase().includes(q) ||
         r.name.toLowerCase().includes(q)
-    )
-  }, [reports, query])
+      )
+    })
+  }, [reports, query, typeFilter])
 
-  // 分組
   const grouped = useMemo(() => {
     if (groupBy === 'stock') {
       const map = new Map()
@@ -39,7 +66,6 @@ export default function ReportLibrary() {
       }
       return [...map.entries()].sort(([a], [b]) => a.localeCompare(b, 'zh-Hant'))
     }
-    // 依日期
     const map = new Map()
     for (const r of filtered) {
       const key = r.date || '（未知日期）'
@@ -58,12 +84,18 @@ export default function ReportLibrary() {
     )
   }
 
+  const TYPE_CHIPS = [
+    { key: 'all', label: '全部' },
+    { key: '快報', label: '快報' },
+    { key: '詳細', label: '詳細' },
+  ]
+
   return (
     <div className="library-wrap">
       <div className="library-header">
         <h2 className="section-title">
           📚 報告庫
-          <span className="range-label">{reports.length} 篇</span>
+          <span className="range-label">{filtered.length} / {reports.length} 篇</span>
         </h2>
         <a href="#/" className="nav-back">← 返回首頁</a>
       </div>
@@ -79,50 +111,83 @@ export default function ReportLibrary() {
           onChange={(e) => setQuery(e.target.value)}
           aria-label="搜尋報告"
         />
-        <div className="group-toggle">
-          <button
-            className={`toggle-btn${groupBy === 'date' ? ' active' : ''}`}
-            onClick={() => setGroupBy('date')}
-          >
-            依日期
-          </button>
-          <button
-            className={`toggle-btn${groupBy === 'stock' ? ' active' : ''}`}
-            onClick={() => setGroupBy('stock')}
-          >
-            依股票
-          </button>
+      </div>
+
+      {/* 篩選器 */}
+      <div className="filter-bar">
+        <div className="filter-row">
+          <span className="filter-label">類型</span>
+          <div className="filter-chips">
+            {TYPE_CHIPS.map((c) => (
+              <button
+                key={c.key}
+                className={`filter-chip${typeFilter === c.key ? ' active' : ''}`}
+                onClick={() => setTypeFilter(c.key)}
+              >
+                {c.label}
+              </button>
+            ))}
+          </div>
+        </div>
+        <div className="filter-row">
+          <span className="filter-label">排序</span>
+          <div className="filter-chips">
+            <button
+              className={`filter-chip${groupBy === 'date' ? ' active' : ''}`}
+              onClick={() => setGroupBy('date')}
+            >
+              依日期
+            </button>
+            <button
+              className={`filter-chip${groupBy === 'stock' ? ' active' : ''}`}
+              onClick={() => setGroupBy('stock')}
+            >
+              依股票
+            </button>
+          </div>
         </div>
       </div>
 
       {filtered.length === 0 ? (
         <p className="placeholder">
-          {query ? `找不到「${query}」相關報告` : '目前尚無報告'}
+          {query || typeFilter !== 'all'
+            ? '找不到符合條件的報告'
+            : '目前尚無報告'}
         </p>
       ) : (
         <div className="library-groups">
           {grouped.map(([groupKey, items]) => (
             <div key={groupKey} className="library-group">
-              <div className="library-group-label">{groupKey}</div>
-              <ul className="report-list">
+              <div className="library-group-label">
+                {groupBy === 'date' ? `🗓 ${groupKey}` : groupKey}
+                <span className="group-count">{items.length}</span>
+              </div>
+              <div className="report-cards">
                 {items.map((r) => (
-                  <li key={r.filename} className="report-item">
-                    <a
-                      href={`#/r/${encodeURIComponent(r.filename ?? '')}`}
-                      className="report-link"
-                    >
+                  <a
+                    key={r.filename}
+                    href={`#/r/${encodeURIComponent(r.filename ?? '')}`}
+                    className="report-card"
+                  >
+                    <div className="report-card-top">
                       <span className="report-code">{r.id}</span>
                       <span className="report-name">{r.name}</span>
-                      <span
-                        className={`report-type tag tag-${typeColorClass(r.type)}`}
-                      >
+                      <span className={`tag tag-${typeColorClass(r.type)}`}>
                         {TYPE_LABEL[r.type] ?? r.type ?? '—'}
                       </span>
-                      <span className="report-date">{r.date}</span>
-                    </a>
-                  </li>
+                    </div>
+                    <div className="report-card-meta">
+                      <span>🗓 報告 {r.date}</span>
+                      {relativeDay(r.date) && (
+                        <span className="meta-rel">{relativeDay(r.date)}</span>
+                      )}
+                      {r.event_date && (
+                        <span>📣 法說 {shortDate(r.event_date)}</span>
+                      )}
+                    </div>
+                  </a>
                 ))}
-              </ul>
+              </div>
             </div>
           ))}
         </div>

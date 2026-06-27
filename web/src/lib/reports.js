@@ -48,6 +48,7 @@ export async function loadReports() {
         id: meta.id ?? '',
         name: meta.name ?? '',
         date: meta.date ?? '',
+        event_date: meta.event_date ?? '',
         type: meta.type ?? '',
         body: meta.body ?? '',
         html,

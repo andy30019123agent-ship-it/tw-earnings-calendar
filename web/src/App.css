@@ -471,7 +471,127 @@ body {
   color: var(--color-primary);
   padding-bottom: 6px;
   border-bottom: 1px solid var(--glass-hairline);
-  margin-bottom: 2px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.group-count {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+/* ── 篩選器 ── */
+.filter-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.filter-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.filter-label {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  min-width: 30px;
+}
+
+.filter-chips {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.filter-chip {
+  padding: 6px 14px;
+  min-height: 34px;
+  border-radius: 99px;
+  border: 1px solid var(--glass-hairline);
+  background: rgba(255, 255, 255, 0.55);
+  color: var(--color-text-muted);
+  font-size: 0.78rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.18s var(--ease), color 0.18s var(--ease),
+    border-color 0.18s var(--ease), transform 0.18s var(--ease);
+}
+
+.filter-chip:hover { transform: translateY(-1px); }
+
+.filter-chip.active {
+  background: var(--color-primary);
+  color: #ffffff;
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 12px rgba(190, 24, 93, 0.28);
+}
+
+.filter-chip:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* ── 報告卡片 ── */
+.report-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.report-card {
+  display: block;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.18s var(--ease), background 0.18s var(--ease),
+    box-shadow 0.18s var(--ease);
+}
+
+@media (hover: hover) {
+  .report-card:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.82);
+    box-shadow: 0 6px 18px rgba(170, 50, 105, 0.14);
+  }
+}
+
+.report-card:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 1px;
+}
+
+.report-card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.report-card-top .report-name { flex: 1; }
+
+.report-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+  font-size: 0.73rem;
+  color: var(--color-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.meta-rel {
+  color: var(--color-primary);
+  font-weight: 700;
 }
 
 /* ── Report view ── */
