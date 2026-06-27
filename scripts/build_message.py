@@ -8,6 +8,9 @@ from typing import List
 
 from scripts.lib.models import CalendarEvent
 
+# 公開研究網站（行事曆＋報告庫）
+SITE_URL = "https://andy30019123agent-ship-it.github.io/tw-earnings-calendar/"
+
 
 def build_calendar_message(
     events: List[CalendarEvent],
@@ -29,7 +32,10 @@ def build_calendar_message(
     Returns:
         格式化後的純文字訊息。
     """
-    footer = "資料源：MOPS 預告，財報實際公布日以公司公告為準・非投資建議"
+    footer = (
+        "資料源：MOPS 預告，財報實際公布日以公司公告為準・非投資建議\n"
+        f"📲 完整行事曆＋研究報告：{SITE_URL}"
+    )
 
     if not events:
         return f"下週暫無已申報的法說會／財報行程\n\n{footer}"
