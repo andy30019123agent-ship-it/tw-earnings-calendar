@@ -765,18 +765,19 @@ body {
 }
 
 .prose h2 {
-  font-size: 1.1rem;
-  margin-top: 1.6em;
-  padding-bottom: 0.35em;
-  border-bottom: 1px solid var(--glass-hairline);
+  font-size: 1.12rem;
+  margin-top: 1.9em;
+  padding-bottom: 0.4em;
+  border-bottom: 2px solid var(--glass-hairline);
 }
+.prose h2:first-child { margin-top: 0.2em; }
 .prose h3 { font-size: 1rem; color: var(--color-primary); }
 .prose h4 { font-size: 0.9rem; }
 
 .prose p { margin: 0.7em 0; }
 
-.prose ul, .prose ol { padding-left: 1.4em; margin: 0.7em 0; }
-.prose li { margin: 0.3em 0; }
+.prose ul, .prose ol { padding-left: 1.35em; margin: 0.6em 0; }
+.prose li { margin: 0.42em 0; }
 /* 內文重點＝亮紅色（Andy 指定） */
 .prose strong { font-weight: 800; color: #e11d48; }
 .prose em { font-style: italic; color: var(--color-text-muted); }
@@ -784,28 +785,38 @@ body {
 .prose table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.85rem;
-  margin: 1em 0;
+  font-size: 0.84rem;
+  margin: 1.3em 0;
   overflow-x: auto;
   display: block;
   font-variant-numeric: tabular-nums;
 }
 
 .prose th, .prose td {
-  padding: 8px 11px;
-  border: 1px solid var(--glass-hairline);
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--glass-hairline);
   text-align: left;
+  white-space: nowrap;
 }
 
-.prose th { background: rgba(255, 255, 255, 0.6); font-weight: 700; }
+.prose th {
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+  font-weight: 700;
+  border-bottom: 2px solid rgba(190, 24, 93, 0.25);
+}
+
+.prose tbody tr:nth-child(even) td { background: rgba(255, 255, 255, 0.42); }
+.prose td:first-child { font-weight: 600; }
 
 .prose blockquote {
-  border-left: 1px solid var(--glass-hairline);
-  background: rgba(255, 255, 255, 0.5);
-  margin: 0.9em 0;
-  padding: 8px 14px;
+  background: rgba(255, 255, 255, 0.55);
+  margin: 1em 0;
+  padding: 11px 14px;
   border-radius: var(--radius-sm);
   color: var(--color-text-muted);
+  font-size: 0.86rem;
+  line-height: 1.7;
 }
 
 .prose hr { border: none; border-top: 1px solid var(--glass-hairline); margin: 1.3em 0; }
