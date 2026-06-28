@@ -793,11 +793,17 @@ body {
 }
 
 .prose th, .prose td {
-  padding: 9px 12px;
+  padding: 8px 9px;
   border-bottom: 1px solid var(--glass-hairline);
   text-align: left;
-  white-space: nowrap;
+  vertical-align: top;
+  word-break: break-word;
 }
+
+/* 比較表欄位多，手機自動縮字、塞得下，數字不換行避免醜 */
+.prose table { font-size: 0.78rem; }
+.prose td:not(:first-child), .prose th { text-align: center; }
+@media (min-width: 600px) { .prose table { font-size: 0.86rem; } }
 
 .prose th {
   background: var(--color-primary-soft);
