@@ -8,3 +8,8 @@ web/dist/
 .DS_Store
 web/public/data/
 .superpowers/
+
+# 本機稽核/盤點報告（含系統弱點，勿推上公開 repo）
+盤點報告_*.md
+大檢查報告_*.md
+夜間全專案盤點*.md
