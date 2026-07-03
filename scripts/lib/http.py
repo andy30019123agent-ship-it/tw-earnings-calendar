@@ -8,8 +8,12 @@ UA = (
 )
 
 
-def get_text(url, *, data=None, headers=None, tries=3):
-    """先試 urllib，失敗改用系統 curl；皆失敗回 None。data 為 bytes 表 POST。"""
+def get_text(url, *, data=None, headers=None, tries=3, encoding="utf-8"):
+    """先試 urllib，失敗改用系統 curl；皆失敗回 None。data 為 bytes 表 POST。
+
+    encoding：回應內容解碼字元集，預設 utf-8。少數舊站台（如 TWSE ISIN 頁面）
+    HTTP header 宣稱 utf-8 但實際回傳 Big5/cp950，呼叫端可自行指定。
+    """
     hdr = {"User-Agent": UA, **(headers or {})}
     for _ in range(tries):
         try:
@@ -18,7 +22,7 @@ def get_text(url, *, data=None, headers=None, tries=3):
                 method="POST" if data else "GET",
             )
             with urllib.request.urlopen(req, timeout=25) as r:
-                return r.read().decode("utf-8", "replace")
+                return r.read().decode(encoding, "replace")
         except Exception:
             pass
         try:
@@ -28,9 +32,9 @@ def get_text(url, *, data=None, headers=None, tries=3):
             if data:
                 cmd += ["--data-binary", data.decode("utf-8", "replace")]
             cmd.append(url)
-            out = subprocess.run(cmd, capture_output=True, text=True, timeout=30)
+            out = subprocess.run(cmd, capture_output=True, timeout=30)
             if out.returncode == 0 and out.stdout:
-                return out.stdout
+                return out.stdout.decode(encoding, "replace")
         except Exception:
             pass
     return None

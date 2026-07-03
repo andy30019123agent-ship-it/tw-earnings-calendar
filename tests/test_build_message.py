@@ -32,3 +32,15 @@ def test_estimate_marker():
 def test_latest_json_has_updated():
     j = build_latest_json(EVTS, "2026-06-29", "2026-07-05")
     assert "updated" in j
+
+def test_blank_industry_does_not_leave_double_space():
+    """industry 空白時排版不能壞：不應出現連續三個以上空格。"""
+    evt = CalendarEvent("6666","某股","上櫃","","2026-07-01","法說會",1234.0,False)
+    msg = build_calendar_message([evt], "2026-06-29", "2026-07-05")
+    assert "   " not in msg
+    assert "市值 1234 億" in msg
+
+def test_industry_shown_when_present():
+    evt = CalendarEvent("2330","台積電","上市","半導體業","2026-07-01","法說會",285000.0,False)
+    msg = build_calendar_message([evt], "2026-06-29", "2026-07-05")
+    assert "半導體業" in msg

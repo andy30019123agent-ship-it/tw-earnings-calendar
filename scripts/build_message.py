@@ -54,9 +54,11 @@ def build_calendar_message(
             cap_str = f"{evt.market_cap:.0f}"
             if evt.cap_is_estimate:
                 cap_str += "(估)"
-            lines.append(
-                f"  {evt.id} {evt.name}  {evt.type}  {evt.industry}  市值 {cap_str} 億"
-            )
+            parts = [f"{evt.id} {evt.name}", evt.type]
+            if evt.industry:
+                parts.append(evt.industry)
+            parts.append(f"市值 {cap_str} 億")
+            lines.append("  " + "  ".join(parts))
 
         lines.append("")  # 日期之間空一行
 

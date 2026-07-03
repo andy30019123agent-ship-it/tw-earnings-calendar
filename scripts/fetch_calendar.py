@@ -105,7 +105,7 @@ def parse_events(
                 id=code,
                 name=name,
                 market=market,
-                industry="",   # Task 3 補填
+                industry="",   # 由 scripts.industry.enrich_industry 於下游補值
                 date=iso_date,
                 type="法說會",
                 market_cap=0.0,  # Task 3 補填

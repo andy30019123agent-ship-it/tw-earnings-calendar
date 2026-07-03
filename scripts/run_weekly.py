@@ -18,11 +18,12 @@ from __future__ import annotations
 import json
 import pathlib
 import sys
-from datetime import date
+from datetime import date, datetime, timedelta, timezone
 
 from scripts.build_message import build_calendar_message, build_latest_json
 from scripts.fetch_calendar import CalendarFetchError
 from scripts.fetch_calendar import fetch_events  # noqa: F401 — module-level for monkeypatch
+from scripts.industry import enrich_industry, refresh_industry  # noqa: F401 — module-level for monkeypatch
 from scripts.lib.dates import next_week_window
 from scripts.market_cap import enrich_market_cap, load_shares, refresh_shares  # noqa: F401 — module-level for monkeypatch
 from scripts.push import push_all  # noqa: F401 — module-level for monkeypatch
@@ -30,12 +31,18 @@ from scripts.push import push_all  # noqa: F401 — module-level for monkeypatch
 # 讓測試可以 monkeypatch 此路徑
 LATEST_PATH: pathlib.Path = pathlib.Path(__file__).parent.parent / "data" / "latest.json"
 
+_TAIPEI = timezone(timedelta(hours=8))
+
+
+def _today_taipei() -> date:
+    return datetime.now(_TAIPEI).date()
+
 
 def run_weekly(today: date | None = None) -> dict:
     """執行週六掃描完整流程。
 
     Args:
-        today: 基準日期，預設使用系統當天（台北時間由呼叫端保證，或依 cron 排程）。
+        today: 基準日期，預設使用台北時間當天（顯式時區，不依賴 cron 執行時點）。
 
     Returns:
         summary dict，至少含：
@@ -48,7 +55,7 @@ def run_weekly(today: date | None = None) -> dict:
         CalendarFetchError: fetch_events 失敗時重新拋出，讓呼叫端／CI 標記失敗。
     """
     if today is None:
-        today = date.today()
+        today = _today_taipei()
 
     start, end = next_week_window(today)
 
@@ -69,6 +76,14 @@ def run_weekly(today: date | None = None) -> dict:
 
     # ── 2. 補市值 ─────────────────────────────────────────────────────────
     events = enrich_market_cap(events)
+
+    # ── 2.5 每週更新產業別快取（頻率低，直接每次刷新；失敗則沿用舊快取） ─────
+    try:
+        refresh_industry()
+    except Exception as exc:
+        print(f"[WARN] refresh_industry 失敗，沿用舊產業別快取：{exc}", file=sys.stderr)
+
+    events = enrich_industry(events)
 
     # ── 3. 寫 latest.json ─────────────────────────────────────────────────
     latest = build_latest_json(events, start, end)

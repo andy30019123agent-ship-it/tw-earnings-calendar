@@ -1,5 +1,8 @@
 """Task 6 測試：週六入口 run_weekly 串接與失敗處理。"""
 
+import dataclasses
+import json
+
 import scripts.run_weekly as rw
 from scripts.fetch_calendar import CalendarFetchError
 from scripts.lib.models import CalendarEvent
@@ -15,6 +18,8 @@ def test_run_weekly_writes_latest_and_pushes(monkeypatch, tmp_path):
     monkeypatch.setattr(rw, "enrich_market_cap", lambda evs: evs)
     monkeypatch.setattr(rw, "load_shares", lambda: {"2330": 25930380458})
     monkeypatch.setattr(rw, "refresh_shares", lambda: None)
+    monkeypatch.setattr(rw, "refresh_industry", lambda: None)
+    monkeypatch.setattr(rw, "enrich_industry", lambda evs: evs)
     pushed = {}
     monkeypatch.setattr(rw, "push_all", lambda t: pushed.update(text=t))
     monkeypatch.setattr(rw, "LATEST_PATH", tmp_path / "latest.json")
@@ -30,6 +35,8 @@ def test_run_weekly_returns_summary_dict(monkeypatch, tmp_path):
     monkeypatch.setattr(rw, "enrich_market_cap", lambda evs: evs)
     monkeypatch.setattr(rw, "load_shares", lambda: {"2330": 25930380458})
     monkeypatch.setattr(rw, "refresh_shares", lambda: None)
+    monkeypatch.setattr(rw, "refresh_industry", lambda: None)
+    monkeypatch.setattr(rw, "enrich_industry", lambda evs: evs)
     monkeypatch.setattr(rw, "push_all", lambda t: None)
     monkeypatch.setattr(rw, "LATEST_PATH", tmp_path / "latest.json")
     out = rw.run_weekly(today=date(2026, 6, 27))
@@ -43,6 +50,8 @@ def test_run_weekly_empty_window_pushes_no_events_message(monkeypatch, tmp_path)
     monkeypatch.setattr(rw, "enrich_market_cap", lambda evs: evs)
     monkeypatch.setattr(rw, "load_shares", lambda: {"2330": 25930380458})
     monkeypatch.setattr(rw, "refresh_shares", lambda: None)
+    monkeypatch.setattr(rw, "refresh_industry", lambda: None)
+    monkeypatch.setattr(rw, "enrich_industry", lambda evs: evs)
     pushed = {}
     monkeypatch.setattr(rw, "push_all", lambda t: pushed.update(text=t))
     monkeypatch.setattr(rw, "LATEST_PATH", tmp_path / "latest.json")
@@ -64,6 +73,8 @@ def test_run_weekly_fetch_error_pushes_failure_notice_and_raises(monkeypatch, tm
     monkeypatch.setattr(rw, "enrich_market_cap", lambda evs: evs)
     monkeypatch.setattr(rw, "load_shares", lambda: {"2330": 25930380458})
     monkeypatch.setattr(rw, "refresh_shares", lambda: None)
+    monkeypatch.setattr(rw, "refresh_industry", lambda: None)
+    monkeypatch.setattr(rw, "enrich_industry", lambda evs: evs)
     pushed = {}
     monkeypatch.setattr(rw, "push_all", lambda t: pushed.update(text=t))
     monkeypatch.setattr(rw, "LATEST_PATH", tmp_path / "latest.json")
@@ -92,6 +103,8 @@ def test_run_weekly_seeds_shares_when_cache_empty(monkeypatch, tmp_path):
 
     refresh_called = []
     monkeypatch.setattr(rw, "refresh_shares", lambda: refresh_called.append(True))
+    monkeypatch.setattr(rw, "refresh_industry", lambda: None)
+    monkeypatch.setattr(rw, "enrich_industry", lambda evs: evs)
 
     monkeypatch.setattr(rw, "push_all", lambda t: None)
     monkeypatch.setattr(rw, "LATEST_PATH", tmp_path / "latest.json")
@@ -110,6 +123,8 @@ def test_run_weekly_skips_refresh_when_cache_present(monkeypatch, tmp_path):
 
     refresh_called = []
     monkeypatch.setattr(rw, "refresh_shares", lambda: refresh_called.append(True))
+    monkeypatch.setattr(rw, "refresh_industry", lambda: None)
+    monkeypatch.setattr(rw, "enrich_industry", lambda evs: evs)
 
     monkeypatch.setattr(rw, "push_all", lambda t: None)
     monkeypatch.setattr(rw, "LATEST_PATH", tmp_path / "latest.json")
@@ -117,3 +132,71 @@ def test_run_weekly_skips_refresh_when_cache_present(monkeypatch, tmp_path):
     rw.run_weekly(today=date(2026, 6, 27))
 
     assert not refresh_called, "快取非空時不應呼叫 refresh_shares"
+
+
+# ── 產業別補值（Task 2） ──────────────────────────────────────────────────
+
+def test_run_weekly_refreshes_and_enriches_industry(monkeypatch, tmp_path):
+    """run_weekly 應每次刷新產業別快取，並用 enrich_industry 補值事件。"""
+    e = CalendarEvent("2330", "台積電", "上市", "", "2026-07-01", "法說會", 285000.0, False)
+    monkeypatch.setattr(rw, "fetch_events", lambda s, en: [e])
+    monkeypatch.setattr(rw, "enrich_market_cap", lambda evs: evs)
+    monkeypatch.setattr(rw, "load_shares", lambda: {"2330": 25930380458})
+    monkeypatch.setattr(rw, "refresh_shares", lambda: None)
+
+    refresh_called = []
+    monkeypatch.setattr(rw, "refresh_industry", lambda: refresh_called.append(True))
+    monkeypatch.setattr(
+        rw, "enrich_industry",
+        lambda evs: [dataclasses.replace(x, industry="半導體業") for x in evs],
+    )
+
+    monkeypatch.setattr(rw, "push_all", lambda t: None)
+    monkeypatch.setattr(rw, "LATEST_PATH", tmp_path / "latest.json")
+
+    rw.run_weekly(today=date(2026, 6, 27))
+
+    assert refresh_called, "應每次呼叫 refresh_industry 更新產業別快取"
+    written = json.loads((tmp_path / "latest.json").read_text(encoding="utf-8"))
+    assert written["events"][0]["industry"] == "半導體業"
+
+
+def test_run_weekly_refresh_industry_failure_does_not_break_pipeline(monkeypatch, tmp_path):
+    """refresh_industry 失敗時應繼續走完流程（沿用舊快取），不得整個流程中斷。"""
+    e = CalendarEvent("2330", "台積電", "上市", "半導體", "2026-07-01", "法說會", 285000.0, False)
+    monkeypatch.setattr(rw, "fetch_events", lambda s, en: [e])
+    monkeypatch.setattr(rw, "enrich_market_cap", lambda evs: evs)
+    monkeypatch.setattr(rw, "load_shares", lambda: {"2330": 25930380458})
+    monkeypatch.setattr(rw, "refresh_shares", lambda: None)
+
+    def bad_refresh():
+        raise RuntimeError("網路掛了")
+
+    monkeypatch.setattr(rw, "refresh_industry", bad_refresh)
+    monkeypatch.setattr(rw, "enrich_industry", lambda evs: evs)
+
+    monkeypatch.setattr(rw, "push_all", lambda t: None)
+    monkeypatch.setattr(rw, "LATEST_PATH", tmp_path / "latest.json")
+
+    out = rw.run_weekly(today=date(2026, 6, 27))
+    assert out["count"] == 1
+
+
+# ── 時區顯式化（Task 3） ──────────────────────────────────────────────────
+
+def test_run_weekly_default_today_uses_taipei_timezone(monkeypatch, tmp_path):
+    """today=None 時應使用顯式台北時區當天（_today_taipei），不依賴系統/伺服器時區。"""
+    monkeypatch.setattr(rw, "_today_taipei", lambda: date(2026, 6, 27))
+    monkeypatch.setattr(rw, "fetch_events", lambda s, en: [])
+    monkeypatch.setattr(rw, "enrich_market_cap", lambda evs: evs)
+    monkeypatch.setattr(rw, "load_shares", lambda: {"2330": 25930380458})
+    monkeypatch.setattr(rw, "refresh_shares", lambda: None)
+    monkeypatch.setattr(rw, "refresh_industry", lambda: None)
+    monkeypatch.setattr(rw, "enrich_industry", lambda evs: evs)
+    monkeypatch.setattr(rw, "push_all", lambda t: None)
+    monkeypatch.setattr(rw, "LATEST_PATH", tmp_path / "latest.json")
+
+    out = rw.run_weekly()  # today 未帶入，應走 _today_taipei()
+
+    # date(2026,6,27) 是週六，next_week_window 應算出下週一 2026-06-29
+    assert out["start"] == "2026-06-29"
