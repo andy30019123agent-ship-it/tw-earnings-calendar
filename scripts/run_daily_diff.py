@@ -41,21 +41,40 @@ def _load_latest() -> dict:
 
 
 def _diff_events(old_events: list[dict], new_events: list) -> dict:
-    """比對舊（dict）／新（CalendarEvent）事件清單，key 為股票代號。
+    """比對舊（dict）／新（CalendarEvent）事件清單。
+
+    同一公司同週可能有多場法說會（fetch_calendar 以「代號＋日期」去重，非只代號），
+    因此不能以股號當唯一鍵，改為按股號分組後比較「日期集合」：
+    - 只在新清單的日期＝新增；只在舊清單的日期＝取消；
+    - 消失／新出現的日期一對一配對（依日期排序）視為改期，配不完的照實列新增／取消；
+    - 兩邊都有的日期＝無異動。
 
     Returns:
         {"added": [CalendarEvent], "removed": [dict], "rescheduled": [(dict, CalendarEvent)]}
     """
-    old_map = {e["id"]: e for e in old_events}
-    new_map = {e.id: e for e in new_events}
+    old_by_id: dict[str, dict] = {}
+    for e in old_events:
+        old_by_id.setdefault(e["id"], {})[e.get("date")] = e
+    new_by_id: dict[str, dict] = {}
+    for e in new_events:
+        new_by_id.setdefault(e.id, {})[e.date] = e
 
-    added = [new_map[cid] for cid in new_map if cid not in old_map]
-    removed = [old_map[cid] for cid in old_map if cid not in new_map]
-    rescheduled = [
-        (old_map[cid], new_map[cid])
-        for cid in new_map
-        if cid in old_map and old_map[cid].get("date") != new_map[cid].date
-    ]
+    added: list = []
+    removed: list = []
+    rescheduled: list = []
+
+    for cid in sorted(set(old_by_id) | set(new_by_id)):
+        old_dates = old_by_id.get(cid, {})
+        new_dates = new_by_id.get(cid, {})
+        gone = sorted(d for d in old_dates if d not in new_dates)
+        fresh = sorted(d for d in new_dates if d not in old_dates)
+
+        # 一減一加依序配對視為改期；配不完的照實列為取消／新增
+        for old_d, new_d in zip(gone, fresh):
+            rescheduled.append((old_dates[old_d], new_dates[new_d]))
+        removed.extend(old_dates[d] for d in gone[len(fresh):])
+        added.extend(new_dates[d] for d in fresh[len(gone):])
+
     return {"added": added, "removed": removed, "rescheduled": rescheduled}
 
 

@@ -125,6 +125,91 @@ def test_rescheduled_event_triggers_push_and_persists(monkeypatch, tmp_path):
     assert written["events"][0]["date"] == "2026-07-03"
 
 
+# ── 同一公司同週多場法說會（不得以股號當唯一鍵互相覆蓋） ─────────────────
+
+def _make_event(code="2330", name="台積電", date="2026-07-07"):
+    return CalendarEvent(code, name, "上市", "半導體業", date, "法說會", 285000.0, False)
+
+
+def _make_event_dict(code="2330", name="台積電", date="2026-07-07"):
+    return {**BASE_EVENT, "id": code, "name": name, "date": date}
+
+
+def test_same_company_two_sessions_unchanged_stays_silent(monkeypatch, tmp_path):
+    """同公司同週兩場（7/07、7/10）新舊都在：不得誤報任何異動。"""
+    old = [_make_event_dict(date="2026-07-07"), _make_event_dict(date="2026-07-10")]
+    latest_path = _write_latest(tmp_path, old, start="2026-07-06", end="2026-07-12")
+    monkeypatch.setattr(rd, "LATEST_PATH", latest_path)
+    pushed = []
+    _stub_common(monkeypatch, pushed)
+    monkeypatch.setattr(rd, "fetch_events", lambda s, e: [
+        _make_event(date="2026-07-07"), _make_event(date="2026-07-10"),
+    ])
+
+    out = rd.run_daily_diff()
+
+    assert out["changed"] is False
+    assert pushed == [], "兩場都沒變不應推播"
+
+
+def test_same_company_one_of_two_sessions_cancelled(monkeypatch, tmp_path):
+    """兩場取消一場（7/10）：只報取消那場，另一場（7/07）不受影響。"""
+    old = [_make_event_dict(date="2026-07-07"), _make_event_dict(date="2026-07-10")]
+    latest_path = _write_latest(tmp_path, old, start="2026-07-06", end="2026-07-12")
+    monkeypatch.setattr(rd, "LATEST_PATH", latest_path)
+    pushed = []
+    _stub_common(monkeypatch, pushed)
+    monkeypatch.setattr(rd, "fetch_events", lambda s, e: [_make_event(date="2026-07-07")])
+
+    out = rd.run_daily_diff()
+
+    assert out["changed"] is True
+    assert out["removed"] == 1 and out["added"] == 0 and out["rescheduled"] == 0
+    assert "取消" in pushed[0] and "2026-07-10" in pushed[0]
+    assert "2026-07-07" not in pushed[0], "仍照常舉行的那場不應出現在異動訊息"
+    written = json.loads(latest_path.read_text(encoding="utf-8"))
+    assert [e["date"] for e in written["events"]] == ["2026-07-07"]
+
+
+def test_same_company_second_session_added(monkeypatch, tmp_path):
+    """原一場（7/07）新增第二場（7/10）：只報新增那場，不誤判成改期。"""
+    old = [_make_event_dict(date="2026-07-07")]
+    latest_path = _write_latest(tmp_path, old, start="2026-07-06", end="2026-07-12")
+    monkeypatch.setattr(rd, "LATEST_PATH", latest_path)
+    pushed = []
+    _stub_common(monkeypatch, pushed)
+    monkeypatch.setattr(rd, "fetch_events", lambda s, e: [
+        _make_event(date="2026-07-07"), _make_event(date="2026-07-10"),
+    ])
+
+    out = rd.run_daily_diff()
+
+    assert out["changed"] is True
+    assert out["added"] == 1 and out["removed"] == 0 and out["rescheduled"] == 0
+    assert "新增" in pushed[0] and "2026-07-10" in pushed[0]
+    assert "改期" not in pushed[0]
+
+
+def test_same_company_one_of_two_sessions_rescheduled(monkeypatch, tmp_path):
+    """兩場其中一場改期（7/10→7/11）：報改期且日期正確，另一場（7/07）不受影響。"""
+    old = [_make_event_dict(date="2026-07-07"), _make_event_dict(date="2026-07-10")]
+    latest_path = _write_latest(tmp_path, old, start="2026-07-06", end="2026-07-12")
+    monkeypatch.setattr(rd, "LATEST_PATH", latest_path)
+    pushed = []
+    _stub_common(monkeypatch, pushed)
+    monkeypatch.setattr(rd, "fetch_events", lambda s, e: [
+        _make_event(date="2026-07-07"), _make_event(date="2026-07-11"),
+    ])
+
+    out = rd.run_daily_diff()
+
+    assert out["changed"] is True
+    assert out["rescheduled"] == 1 and out["added"] == 0 and out["removed"] == 0
+    assert "改期" in pushed[0]
+    assert "2026-07-10 → 2026-07-11" in pushed[0]
+    assert "2026-07-07" not in pushed[0], "沒動的那場不應出現在異動訊息"
+
+
 # ── 抓取失敗：告警＋重新拋出，且不得覆寫舊資料（不誤判成「全部取消」） ─────
 
 def test_fetch_failure_pushes_warning_raises_and_preserves_old_data(monkeypatch, tmp_path):
