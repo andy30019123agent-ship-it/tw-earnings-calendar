@@ -112,6 +112,13 @@ def run_daily_diff() -> dict:
         push_all(f"⚠️ 每日法說會異動核對抓取失敗，稍後人工補查：{exc}")
         raise
 
+    # ── 1.5 全空防呆：來源回 0 筆但既有清單非空，極可能是 MOPS 回空表／限流
+    #        而非整週全數取消（2026-07-04 實際發生：9 場被誤判全取消、清空網站資料）。
+    #        保留原清單、推警告請人工確認，絕不覆寫。
+    if not events and old_events:
+        push_all("⚠️ 每日異動核對：來源回 0 筆但現有清單非空，疑似資料源異常——已保留原行事曆，請人工確認")
+        return {"changed": False, "reason": "empty_fetch_guard"}
+
     # ── 2. 補市值／產業別（沿用既有快取，不在每日流程額外刷新快取） ─────────
     events = enrich_market_cap(events)
     events = enrich_industry(events)

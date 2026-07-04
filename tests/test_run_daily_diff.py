@@ -91,11 +91,14 @@ def test_added_event_triggers_push_and_persists(monkeypatch, tmp_path):
 # ── 取消 ────────────────────────────────────────────────────────────────
 
 def test_removed_event_triggers_push_and_persists(monkeypatch, tmp_path):
-    latest_path = _write_latest(tmp_path, [BASE_EVENT])
+    """部分取消（來源仍回得到其他場次）照常推播＋覆寫。"""
+    second_event = {**BASE_EVENT, "id": "2454", "name": "聯發科", "date": "2026-07-02"}
+    latest_path = _write_latest(tmp_path, [BASE_EVENT, second_event])
     monkeypatch.setattr(rd, "LATEST_PATH", latest_path)
     pushed = []
     _stub_common(monkeypatch, pushed)
-    monkeypatch.setattr(rd, "fetch_events", lambda s, e: [])  # 2330 消失
+    remaining = CalendarEvent("2454", "聯發科", "上市", "半導體業", "2026-07-02", "法說會", 92000.0, False)
+    monkeypatch.setattr(rd, "fetch_events", lambda s, e: [remaining])  # 2330 消失、2454 仍在
 
     out = rd.run_daily_diff()
 
@@ -103,7 +106,28 @@ def test_removed_event_triggers_push_and_persists(monkeypatch, tmp_path):
     assert out["removed"] == 1 and out["added"] == 0 and out["rescheduled"] == 0
     assert "取消" in pushed[0] and "2330" in pushed[0] and "台積電" in pushed[0]
     written = json.loads(latest_path.read_text(encoding="utf-8"))
-    assert written["events"] == []
+    assert {e["id"] for e in written["events"]} == {"2454"}
+
+
+def test_empty_fetch_with_nonempty_baseline_keeps_data(monkeypatch, tmp_path):
+    """來源回 0 筆但既有清單非空 → 防呆：不覆寫、不發取消通知、推資料源警告。
+
+    2026-07-04 實際事故：MOPS 回空表，9 場被誤判「全數取消」、latest.json 被清空。
+    """
+    latest_path = _write_latest(tmp_path, [BASE_EVENT])
+    monkeypatch.setattr(rd, "LATEST_PATH", latest_path)
+    pushed = []
+    _stub_common(monkeypatch, pushed)
+    monkeypatch.setattr(rd, "fetch_events", lambda s, e: [])
+
+    out = rd.run_daily_diff()
+
+    assert out["changed"] is False
+    assert out.get("reason") == "empty_fetch_guard"
+    assert len(pushed) == 1 and "資料源異常" in pushed[0], "應推資料源警告而非取消通知"
+    assert "取消" not in pushed[0]
+    # latest.json 必須原封不動
+    assert json.loads(latest_path.read_text(encoding="utf-8"))["events"] == [BASE_EVENT]
 
 
 # ── 改期 ────────────────────────────────────────────────────────────────
