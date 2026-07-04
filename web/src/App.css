@@ -973,8 +973,7 @@ input, select { font-family: inherit; }
 }
 
 .prose table {
-  min-width: 100%;
-  width: max-content;
+  width: 100%;
   border-collapse: collapse;
   font-variant-numeric: tabular-nums;
 }
