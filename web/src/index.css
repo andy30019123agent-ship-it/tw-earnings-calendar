@@ -12,7 +12,7 @@ html, body, #root {
   min-height: 100dvh;
 }
 
-/* Soft warm-blush fallback so areas beyond the fixed gradient match */
+/* urbi 粉色系底色（token 定義於 App.css :root，此處僅引用避免 FOUC） */
 html {
-  background-color: #ffe8ec;
+  background-color: var(--bg, #F7F3F7);
 }
