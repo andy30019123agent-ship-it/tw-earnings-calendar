@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { ArrowLeft, Inbox } from 'lucide-react'
 import { loadReports } from '../lib/reports'
 import { TYPE_LABEL, typeColorClass } from '../lib/reportTypes'
 
@@ -33,7 +34,10 @@ export default function ReportView({ filename }) {
   if (err) {
     return (
       <div className="report-view-wrap">
-        <a href="#/" className="nav-back">← 返回首頁</a>
+        <a href="#/" className="nav-back">
+          <ArrowLeft size={16} strokeWidth={1.75} aria-hidden="true" />
+          返回首頁
+        </a>
         <p className="error-note" style={{ marginTop: '16px' }}>
           報告載入失敗，請稍後再試。
         </p>
@@ -44,9 +48,12 @@ export default function ReportView({ filename }) {
   if (report === null) {
     return (
       <div className="report-view-wrap">
-        <a href="#/" className="nav-back">← 返回首頁</a>
+        <a href="#/" className="nav-back">
+          <ArrowLeft size={16} strokeWidth={1.75} aria-hidden="true" />
+          返回首頁
+        </a>
         <div className="report-not-found">
-          <p className="report-not-found-icon">📭</p>
+          <Inbox size={40} strokeWidth={1.5} className="report-not-found-icon" aria-hidden="true" />
           <p className="report-not-found-title">找不到這篇報告</p>
           <p className="report-not-found-hint">
             可能已移除或連結有誤，請回首頁查看最近報告。
@@ -62,7 +69,10 @@ export default function ReportView({ filename }) {
   return (
     <article className="report-view-wrap">
       <nav className="report-view-nav">
-        <a href="#/" className="nav-back">← 首頁</a>
+        <a href="#/" className="nav-back">
+          <ArrowLeft size={16} strokeWidth={1.75} aria-hidden="true" />
+          首頁
+        </a>
         <a href="#/library" className="nav-back">報告庫</a>
       </nav>
 

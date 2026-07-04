@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { CalendarDays } from 'lucide-react'
 
 /**
  * 將 YYYY-MM-DD 格式轉成中文日期標題，例如 06/30（一）
@@ -12,7 +13,15 @@ function formatDateLabel(dateStr) {
   return `${mm}/${dd}（${wd}）`
 }
 
-export default function CalendarCard() {
+/** 台北today（YYYY-MM-DD），供 hero 大數字「今日場次」比對用 */
+function todayTaipei() {
+  const now = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Taipei' }))
+  const mm = String(now.getMonth() + 1).padStart(2, '0')
+  const dd = String(now.getDate()).padStart(2, '0')
+  return `${now.getFullYear()}-${mm}-${dd}`
+}
+
+export default function CalendarCard({ onStats }) {
   const [groupedEvents, setGroupedEvents] = useState(null) // null = loading
   const [range, setRange] = useState(null)
   const [error, setError] = useState(false)
@@ -51,6 +60,14 @@ export default function CalendarCard() {
         )
         setGroupedEvents(sorted)
         setRange(data.range ?? null)
+        // 回報 hero 大數字統計（純顯示用衍生值，不影響上方分組/排序邏輯）
+        if (onStats) {
+          const today = todayTaipei()
+          onStats({
+            total: events.length,
+            today: events.filter((ev) => (ev.date ?? ev.event_date) === today).length,
+          })
+        }
       })
       .catch(() => {
         setError(true)
@@ -61,7 +78,10 @@ export default function CalendarCard() {
   if (groupedEvents === null) {
     return (
       <section className="calendar-card">
-        <h2 className="section-title">📅 下週法說會行事曆</h2>
+        <h2 className="section-title">
+          <CalendarDays size={20} strokeWidth={1.75} aria-hidden="true" />
+          下週法說會行事曆
+        </h2>
         <p className="placeholder">載入中…</p>
       </section>
     )
@@ -73,7 +93,8 @@ export default function CalendarCard() {
   return (
     <section className="calendar-card">
       <h2 className="section-title">
-        📅 下週法說會行事曆
+        <CalendarDays size={20} strokeWidth={1.75} aria-hidden="true" />
+        下週法說會行事曆
         {range && Array.isArray(range) && range.length === 2 && (
           <span className="range-label">{range[0]} ～ {range[1]}</span>
         )}

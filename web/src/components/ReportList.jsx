@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { FileText } from 'lucide-react'
 import { loadReports } from '../lib/reports'
 
 const TYPE_LABEL = {
@@ -23,7 +24,10 @@ export default function ReportList() {
   if (reports === null) {
     return (
       <section className="report-list-section">
-        <h2 className="section-title">📄 最近報告</h2>
+        <h2 className="section-title">
+          <FileText size={20} strokeWidth={1.75} aria-hidden="true" />
+          最近報告
+        </h2>
         <p className="placeholder">載入中…</p>
       </section>
     )
@@ -31,7 +35,10 @@ export default function ReportList() {
 
   return (
     <section className="report-list-section">
-      <h2 className="section-title">📄 最近報告</h2>
+      <h2 className="section-title">
+        <FileText size={20} strokeWidth={1.75} aria-hidden="true" />
+        最近報告
+      </h2>
 
       {err && <p className="error-note">報告載入失敗，請稍後再試。</p>}
 
