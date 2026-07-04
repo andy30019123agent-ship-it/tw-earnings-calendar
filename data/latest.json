@@ -1,8 +1,99 @@
 {
-  "updated": "2026-07-05T00:41:11.337248+08:00",
+  "updated": "2026-07-05T01:13:11.002102+08:00",
   "range": [
     "2026-07-06",
     "2026-07-12"
   ],
-  "events": []
+  "events": [
+    {
+      "id": "2308",
+      "name": "台達電",
+      "market": "上市",
+      "industry": "電子零組件業",
+      "date": "2026-07-08",
+      "type": "法說會",
+      "market_cap": 53899.02,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "2408",
+      "name": "南亞科",
+      "market": "上市",
+      "industry": "半導體業",
+      "date": "2026-07-10",
+      "type": "法說會",
+      "market_cap": 14128.59,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "2889",
+      "name": "國票金",
+      "market": "上市",
+      "industry": "金融保險業",
+      "date": "2026-07-07",
+      "type": "法說會",
+      "market_cap": 545.03,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "3008",
+      "name": "大立光",
+      "market": "上市",
+      "industry": "光電業",
+      "date": "2026-07-09",
+      "type": "法說會",
+      "market_cap": 5532.76,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "3518",
+      "name": "柏騰",
+      "market": "上市",
+      "industry": "其他電子業",
+      "date": "2026-07-08",
+      "type": "法說會",
+      "market_cap": 37.25,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "4904",
+      "name": "遠傳",
+      "market": "上市",
+      "industry": "通信網路業",
+      "date": "2026-07-08",
+      "type": "法說會",
+      "market_cap": 3788.09,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "4529",
+      "name": "淳紳",
+      "market": "上櫃",
+      "industry": "其他業",
+      "date": "2026-07-06",
+      "type": "法說會",
+      "market_cap": 3.57,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "5236",
+      "name": "凌陽創新",
+      "market": "上櫃",
+      "industry": "半導體業",
+      "date": "2026-07-09",
+      "type": "法說會",
+      "market_cap": 101.41,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "8027",
+      "name": "鈦昇",
+      "market": "上櫃",
+      "industry": "電機機械",
+      "date": "2026-07-07",
+      "type": "法說會",
+      "market_cap": 273.28,
+      "cap_is_estimate": false
+    }
+  ]
 }
