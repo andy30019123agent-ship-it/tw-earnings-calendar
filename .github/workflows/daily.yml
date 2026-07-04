@@ -2,8 +2,9 @@ name: daily-remind
 
 on:
   schedule:
-    - cron: "0 3 * * *"   # UTC 每日 03:00 = 台北每日 11:00
-    - cron: "40 3 * * *"  # 保險重試（GitHub 排程偶爾漏跑）；靠冪等旗標不會重複推
+    # 整點/熱門分鐘的 cron 常被 GitHub 延遲或丟包（2026-07-04 當天 03:00 與 03:40 都沒跑）
+    - cron: "26 3 * * *"  # UTC 03:26 = 台北 11:26
+    - cron: "26 5 * * *"  # 台北 13:26 保險重試；靠冪等旗標不會重複推
   workflow_dispatch:
 
 jobs:

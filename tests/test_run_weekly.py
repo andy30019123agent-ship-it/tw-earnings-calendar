@@ -23,6 +23,7 @@ def test_run_weekly_writes_latest_and_pushes(monkeypatch, tmp_path):
     pushed = {}
     monkeypatch.setattr(rw, "push_all", lambda t: pushed.update(text=t))
     monkeypatch.setattr(rw, "LATEST_PATH", tmp_path / "latest.json")
+    monkeypatch.setattr(rw, "STATE_PATH", tmp_path / "notify_state.json")
     out = rw.run_weekly(today=date(2026, 6, 27))
     assert out["count"] == 1
     assert (tmp_path / "latest.json").exists()
@@ -39,6 +40,7 @@ def test_run_weekly_returns_summary_dict(monkeypatch, tmp_path):
     monkeypatch.setattr(rw, "enrich_industry", lambda evs: evs)
     monkeypatch.setattr(rw, "push_all", lambda t: None)
     monkeypatch.setattr(rw, "LATEST_PATH", tmp_path / "latest.json")
+    monkeypatch.setattr(rw, "STATE_PATH", tmp_path / "notify_state.json")
     out = rw.run_weekly(today=date(2026, 6, 27))
     assert "count" in out
     assert out["count"] == 0
@@ -55,8 +57,34 @@ def test_run_weekly_empty_window_pushes_no_events_message(monkeypatch, tmp_path)
     pushed = {}
     monkeypatch.setattr(rw, "push_all", lambda t: pushed.update(text=t))
     monkeypatch.setattr(rw, "LATEST_PATH", tmp_path / "latest.json")
+    monkeypatch.setattr(rw, "STATE_PATH", tmp_path / "notify_state.json")
     rw.run_weekly(today=date(2026, 6, 27))
     assert "暫無" in pushed["text"]
+
+
+def test_run_weekly_idempotent_same_window_pushes_once(monkeypatch, tmp_path):
+    """同一週窗口第二次執行（保險 cron 重跑）不得重複推播，但 latest.json 照常更新。"""
+    e = CalendarEvent("2330", "台積電", "上市", "半導體", "2026-07-01", "法說會", 285000.0, False)
+    monkeypatch.setattr(rw, "fetch_events", lambda s, en: [e])
+    monkeypatch.setattr(rw, "enrich_market_cap", lambda evs: evs)
+    monkeypatch.setattr(rw, "load_shares", lambda: {"2330": 25930380458})
+    monkeypatch.setattr(rw, "refresh_shares", lambda: None)
+    monkeypatch.setattr(rw, "refresh_industry", lambda: None)
+    monkeypatch.setattr(rw, "enrich_industry", lambda evs: evs)
+    calls = []
+    monkeypatch.setattr(rw, "push_all", lambda t: calls.append(t))
+    monkeypatch.setattr(rw, "LATEST_PATH", tmp_path / "latest.json")
+    monkeypatch.setattr(rw, "STATE_PATH", tmp_path / "notify_state.json")
+
+    rw.run_weekly(today=date(2026, 6, 27))
+    rw.run_weekly(today=date(2026, 6, 27))  # 保險 cron 重跑同一窗口
+
+    assert len(calls) == 1, "同一週窗口只准推播一次"
+    assert (tmp_path / "notify_state.json").exists()
+
+    # 下一週窗口是新的，應照常推播
+    rw.run_weekly(today=date(2026, 7, 4))
+    assert len(calls) == 2
 
 
 # ── 失敗路徑（CalendarFetchError） ────────────────────────────────────────
@@ -78,6 +106,7 @@ def test_run_weekly_fetch_error_pushes_failure_notice_and_raises(monkeypatch, tm
     pushed = {}
     monkeypatch.setattr(rw, "push_all", lambda t: pushed.update(text=t))
     monkeypatch.setattr(rw, "LATEST_PATH", tmp_path / "latest.json")
+    monkeypatch.setattr(rw, "STATE_PATH", tmp_path / "notify_state.json")
 
     with pytest.raises(CalendarFetchError):
         rw.run_weekly(today=date(2026, 6, 27))
@@ -108,6 +137,7 @@ def test_run_weekly_seeds_shares_when_cache_empty(monkeypatch, tmp_path):
 
     monkeypatch.setattr(rw, "push_all", lambda t: None)
     monkeypatch.setattr(rw, "LATEST_PATH", tmp_path / "latest.json")
+    monkeypatch.setattr(rw, "STATE_PATH", tmp_path / "notify_state.json")
 
     rw.run_weekly(today=date(2026, 6, 27))
 
@@ -128,6 +158,7 @@ def test_run_weekly_skips_refresh_when_cache_present(monkeypatch, tmp_path):
 
     monkeypatch.setattr(rw, "push_all", lambda t: None)
     monkeypatch.setattr(rw, "LATEST_PATH", tmp_path / "latest.json")
+    monkeypatch.setattr(rw, "STATE_PATH", tmp_path / "notify_state.json")
 
     rw.run_weekly(today=date(2026, 6, 27))
 
@@ -153,6 +184,7 @@ def test_run_weekly_refreshes_and_enriches_industry(monkeypatch, tmp_path):
 
     monkeypatch.setattr(rw, "push_all", lambda t: None)
     monkeypatch.setattr(rw, "LATEST_PATH", tmp_path / "latest.json")
+    monkeypatch.setattr(rw, "STATE_PATH", tmp_path / "notify_state.json")
 
     rw.run_weekly(today=date(2026, 6, 27))
 
@@ -177,6 +209,7 @@ def test_run_weekly_refresh_industry_failure_does_not_break_pipeline(monkeypatch
 
     monkeypatch.setattr(rw, "push_all", lambda t: None)
     monkeypatch.setattr(rw, "LATEST_PATH", tmp_path / "latest.json")
+    monkeypatch.setattr(rw, "STATE_PATH", tmp_path / "notify_state.json")
 
     out = rw.run_weekly(today=date(2026, 6, 27))
     assert out["count"] == 1
@@ -195,6 +228,7 @@ def test_run_weekly_default_today_uses_taipei_timezone(monkeypatch, tmp_path):
     monkeypatch.setattr(rw, "enrich_industry", lambda evs: evs)
     monkeypatch.setattr(rw, "push_all", lambda t: None)
     monkeypatch.setattr(rw, "LATEST_PATH", tmp_path / "latest.json")
+    monkeypatch.setattr(rw, "STATE_PATH", tmp_path / "notify_state.json")
 
     out = rw.run_weekly()  # today 未帶入，應走 _today_taipei()
 

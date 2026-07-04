@@ -31,6 +31,21 @@ from scripts.push import push_all  # noqa: F401 — module-level for monkeypatch
 # 讓測試可以 monkeypatch 此路徑
 LATEST_PATH: pathlib.Path = pathlib.Path(__file__).parent.parent / "data" / "latest.json"
 
+# 冪等旗標（與 run_daily_remind 共用同一個 state 檔，key 各自獨立）
+STATE_PATH: pathlib.Path = pathlib.Path(__file__).parent.parent / "data" / "notify_state.json"
+
+
+def _load_notify_state() -> dict:
+    try:
+        return json.loads(STATE_PATH.read_text(encoding="utf-8"))
+    except Exception:
+        return {}
+
+
+def _save_notify_state(state: dict) -> None:
+    STATE_PATH.parent.mkdir(parents=True, exist_ok=True)
+    STATE_PATH.write_text(json.dumps(state, ensure_ascii=False, indent=2), encoding="utf-8")
+
 _TAIPEI = timezone(timedelta(hours=8))
 
 
@@ -90,9 +105,15 @@ def run_weekly(today: date | None = None) -> dict:
     LATEST_PATH.parent.mkdir(parents=True, exist_ok=True)
     LATEST_PATH.write_text(json.dumps(latest, ensure_ascii=False, indent=2), encoding="utf-8")
 
-    # ── 4. 組訊息並推播 ───────────────────────────────────────────────────
-    message = build_calendar_message(events, start, end)
-    push_all(message)
+    # ── 4. 組訊息並推播（冪等：同一週窗口已推過就跳過，保險 cron 不重複推） ──
+    state = _load_notify_state()
+    if state.get("weekly_calendar") == start:
+        print(f"[SKIP] 週窗口 {start} 已推播過，冪等跳過重複推播")
+    else:
+        message = build_calendar_message(events, start, end)
+        push_all(message)
+        state["weekly_calendar"] = start
+        _save_notify_state(state)
 
     return {"count": len(events), "start": start, "end": end}
 
