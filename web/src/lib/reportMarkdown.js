@@ -210,7 +210,7 @@ export function renderReportMarkdown(body) {
 // ── 重點卡抽取（在轉 HTML 之前，直接對原始 markdown 抽字） ──
 
 const SUMMARY_HEADING_RE =
-  /^##[ \t]*(?:\p{Extended_Pictographic}️?[ \t]*)?(?:一句話總結|一句話定位)[ \t]*\n+([\s\S]*?)(?=\n##[ \t]|\n---[ \t]*\n|$)/mu
+  /^##[ \t]*(?:\p{Extended_Pictographic}️?[ \t]*)?(?:一句話總結|一句話定位|一句話投資論點)[ \t]*\n+([\s\S]*?)(?=\n##[ \t]|\n---[ \t]*\n|$)/mu
 
 const OUTLOOK_HEADING_RE = /^##[ \t]*(?:\d+\.[ \t]*)?(?:\p{Extended_Pictographic}️?[ \t]*)?(多空評估[^\n]*)$/mu
 
