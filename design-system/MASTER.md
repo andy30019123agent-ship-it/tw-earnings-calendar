@@ -28,7 +28,8 @@
 | Role | Hex | CSS Variable | 用法 |
 |------|-----|--------------|------|
 | Primary | `#FF4D8D` | `--primary` | 主 CTA、選中態、關鍵強調（亮桃紅） |
-| Primary Hover | `#E63677` | `--primary-strong` | hover／active |
+| Primary Hover | `#E63677` | `--primary-strong` | hover／active（**不得當常態文字色**：對白底僅 4.07:1，未達 4.5:1） |
+| Primary Ink | `#B8125C` | `--primary-ink` | 強調文字色（對白底與 tint 底皆 ≥4.5:1）；一般文字用強調色（分類代號、連結、標題重點字）一律用這個，`--primary-strong` 僅限 hover/active |
 | On Primary | `#2B0A20` | `--on-primary` | 主鈕文字用深莓（urbi 是深字配亮鈕，白字對比不足） |
 | Primary Tint | `#FFD6E5` | `--primary-tint` | 徽章底、選中列底 |
 | Accent | `#FFC24B` | `--accent` | 琥珀點綴（向 urbi 黃致敬）：小徽章、標記，一頁最多一處 |
