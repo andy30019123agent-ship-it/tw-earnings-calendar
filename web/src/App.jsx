@@ -4,12 +4,14 @@ import CalendarCard from './components/CalendarCard'
 import ReportList from './components/ReportList'
 import ReportLibrary from './components/ReportLibrary'
 import ReportView from './components/ReportView'
+import Scorecard from './components/Scorecard'
 import './App.css'
 
 function parseHash(hash) {
   const h = hash.replace(/^#/, '')
   if (!h || h === '/') return { route: 'home' }
   if (h === '/library') return { route: 'library' }
+  if (h === '/scorecard') return { route: 'scorecard' }
   const m = h.match(/^\/r\/(.+)$/)
   if (m) return { route: 'report', filename: decodeURIComponent(m[1]) }
   return { route: 'home' }
@@ -57,6 +59,13 @@ export default function App() {
             >
               報告庫
             </a>
+            <a
+              href="#/scorecard"
+              className={`seg-btn${loc.route === 'scorecard' ? ' on' : ''}`}
+              aria-current={loc.route === 'scorecard' ? 'page' : undefined}
+            >
+              成績單
+            </a>
           </nav>
         </div>
 
@@ -82,6 +91,7 @@ export default function App() {
           </>
         )}
         {loc.route === 'library' && <ReportLibrary />}
+        {loc.route === 'scorecard' && <Scorecard />}
         {loc.route === 'report' && <ReportView filename={loc.filename} />}
       </main>
 

@@ -1,0 +1,1220 @@
+{
+  "updated": "2026-07-04",
+  "predictions": [
+    {
+      "pid": "2303-2026-06-27-01",
+      "stock_id": "2303",
+      "stock_name": "聯電",
+      "report": "2303-快報-2026-06-27.md",
+      "predicted_on": "2026-06-27",
+      "claim": "22nm/特殊製程佔比持續攀升、報價調漲延續（期限推定）",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-12-27"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "2303-2026-06-27-02",
+      "stock_id": "2303",
+      "stock_name": "聯電",
+      "report": "2303-快報-2026-06-27.md",
+      "predicted_on": "2026-06-27",
+      "claim": "聯電與 Intel 合作 12nm 製程預計 2027 年投產",
+      "verifiable": {
+        "direction": "na",
+        "price_range": null,
+        "deadline": "2027-12-31"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "2303-2026-06-27-03",
+      "stock_id": "2303",
+      "stock_name": "聯電",
+      "report": "2303-快報-2026-06-27.md",
+      "predicted_on": "2026-06-27",
+      "claim": "中國成熟製程廠殺價競爭壓力持續，可能壓縮聯電報價與毛利（期限推定）",
+      "verifiable": {
+        "direction": "down",
+        "price_range": null,
+        "deadline": "2026-12-27"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "2308-2026-06-27-01",
+      "stock_id": "2308",
+      "stock_name": "台達電",
+      "report": "2308-快報-2026-06-27.md",
+      "predicted_on": "2026-06-27",
+      "claim": "台達電 800V HVDC 高壓直流電將於 2027 年成為主要貢獻",
+      "verifiable": {
+        "direction": "na",
+        "price_range": null,
+        "deadline": "2027-12-31"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "2308-2026-06-27-02",
+      "stock_id": "2308",
+      "stock_name": "台達電",
+      "report": "2308-快報-2026-06-27.md",
+      "predicted_on": "2026-06-27",
+      "claim": "台達電 Q2 在無一次性賠償下毛利率仍可望守穩",
+      "verifiable": {
+        "direction": "flat",
+        "price_range": null,
+        "deadline": "2026-06-30"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "2308-2026-06-27-03",
+      "stock_id": "2308",
+      "stock_name": "台達電",
+      "report": "2308-快報-2026-06-27.md",
+      "predicted_on": "2026-06-27",
+      "claim": "台達電 AI 電源＋液冷占比持續走升（期限推定）",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-12-27"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "2308-2026-06-27-04",
+      "stock_id": "2308",
+      "stock_name": "台達電",
+      "report": "2308-快報-2026-06-27.md",
+      "predicted_on": "2026-06-27",
+      "claim": "券商喊台達電目標價上看 1,815 元（期限推定）",
+      "verifiable": {
+        "direction": "up",
+        "price_range": [
+          1815,
+          1815
+        ],
+        "deadline": "2026-12-27"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "2404-2026-06-27-01",
+      "stock_id": "2404",
+      "stock_name": "漢唐",
+      "report": "2404-快報-2026-06-27.md",
+      "predicted_on": "2026-06-27",
+      "claim": "台積電 2026 年資本支出上看 520–560 億美元，漢唐可望受惠",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-12-31"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "2404-2026-06-27-02",
+      "stock_id": "2404",
+      "stock_name": "漢唐",
+      "report": "2404-快報-2026-06-27.md",
+      "predicted_on": "2026-06-27",
+      "claim": "漢唐新接單動能持續強勁（領先在手訂單的指標）（期限推定）",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-12-27"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "2404-2026-06-27-03",
+      "stock_id": "2404",
+      "stock_name": "漢唐",
+      "report": "2404-快報-2026-06-27.md",
+      "predicted_on": "2026-06-27",
+      "claim": "市場估漢唐 2026 年 EPS 約 64.8～74 元",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-12-31"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "2408-2026-06-27-01",
+      "stock_id": "2408",
+      "stock_name": "南亞科",
+      "report": "2408-快報-2026-06-27.md",
+      "predicted_on": "2026-06-27",
+      "claim": "南亞科公司指引 Q2 優於 Q1、毛利率挑戰 70%",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-06-30"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "2408-2026-06-27-02",
+      "stock_id": "2408",
+      "stock_name": "南亞科",
+      "report": "2408-快報-2026-06-27.md",
+      "predicted_on": "2026-06-27",
+      "claim": "DRAM 報價持續走高、超級循環延續（期限推定）",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-12-27"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "2408-2026-06-27-03",
+      "stock_id": "2408",
+      "stock_name": "南亞科",
+      "report": "2408-快報-2026-06-27.md",
+      "predicted_on": "2026-06-27",
+      "claim": "南亞科客製化 AI 記憶體（UWIO）／DDR5 占比持續提升（期限推定）",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-12-27"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "2409-2026-06-27-01",
+      "stock_id": "2409",
+      "stock_name": "友達",
+      "report": "2409-快報-2026-06-27.md",
+      "predicted_on": "2026-06-27",
+      "claim": "友達 Mobility＋Vertical 營收占比目標 2030 年達 70%",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2030-12-31"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "2409-2026-06-27-02",
+      "stock_id": "2409",
+      "stock_name": "友達",
+      "report": "2409-快報-2026-06-27.md",
+      "predicted_on": "2026-06-27",
+      "claim": "友達 2026 年車用（Mobility）美元營收估年增 11–13%",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-12-31"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "2409-2026-06-27-03",
+      "stock_id": "2409",
+      "stock_name": "友達",
+      "report": "2409-快報-2026-06-27.md",
+      "predicted_on": "2026-06-27",
+      "claim": "友達本業有望轉盈（期限推定）",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-12-27"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "2454-2026-06-27-01",
+      "stock_id": "2454",
+      "stock_name": "聯發科",
+      "report": "2454-快報-2026-06-27.md",
+      "predicted_on": "2026-06-27",
+      "claim": "聯發科 AI ASIC 今年（2026）貢獻 20 億美元營收，目標市占 10–15%",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-12-31"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "2454-2026-06-27-02",
+      "stock_id": "2454",
+      "stock_name": "聯發科",
+      "report": "2454-快報-2026-06-27.md",
+      "predicted_on": "2026-06-27",
+      "claim": "高盛估聯發科 2026 年 EPS 63 元",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-12-31"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "2454-2026-06-27-03",
+      "stock_id": "2454",
+      "stock_name": "聯發科",
+      "report": "2454-快報-2026-06-27.md",
+      "predicted_on": "2026-06-27",
+      "claim": "聯發科手機本業營收年增有望轉正（期限推定）",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-12-27"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "2467-2026-06-27-01",
+      "stock_id": "2467",
+      "stock_name": "志聖",
+      "report": "2467-快報-2026-06-27.md",
+      "predicted_on": "2026-06-27",
+      "claim": "志聖先進封裝設備占比可望從 40% 衝向 54%（期限推定）",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-12-27"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "2467-2026-06-27-02",
+      "stock_id": "2467",
+      "stock_name": "志聖",
+      "report": "2467-快報-2026-06-27.md",
+      "predicted_on": "2026-06-27",
+      "claim": "志聖 G2C+ 整線方案接單放量（期限推定）",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-12-27"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "2486-2026-06-27-01",
+      "stock_id": "2486",
+      "stock_name": "一詮",
+      "report": "2486-快報-2026-06-27.md",
+      "predicted_on": "2026-06-27",
+      "claim": "法人估一詮 2026 年營收挑戰 70.3 億元（年增 16.6%）",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-12-31"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "2486-2026-06-27-02",
+      "stock_id": "2486",
+      "stock_name": "一詮",
+      "report": "2486-快報-2026-06-27.md",
+      "predicted_on": "2026-06-27",
+      "claim": "一詮均熱片／Metal TIM 客戶認證與放量持續推進、毛利率續升（期限推定）",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-12-27"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "3363-2026-06-27-01",
+      "stock_id": "3363",
+      "stock_name": "上詮",
+      "report": "3363-快報-2026-06-27.md",
+      "predicted_on": "2026-06-27",
+      "claim": "外資預估上詮今年 EPS 年增挑戰 175%～260%",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-12-31"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "3363-2026-06-27-02",
+      "stock_id": "3363",
+      "stock_name": "上詮",
+      "report": "3363-快報-2026-06-27.md",
+      "predicted_on": "2026-06-27",
+      "claim": "上詮 CPO 2026 Q3 是兌現分水嶺",
+      "verifiable": {
+        "direction": "na",
+        "price_range": null,
+        "deadline": "2026-09-30"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "3363-2026-06-27-03",
+      "stock_id": "3363",
+      "stock_name": "上詮",
+      "report": "3363-快報-2026-06-27.md",
+      "predicted_on": "2026-06-27",
+      "claim": "上詮 FAU 隨光引擎放量，2026 H2～2027 逐步貢獻",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2027-12-31"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "3481-2026-06-27-01",
+      "stock_id": "3481",
+      "stock_name": "群創",
+      "report": "3481-快報-2026-06-27.md",
+      "predicted_on": "2026-06-27",
+      "claim": "群創全年 EPS 估 2.96～3.5 元（含賣廠業外）",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-12-31"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "3481-2026-06-27-02",
+      "stock_id": "3481",
+      "stock_name": "群創",
+      "report": "3481-快報-2026-06-27.md",
+      "predicted_on": "2026-06-27",
+      "claim": "群創 FOPLP 月產能持續放大，驅動第二曲線成形（期限推定）",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-12-27"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "3481-2026-06-27-03",
+      "stock_id": "3481",
+      "stock_name": "群創",
+      "report": "3481-快報-2026-06-27.md",
+      "predicted_on": "2026-06-27",
+      "claim": "Factset 給予群創目標價 27 元（期限推定）",
+      "verifiable": {
+        "direction": "up",
+        "price_range": [
+          27,
+          27
+        ],
+        "deadline": "2026-12-27"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "3526-2026-06-27-01",
+      "stock_id": "3526",
+      "stock_name": "凡甲",
+      "report": "3526-快報-2026-06-27.md",
+      "predicted_on": "2026-06-27",
+      "claim": "凡甲 NVIDIA GB 系列連接器可望由試產轉量產、貢獻 2026 下半年營收",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-12-31"
+      },
+      "status": "hit",
+      "verified_on": "2026-07-02",
+      "evidence": "法說會（07-01）：BBU 連接器已進入逐步量產，AI 連接器與線預期下半年到 2027~2028 逐步轉營收——落點🟡符合預期、非超預期驚喜（見 3526-法說會-2026-07-02 預測追蹤表）。"
+    },
+    {
+      "pid": "3526-2026-06-27-02",
+      "stock_id": "3526",
+      "stock_name": "凡甲",
+      "report": "3526-快報-2026-06-27.md",
+      "predicted_on": "2026-06-27",
+      "claim": "凡甲毛利率 50% 可望維持",
+      "verifiable": {
+        "direction": "flat",
+        "price_range": null,
+        "deadline": "2026-12-31"
+      },
+      "status": "hit",
+      "verified_on": "2026-07-02",
+      "evidence": "法說會（07-01）未正面量化保證，僅稱產品結構優化助益毛利；財報狗顯示 2026 Q1 毛利率 50.38% 已達標，惟公司不掛保證（見 3526-法說會-2026-07-02 預測追蹤表）。"
+    },
+    {
+      "pid": "3526-2026-06-27-03",
+      "stock_id": "3526",
+      "stock_name": "凡甲",
+      "report": "3526-快報-2026-06-27.md",
+      "predicted_on": "2026-06-27",
+      "claim": "比亞迪等車廠殺價壓力恐壓縮凡甲車用毛利",
+      "verifiable": {
+        "direction": "down",
+        "price_range": null,
+        "deadline": "2026-12-31"
+      },
+      "status": "miss",
+      "verified_on": "2026-07-02",
+      "evidence": "法說會（07-01）：中國電動車電池新規 7/1 上路，總經理稱『對凡甲愈正面』，車用毛利反而改善、大陸車市不再那麼捲——原預期的殺價壓力風險未發生，反轉為利多，落點🐂優於快報預期（見 3526-法說會-2026-07-02 預測追蹤表）。"
+    },
+    {
+      "pid": "3526-2026-06-27-04",
+      "stock_id": "3526",
+      "stock_name": "凡甲",
+      "report": "3526-快報-2026-06-27.md",
+      "predicted_on": "2026-06-27",
+      "claim": "市場推估凡甲 2026 全年 EPS 約 23 元",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-12-31"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "3526-2026-06-27-05",
+      "stock_id": "3526",
+      "stock_name": "凡甲",
+      "report": "3526-快報-2026-06-27.md",
+      "predicted_on": "2026-06-27",
+      "claim": "市場推估凡甲 2027 年 EPS 上看挑戰 30 元",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2027-12-31"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "3665-2026-06-27-01",
+      "stock_id": "3665",
+      "stock_name": "貿聯-KY",
+      "report": "3665-快報-2026-06-27.md",
+      "predicted_on": "2026-06-27",
+      "claim": "貿聯 AI 新平台 AEC 線材可望放量，解套 Q1 季減（期限推定）",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-12-27"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "3665-2026-06-27-02",
+      "stock_id": "3665",
+      "stock_name": "貿聯-KY",
+      "report": "3665-快報-2026-06-27.md",
+      "predicted_on": "2026-06-27",
+      "claim": "貿聯人形機器人業務放量（期限推定）",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-12-27"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "3711-2026-06-27-01",
+      "stock_id": "3711",
+      "stock_name": "日月光投控",
+      "report": "3711-快報-2026-06-27.md",
+      "predicted_on": "2026-06-27",
+      "claim": "日月光 2026 先進封裝營收由 16 億美元成長至逾 26 億美元（年增逾 60%）",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-12-31"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "3711-2026-06-27-02",
+      "stock_id": "3711",
+      "stock_name": "日月光投控",
+      "report": "3711-快報-2026-06-27.md",
+      "predicted_on": "2026-06-27",
+      "claim": "日月光 2026 資本支出上調至 70 億→逾 80 億美元創紀錄",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-12-31"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "3711-2026-06-27-03",
+      "stock_id": "3711",
+      "stock_name": "日月光投控",
+      "report": "3711-快報-2026-06-27.md",
+      "predicted_on": "2026-06-27",
+      "claim": "日月光 LEAP 先進封測目標上修至逾 35 億美元",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-12-31"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "5443-2026-06-27-01",
+      "stock_id": "5443",
+      "stock_name": "均豪",
+      "report": "5443-快報-2026-06-27.md",
+      "predicted_on": "2026-06-27",
+      "claim": "均豪訂單能見度延伸至 2026、交期逾 6 個月，認列可望於下半年跟上",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-12-31"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "5443-2026-06-27-02",
+      "stock_id": "5443",
+      "stock_name": "均豪",
+      "report": "5443-快報-2026-06-27.md",
+      "predicted_on": "2026-06-27",
+      "claim": "均豪先進封裝設備接單持續、EPS 回升（期限推定）",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-12-27"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "6187-2026-06-27-01",
+      "stock_id": "6187",
+      "stock_name": "萬潤",
+      "report": "6187-快報-2026-06-27.md",
+      "predicted_on": "2026-06-27",
+      "claim": "市場估萬潤 2026 年 EPS 約 17.71 元",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-12-31"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "6187-2026-06-27-02",
+      "stock_id": "6187",
+      "stock_name": "萬潤",
+      "report": "6187-快報-2026-06-27.md",
+      "predicted_on": "2026-06-27",
+      "claim": "萬潤先進封裝檢測設備拉貨，月營收年增可望落底回升（期限推定）",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-12-27"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "6451-2026-06-27-01",
+      "stock_id": "6451",
+      "stock_name": "訊芯-KY",
+      "report": "6451-詳細-2026-06-27.md",
+      "predicted_on": "2026-06-27",
+      "claim": "訊芯 2026 下半年高階光通訊（800G）出貨放量，毛利率脫離谷底",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-12-31"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "6451-2026-06-27-02",
+      "stock_id": "6451",
+      "stock_name": "訊芯-KY",
+      "report": "6451-詳細-2026-06-27.md",
+      "predicted_on": "2026-06-27",
+      "claim": "訊芯 Q2／Q3 能否縮小虧損甚至轉盈",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-09-30"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "6451-2026-06-27-03",
+      "stock_id": "6451",
+      "stock_name": "訊芯-KY",
+      "report": "6451-詳細-2026-06-27.md",
+      "predicted_on": "2026-06-27",
+      "claim": "訊芯 ALS 感測器 2026 年月產能達 1.2 億顆（年增 50%）",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-12-31"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "6451-2026-06-27-04",
+      "stock_id": "6451",
+      "stock_name": "訊芯-KY",
+      "report": "6451-詳細-2026-06-27.md",
+      "predicted_on": "2026-06-27",
+      "claim": "訊芯 CPO 2026 年進入商轉，102.4T 由測試轉量產",
+      "verifiable": {
+        "direction": "na",
+        "price_range": null,
+        "deadline": "2026-12-31"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "6770-2026-06-27-01",
+      "stock_id": "6770",
+      "stock_name": "力積電",
+      "report": "6770-快報-2026-06-27.md",
+      "predicted_on": "2026-06-27",
+      "claim": "力積電 Q1 轉盈主要來自記憶體代工漲價（營運性收入），非賣廠一次性業外",
+      "verifiable": {
+        "direction": "na",
+        "price_range": null,
+        "deadline": "2026-06-29"
+      },
+      "status": "miss",
+      "verified_on": "2026-06-30",
+      "evidence": "法說會（06-29）與媒體查證：Q1 EPS 3.36 元中約 145 億元來自 P5 廠售予美光的一次性處分利益，扣除後本業 EPS 僅約 0.13 元，原快報判斷有誤，已於 6770-法說會-2026-06-30「重要更正」段公開更正。"
+    },
+    {
+      "pid": "6770-2026-06-27-02",
+      "stock_id": "6770",
+      "stock_name": "力積電",
+      "report": "6770-快報-2026-06-27.md",
+      "predicted_on": "2026-06-27",
+      "claim": "力積電矽中介層／IPD 打入 Intel EMIB，2027 H2 月投片近 1 萬片",
+      "verifiable": {
+        "direction": "na",
+        "price_range": null,
+        "deadline": "2027-12-31"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "6770-2026-06-27-03",
+      "stock_id": "6770",
+      "stock_name": "力積電",
+      "report": "6770-快報-2026-06-27.md",
+      "predicted_on": "2026-06-27",
+      "claim": "美銀美林估力積電目標價由 88 上調至 111 元（期限推定）",
+      "verifiable": {
+        "direction": "up",
+        "price_range": [
+          88,
+          111
+        ],
+        "deadline": "2026-12-27"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "8027-2026-06-27-01",
+      "stock_id": "8027",
+      "stock_name": "鈦昇",
+      "report": "8027-快報-2026-06-27.md",
+      "predicted_on": "2026-06-27",
+      "claim": "鈦昇已切入台積電 CoPoS 供應鏈，訂單能見度直達 2027 年",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2027-12-31"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "8027-2026-06-27-02",
+      "stock_id": "8027",
+      "stock_name": "鈦昇",
+      "report": "8027-快報-2026-06-27.md",
+      "predicted_on": "2026-06-27",
+      "claim": "英特爾大投資帶動鈦昇訂單年增五成（2026 年導入 14A 製程量產）",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-12-31"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "8027-2026-06-27-03",
+      "stock_id": "8027",
+      "stock_name": "鈦昇",
+      "report": "8027-快報-2026-06-27.md",
+      "predicted_on": "2026-06-27",
+      "claim": "鈦昇 RDL／TGV 認證進度推進，毛利／獲利可望轉正（期限推定）",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-12-27"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "8032-2026-06-27-01",
+      "stock_id": "8032",
+      "stock_name": "光菱",
+      "report": "8032-快報-2026-06-27.md",
+      "predicted_on": "2026-06-27",
+      "claim": "光菱全年營收有機會明顯超越 2025 年的 36.4 億元",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-12-31"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "8032-2026-06-27-02",
+      "stock_id": "8032",
+      "stock_name": "光菱",
+      "report": "8032-快報-2026-06-27.md",
+      "predicted_on": "2026-06-27",
+      "claim": "光菱可望在法說會釋出新增代理線，帶動下半年營收動能",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-12-31"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "2327-2026-06-30-01",
+      "stock_id": "2327",
+      "stock_name": "國巨",
+      "report": "2327-快報-2026-06-30.md",
+      "predicted_on": "2026-06-30",
+      "claim": "大摩估國巨下半年對直接客戶 MLCC ASP 調漲 30–40%",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-12-31"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "2327-2026-06-30-02",
+      "stock_id": "2327",
+      "stock_name": "國巨",
+      "report": "2327-快報-2026-06-30.md",
+      "predicted_on": "2026-06-30",
+      "claim": "大摩喊國巨目標價 1,515 元（期限推定）",
+      "verifiable": {
+        "direction": "up",
+        "price_range": [
+          1515,
+          1515
+        ],
+        "deadline": "2026-12-31"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "2327-2026-06-30-03",
+      "stock_id": "2327",
+      "stock_name": "國巨",
+      "report": "2327-快報-2026-06-30.md",
+      "predicted_on": "2026-06-30",
+      "claim": "國巨 2026 全年 EPS 需站上 20 元以上才能撐住目前 PE 80 的估值",
+      "verifiable": {
+        "direction": "na",
+        "price_range": null,
+        "deadline": "2026-12-31"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "2327-2026-06-30-04",
+      "stock_id": "2327",
+      "stock_name": "國巨",
+      "report": "2327-快報-2026-06-30.md",
+      "predicted_on": "2026-06-30",
+      "claim": "國巨 AI MLCC 接單出貨比（B/B）可望維持在 1.3 附近高檔（期限推定）",
+      "verifiable": {
+        "direction": "flat",
+        "price_range": null,
+        "deadline": "2026-12-30"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "2472-2026-06-30-01",
+      "stock_id": "2472",
+      "stock_name": "立隆電",
+      "report": "2472-快報-2026-06-30.md",
+      "predicted_on": "2026-06-30",
+      "claim": "立隆電打入 NVIDIA Vera Rubin 板端供電供應鏈，2026 H2 出貨貢獻可望顯現",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-12-31"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "2472-2026-06-30-02",
+      "stock_id": "2472",
+      "stock_name": "立隆電",
+      "report": "2472-快報-2026-06-30.md",
+      "predicted_on": "2026-06-30",
+      "claim": "立隆電泰國春武里新廠 2026 Q4 量產",
+      "verifiable": {
+        "direction": "na",
+        "price_range": null,
+        "deadline": "2026-12-31"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "2472-2026-06-30-03",
+      "stock_id": "2472",
+      "stock_name": "立隆電",
+      "report": "2472-快報-2026-06-30.md",
+      "predicted_on": "2026-06-30",
+      "claim": "立隆電 2026 年中性情境 EPS 看 9–11 元、目標價 250–320 元",
+      "verifiable": {
+        "direction": "up",
+        "price_range": [
+          250,
+          320
+        ],
+        "deadline": "2026-12-31"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "2472-2026-06-30-04",
+      "stock_id": "2472",
+      "stock_name": "立隆電",
+      "report": "2472-快報-2026-06-30.md",
+      "predicted_on": "2026-06-30",
+      "claim": "立隆電汽車電子占比可望站上 40%（期限推定）",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-12-30"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "2492-2026-06-30-01",
+      "stock_id": "2492",
+      "stock_name": "華新科",
+      "report": "2492-快報-2026-06-30.md",
+      "predicted_on": "2026-06-30",
+      "claim": "華新科 AI 占營收比重可望從 10% 倍增至 20%",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-12-31"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "2492-2026-06-30-02",
+      "stock_id": "2492",
+      "stock_name": "華新科",
+      "report": "2492-快報-2026-06-30.md",
+      "predicted_on": "2026-06-30",
+      "claim": "華新科 2026 EPS 有望自 5.22 元倍增至 10 元以上、PE 可望回落",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-12-31"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "2492-2026-06-30-03",
+      "stock_id": "2492",
+      "stock_name": "華新科",
+      "report": "2492-快報-2026-06-30.md",
+      "predicted_on": "2026-06-30",
+      "claim": "華新科晶片電阻全面調漲約 2 成的漲價傳導持續（期限推定）",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-12-30"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "5425-2026-06-30-01",
+      "stock_id": "5425",
+      "stock_name": "台半",
+      "report": "5425-快報-2026-06-30.md",
+      "predicted_on": "2026-06-30",
+      "claim": "台半聯電輕晶圓效益下半年爆發，攜手 Tier 1 車用客戶挑戰強茂",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-12-31"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "5425-2026-06-30-02",
+      "stock_id": "5425",
+      "stock_name": "台半",
+      "report": "5425-快報-2026-06-30.md",
+      "predicted_on": "2026-06-30",
+      "claim": "台半 AI 伺服器電源（600V Super Junction MOSFET）放量（期限推定）",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-12-30"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "6770-2026-06-30-01",
+      "stock_id": "6770",
+      "stock_name": "力積電",
+      "report": "6770-法說會-2026-06-29.md",
+      "predicted_on": "2026-06-30",
+      "claim": "力積電本業（扣除賣廠）Q2 財報（約 8 月）能否連續獲利",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-08-31"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "6770-2026-06-30-02",
+      "stock_id": "6770",
+      "stock_name": "力積電",
+      "report": "6770-法說會-2026-06-29.md",
+      "predicted_on": "2026-06-30",
+      "claim": "力積電產能利用率可望站穩 90% 以上（期限推定）",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-12-30"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "6770-2026-06-30-03",
+      "stock_id": "6770",
+      "stock_name": "力積電",
+      "report": "6770-法說會-2026-06-29.md",
+      "predicted_on": "2026-06-30",
+      "claim": "力積電 HBM 後段代工放量，2027 年可望規模化貢獻",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2027-12-31"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "3526-2026-07-02-01",
+      "stock_id": "3526",
+      "stock_name": "凡甲",
+      "report": "3526-法說會-2026-07-02.md",
+      "predicted_on": "2026-07-02",
+      "claim": "凡甲 AI 連接器與線，預期下半年到 2027~2028 逐步轉化為營收貢獻",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2028-12-31"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "3526-2026-07-02-02",
+      "stock_id": "3526",
+      "stock_name": "凡甲",
+      "report": "3526-法說會-2026-07-02.md",
+      "predicted_on": "2026-07-02",
+      "claim": "凡甲儲能業務為潛在第三成長腿，貢獻可望增加（期限推定）",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2027-01-02"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "3526-2026-07-02-03",
+      "stock_id": "3526",
+      "stock_name": "凡甲",
+      "report": "3526-法說會-2026-07-02.md",
+      "predicted_on": "2026-07-02",
+      "claim": "凡甲越南廠車用認證落地後，可望帶動車用／儲能／NB 產線出貨（期限推定）",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2027-01-02"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "3526-2026-07-02-04",
+      "stock_id": "3526",
+      "stock_name": "凡甲",
+      "report": "3526-法說會-2026-07-02.md",
+      "predicted_on": "2026-07-02",
+      "claim": "凡甲 Gen7／200G-400G 銅線訊號放大研發可延長銅高速互連對抗 CPO 替代的壽命（期限推定）",
+      "verifiable": {
+        "direction": "na",
+        "price_range": null,
+        "deadline": "2027-01-02"
+      },
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    }
+  ]
+}

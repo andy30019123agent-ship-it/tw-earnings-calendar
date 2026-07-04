@@ -658,6 +658,9 @@ input, select { font-family: inherit; }
 }
 
 .filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   padding: 8px 16px;
   min-height: 44px;
   border-radius: var(--r-pill);
@@ -670,6 +673,7 @@ input, select { font-family: inherit; }
   cursor: pointer;
   transition: background .15s ease, color .15s ease, border-color .15s ease, transform .15s ease;
 }
+.filter-chip svg { flex: none; }
 
 .filter-chip:hover { transform: translateY(-1px); border-color: var(--primary); }
 
@@ -965,6 +969,102 @@ input, select { font-family: inherit; }
   max-width: 280px;
 }
 
+/* ── 通用 input（MASTER §5，給下拉／單行輸入共用） ── */
+.input {
+  padding: 12px 16px;
+  min-height: 44px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--r-sm);
+  font-size: 1rem;
+  background: var(--surface);
+  color: var(--ink);
+}
+.input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(255, 77, 141, .18);
+}
+
+/* ── 成績單（Scorecard） ── */
+.sc-stat-grid {
+  max-width: none;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.sc-rate-tile {
+  grid-column: 1 / -1;
+  background: var(--primary-tint);
+  border-color: var(--primary-tint);
+}
+.sc-rate-tile .st-value { color: var(--primary-ink); }
+
+.sc-value-hit { color: var(--up); }
+.sc-value-miss { color: var(--down); }
+.sc-value-pending { color: var(--flat); }
+
+.sc-note {
+  margin-top: 16px;
+  font-size: .875rem;
+  color: var(--ink-muted);
+  line-height: 1.6;
+}
+
+.sc-disclaimer {
+  margin-top: 4px;
+  margin-bottom: 16px;
+  font-size: .875rem;
+  font-weight: 700;
+  color: var(--ink-muted);
+}
+
+.sc-stock-select {
+  min-width: 0;
+  max-width: 100%;
+  flex: 1 1 200px;
+}
+
+/* 狀態語意 pill：底色沿用紅漲綠跌語意，文字固定用 --ink 確保對比 ≥4.5:1
+   （--up/--down/--flat 直接當文字色在淡底上量測後對比僅 3.6~4.3，未達 4.5，
+   故只用於 icon —— icon 為裝飾用，WCAG 非文字圖形只需 3:1，符合規範）。 */
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  min-height: 28px;
+  border-radius: var(--r-pill);
+  font-size: .875rem;
+  font-weight: 700;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.status-hit { background: var(--up-bg); }
+.status-hit svg { color: var(--up); flex: none; }
+.status-miss { background: var(--down-bg); }
+.status-miss svg { color: var(--down); flex: none; }
+.status-pending { background: var(--surface-tint); }
+.status-pending svg { color: var(--flat); flex: none; }
+
+.sc-claim {
+  margin-top: 8px;
+  font-size: 1rem;
+  color: var(--ink-body);
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.sc-evidence {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+  font-size: .875rem;
+  color: var(--ink-muted);
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.sc-card { min-width: 0; }
+
 /* ── Desktop ── */
 @media (min-width: 768px) {
   .app { padding: 0 32px 64px; }
@@ -973,4 +1073,6 @@ input, select { font-family: inherit; }
   .calendar-card, .report-list-section, .library-wrap, .report-view-wrap { padding: 32px; }
   .library-controls { flex-direction: row; align-items: center; }
   .search-input { flex: 1; }
+  .sc-stat-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .sc-rate-tile { grid-column: auto; }
 }
