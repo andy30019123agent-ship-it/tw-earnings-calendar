@@ -198,9 +198,9 @@
       },
       "category": "獲利能力",
       "industry": "半導體業",
-      "status": "pending",
-      "verified_on": null,
-      "evidence": null
+      "status": "hit",
+      "verified_on": "2026-07-04",
+      "evidence": "H1 累計營收 1,316.36 億反推 Q2≈825 億、季增約 +68% 遠優於 Q1 490.87 億（公司公告 2026-07-03）；毛利率法人估 Q2 76.7% 已越過 70% 目標（官方數字待 8 月財報）"
     },
     {
       "pid": "2408-2026-06-27-02",
@@ -1361,6 +1361,192 @@
         "deadline": "2027-01-02"
       },
       "category": "產業趨勢",
+      "industry": "電子零組件業",
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "2408-2026-07-04-01",
+      "stock_id": "2408",
+      "stock_name": "南亞科",
+      "report": "2408-快報-2026-07-04.md",
+      "predicted_on": "2026-07-04",
+      "claim": "DRAM 超級循環延續到 Q3、合約價再漲（法人估 +35~40%），HBM 排擠標準 DRAM 撐價，南亞科 Q3 營收續成長",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-10-31"
+      },
+      "category": "產業趨勢",
+      "industry": "半導體業",
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "2408-2026-07-04-02",
+      "stock_id": "2408",
+      "stock_name": "南亞科",
+      "report": "2408-快報-2026-07-04.md",
+      "predicted_on": "2026-07-04",
+      "claim": "2026 Q2 毛利率突破 70%（法人估 76.7%）、Q2 營收與 EPS 續創高",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-08-31"
+      },
+      "category": "獲利能力",
+      "industry": "半導體業",
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "2408-2026-07-04-03",
+      "stock_id": "2408",
+      "stock_name": "南亞科",
+      "report": "2408-快報-2026-07-04.md",
+      "predicted_on": "2026-07-04",
+      "claim": "股價位於一年區間約 79% 高位、法人評級分歧，短期高檔震盪、追高風報比差",
+      "verifiable": {
+        "direction": "flat",
+        "price_range": [
+          380,
+          460
+        ],
+        "deadline": "2026-09-30"
+      },
+      "category": "股價位置",
+      "industry": "半導體業",
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "5425-2026-07-04-01",
+      "stock_id": "5425",
+      "stock_name": "台半",
+      "report": "5425-快報-2026-07-04.md",
+      "predicted_on": "2026-07-04",
+      "claim": "車用 Tier-1（Bosch/Continental）MOSFET 認證後 H2 放量，2026 全年 EPS 挑戰 3.0 元以上",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2027-03-31"
+      },
+      "category": "獲利能力",
+      "industry": "半導體業",
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "5425-2026-07-04-02",
+      "stock_id": "5425",
+      "stock_name": "台半",
+      "report": "5425-快報-2026-07-04.md",
+      "predicted_on": "2026-07-04",
+      "claim": "股價位於一年區間 88% 頂端、PE 約 57、近半年 +124%，短期追高易回檔",
+      "verifiable": {
+        "direction": "down",
+        "price_range": null,
+        "deadline": "2026-09-30"
+      },
+      "category": "股價位置",
+      "industry": "半導體業",
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "5425-2026-07-04-03",
+      "stock_id": "5425",
+      "stock_name": "台半",
+      "report": "5425-快報-2026-07-04.md",
+      "predicted_on": "2026-07-04",
+      "claim": "SiC（650V/1200V）2026 僅小量出貨、非成長主引擎（受英飛凌/中國車規 SiC 規模壓制）",
+      "verifiable": {
+        "direction": "flat",
+        "price_range": null,
+        "deadline": "2026-12-31"
+      },
+      "category": "產業趨勢",
+      "industry": "半導體業",
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "8046-2026-07-04-01",
+      "stock_id": "8046",
+      "stock_name": "南電",
+      "report": "8046-快報-2026-07-04.md",
+      "predicted_on": "2026-07-04",
+      "claim": "ABF 載板供需缺口延續、報價逐季調漲，AI/HPC 佔比由 16% 續升",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2027-06-30"
+      },
+      "category": "產業趨勢",
+      "industry": "電子零組件業",
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "8046-2026-07-04-02",
+      "stock_id": "8046",
+      "stock_name": "南電",
+      "report": "8046-快報-2026-07-04.md",
+      "predicted_on": "2026-07-04",
+      "claim": "現價 1185 為週期股 PE 約 90 倍極端追高區，Q2~Q3 有回檔消化 391% 漲幅的壓力",
+      "verifiable": {
+        "direction": "down",
+        "price_range": [
+          800,
+          1000
+        ],
+        "deadline": "2026-12-31"
+      },
+      "category": "股價位置",
+      "industry": "電子零組件業",
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "8046-2026-07-04-03",
+      "stock_id": "8046",
+      "stock_name": "南電",
+      "report": "8046-快報-2026-07-04.md",
+      "predicted_on": "2026-07-04",
+      "claim": "稼動率維持破 90%、法人 2026 EPS（中位 12.78）不下修，全年獲利續創高",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2027-03-31"
+      },
+      "category": "獲利能力",
+      "industry": "電子零組件業",
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "8046-2026-07-04-04",
+      "stock_id": "8046",
+      "stock_name": "南電",
+      "report": "8046-快報-2026-07-04.md",
+      "predicted_on": "2026-07-04",
+      "claim": "樹林廠 ABF 新產能 2026 底~2027H1 開出，是循環續命 vs 見頂的分水嶺",
+      "verifiable": {
+        "direction": "na",
+        "price_range": null,
+        "deadline": "2027-12-31"
+      },
+      "category": "量產時程",
       "industry": "電子零組件業",
       "status": "pending",
       "verified_on": null,
