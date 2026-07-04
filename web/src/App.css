@@ -97,85 +97,183 @@ input, select { font-family: inherit; }
   display: flex;
   flex-direction: column;
   min-height: 100dvh;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 16px 48px;
 }
 
-.app-header {
-  color: var(--color-header-text);
-  padding: 26px 16px 20px;
-  text-align: center;
+/* ── Hero（urbi 簽名大圓角容器：徽章＋大標＋大數字統計列）── */
+.hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  border-radius: var(--r-xl);
+  background: var(--surface-tint);
+  padding: 32px 24px;
+  margin: 24px 0 32px;
 }
 
-.app-title {
-  font-size: 1.3rem;
+.hero-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  z-index: -1;
+  opacity: .5;
+  display: block;
+}
+.hero-blob.b1 { width: 220px; height: 220px; top: -80px; right: -50px; background: var(--deco-pink); }
+.hero-blob.b2 { width: 180px; height: 180px; bottom: -70px; left: -40px; background: var(--deco-lavender); opacity: .4; }
+
+.hero-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.hero-titles h1 {
+  font-size: clamp(1.75rem, 5vw, 2.25rem);
   font-weight: 800;
-  letter-spacing: 0.03em;
-  text-shadow: 0 1px 12px rgba(255, 255, 255, 0.6);
+  line-height: 1.2;
+  margin-top: 12px;
 }
 
-.app-subtitle {
-  font-size: 0.8rem;
-  margin-top: 5px;
-  color: rgba(122, 32, 70, 0.66);
-  letter-spacing: 0.06em;
+.hero-titles .subtitle {
+  color: var(--ink-muted);
+  font-size: 1rem;
+  margin-top: 8px;
+}
+
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--primary-tint);
+  color: var(--ink);
+  border-radius: var(--r-pill);
+  padding: 6px 14px;
+  font-size: .875rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.badge-pill svg { flex: none; color: var(--primary-strong); }
+
+/* pill segmented nav */
+.seg {
+  display: inline-flex;
+  gap: 4px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-pill);
+  padding: 4px;
+  flex: none;
+}
+.seg-btn {
+  border: none;
+  background: none;
+  color: var(--ink-muted);
+  font-family: inherit;
+  font-size: .875rem;
+  font-weight: 700;
+  padding: 10px 18px;
+  min-height: 44px;
+  border-radius: var(--r-pill);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: background .15s ease, color .15s ease;
+}
+.seg-btn.on { background: var(--primary); color: var(--on-primary); }
+
+/* 大數字統計列 */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  max-width: 420px;
+  margin-top: 24px;
+}
+.stat-tile {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 16px 20px;
+  min-width: 0;
+}
+.stat-tile .st-name { font-size: .875rem; color: var(--ink-muted); margin-bottom: 6px; }
+.stat-tile .st-value {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  line-height: 1.1;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
 }
 
 .app-main {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 18px;
-  padding: 16px;
-  max-width: 680px;
+  gap: 24px;
+  max-width: 720px;
   width: 100%;
   margin: 0 auto;
 }
 
 .app-footer {
+  background: var(--surface-deep);
+  color: var(--on-deep);
+  border-radius: var(--r-xl);
   text-align: center;
-  padding: 18px 16px 26px;
-  font-size: 0.72rem;
-  color: rgba(122, 32, 70, 0.55);
-  margin-top: 4px;
+  margin-top: 48px;
+  padding: 24px 32px;
+  font-size: .9375rem;
+  line-height: 1.7;
+  opacity: .92;
 }
 
-/* ── Glass surface (shared) ── */
+/* ── Card surface (shared) ── */
 .calendar-card,
 .report-list-section,
 .library-wrap,
 .report-view-wrap {
-  background: var(--glass-bg);
-  -webkit-backdrop-filter: var(--glass-blur);
-  backdrop-filter: var(--glass-blur);
-  border: 1px solid var(--glass-border);
-  border-radius: var(--radius);
-  padding: 18px;
-  box-shadow: var(--glass-shadow);
-  animation: rise 0.5s var(--ease) both;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
 }
 
-.report-list-section { animation-delay: 0.08s; }
-
-@keyframes rise {
-  from { opacity: 0; transform: translateY(14px); }
-  to   { opacity: 1; transform: translateY(0); }
+@media (hover: hover) {
+  .calendar-card:hover,
+  .report-list-section:hover,
+  .library-wrap:hover,
+  .report-view-wrap:hover {
+    box-shadow: var(--shadow-md);
+  }
 }
 
 /* ── Section titles ── */
 .section-title {
-  font-size: 1.02rem;
+  font-size: 1.125rem;
   font-weight: 800;
-  color: var(--color-text);
-  margin-bottom: 14px;
+  color: var(--ink);
+  margin-bottom: 16px;
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 8px;
   flex-wrap: wrap;
 }
+.section-title svg { flex: none; color: var(--primary-strong); }
 
 .range-label {
-  font-size: 0.75rem;
+  font-size: .875rem;
   font-weight: 500;
-  color: var(--color-text-muted);
+  color: var(--ink-muted);
+  margin-left: auto;
 }
 
 /* ── Calendar ── */
@@ -359,60 +457,22 @@ input, select { font-family: inherit; }
   margin-bottom: 8px;
 }
 
-/* ── App nav (glass pills) ── */
-.app-nav {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  margin-top: 14px;
-}
-
-.app-nav-link {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--color-header-text);
-  text-decoration: none;
-  padding: 7px 16px;
-  min-height: 36px;
-  display: inline-flex;
-  align-items: center;
-  border-radius: 99px;
-  border: 1px solid rgba(255, 255, 255, 0.85);
-  background: rgba(255, 255, 255, 0.45);
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
-  box-shadow: 0 2px 10px rgba(170, 50, 105, 0.12);
-  transition: background 0.2s var(--ease), color 0.2s var(--ease),
-    transform 0.2s var(--ease);
-}
-
-.app-nav-link:hover { transform: translateY(-1px); }
-
-.app-nav-link.active,
-.app-nav-link:hover {
-  background: rgba(255, 255, 255, 0.92);
-  color: var(--color-primary);
-}
-
-.app-nav-link:focus-visible {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 2px;
-}
-
 /* ── Nav back / view nav ── */
 .nav-back {
   display: inline-flex;
   align-items: center;
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--color-primary);
+  gap: 6px;
+  font-size: .9375rem;
+  font-weight: 700;
+  color: var(--primary-strong);
   text-decoration: none;
-  padding: 4px 0;
-  margin-right: 14px;
-  transition: opacity 0.15s;
+  padding: 8px 0;
+  margin-right: 16px;
+  min-height: 44px;
+  transition: opacity .15s;
 }
 
-.nav-back:hover { opacity: 0.7; }
+.nav-back:hover { opacity: .7; }
 
 /* ── Secondary button ── */
 .btn-secondary {
@@ -906,11 +966,11 @@ input, select { font-family: inherit; }
 }
 
 /* ── Desktop ── */
-@media (min-width: 600px) {
-  .app-title { font-size: 1.6rem; }
-  .app-subtitle { font-size: 0.85rem; }
-  .app-main { padding: 28px 16px; gap: 22px; }
-  .calendar-card, .report-list-section, .library-wrap, .report-view-wrap { padding: 24px; }
+@media (min-width: 768px) {
+  .app { padding: 0 32px 64px; }
+  .hero { padding: 40px 32px; margin: 32px 0 48px; }
+  .app-main { gap: 32px; }
+  .calendar-card, .report-list-section, .library-wrap, .report-view-wrap { padding: 32px; }
   .event-item { font-size: 0.9rem; }
   .report-name { font-size: 0.96rem; }
   .library-controls { flex-direction: row; align-items: center; }

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { CalendarDays } from 'lucide-react'
 import CalendarCard from './components/CalendarCard'
 import ReportList from './components/ReportList'
 import ReportLibrary from './components/ReportLibrary'
@@ -16,6 +17,8 @@ function parseHash(hash) {
 
 export default function App() {
   const [loc, setLoc] = useState(() => parseHash(window.location.hash))
+  // 首頁行事曆載入完成後回報統計數字，供 hero 大數字列顯示（僅首頁使用）
+  const [heroStats, setHeroStats] = useState(null)
 
   useEffect(() => {
     const onHashChange = () => setLoc(parseHash(window.location.hash))
@@ -23,21 +26,58 @@ export default function App() {
     return () => window.removeEventListener('hashchange', onHashChange)
   }, [])
 
+  const isHome = loc.route === 'home'
+
   return (
     <div className="app">
-      <header className="app-header">
-        <h1 className="app-title">台股法說會行事曆</h1>
-        <p className="app-subtitle">法說會・財報・AI 快報</p>
-        <nav className="app-nav">
-          <a href="#/" className={`app-nav-link${loc.route === 'home' ? ' active' : ''}`}>首頁</a>
-          <a href="#/library" className={`app-nav-link${loc.route === 'library' || loc.route === 'report' ? ' active' : ''}`}>報告庫</a>
-        </nav>
+      <header className="hero">
+        <span className="hero-blob b1" aria-hidden="true" />
+        <span className="hero-blob b2" aria-hidden="true" />
+        <div className="hero-top">
+          <div className="hero-titles">
+            <span className="badge-pill">
+              <CalendarDays size={16} strokeWidth={1.75} aria-hidden="true" />
+              法說會與財報追蹤
+            </span>
+            <h1>台股法說會行事曆</h1>
+            <p className="subtitle">法說會・財報・AI 快報，每週自動更新</p>
+          </div>
+          <nav className="seg app-nav">
+            <a
+              href="#/"
+              className={`seg-btn${isHome ? ' on' : ''}`}
+              aria-current={isHome ? 'page' : undefined}
+            >
+              首頁
+            </a>
+            <a
+              href="#/library"
+              className={`seg-btn${loc.route === 'library' || loc.route === 'report' ? ' on' : ''}`}
+              aria-current={loc.route === 'library' || loc.route === 'report' ? 'page' : undefined}
+            >
+              報告庫
+            </a>
+          </nav>
+        </div>
+
+        {isHome && heroStats && (
+          <div className="stat-grid">
+            <div className="stat-tile">
+              <div className="st-name">下週場次</div>
+              <div className="st-value">{heroStats.total}</div>
+            </div>
+            <div className="stat-tile">
+              <div className="st-name">今日場次</div>
+              <div className="st-value">{heroStats.today}</div>
+            </div>
+          </div>
+        )}
       </header>
 
       <main className="app-main">
-        {loc.route === 'home' && (
+        {isHome && (
           <>
-            <CalendarCard />
+            <CalendarCard onStats={setHeroStats} />
             <ReportList />
           </>
         )}
