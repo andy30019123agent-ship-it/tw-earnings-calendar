@@ -13,6 +13,8 @@
         "price_range": null,
         "deadline": "2026-12-27"
       },
+      "category": "產業趨勢",
+      "industry": "半導體業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -29,6 +31,8 @@
         "price_range": null,
         "deadline": "2027-12-31"
       },
+      "category": "量產時程",
+      "industry": "半導體業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -45,6 +49,8 @@
         "price_range": null,
         "deadline": "2026-12-27"
       },
+      "category": "產業趨勢",
+      "industry": "半導體業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -61,6 +67,8 @@
         "price_range": null,
         "deadline": "2027-12-31"
       },
+      "category": "量產時程",
+      "industry": "電子零組件業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -77,6 +85,8 @@
         "price_range": null,
         "deadline": "2026-06-30"
       },
+      "category": "獲利能力",
+      "industry": "電子零組件業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -93,6 +103,8 @@
         "price_range": null,
         "deadline": "2026-12-27"
       },
+      "category": "量產時程",
+      "industry": "電子零組件業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -112,6 +124,8 @@
         ],
         "deadline": "2026-12-27"
       },
+      "category": "股價位置",
+      "industry": "電子零組件業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -128,6 +142,8 @@
         "price_range": null,
         "deadline": "2026-12-31"
       },
+      "category": "產業趨勢",
+      "industry": "其他電子業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -144,6 +160,8 @@
         "price_range": null,
         "deadline": "2026-12-27"
       },
+      "category": "題材發酵",
+      "industry": "其他電子業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -160,6 +178,8 @@
         "price_range": null,
         "deadline": "2026-12-31"
       },
+      "category": "獲利能力",
+      "industry": "其他電子業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -176,6 +196,8 @@
         "price_range": null,
         "deadline": "2026-06-30"
       },
+      "category": "獲利能力",
+      "industry": "半導體業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -192,6 +214,8 @@
         "price_range": null,
         "deadline": "2026-12-27"
       },
+      "category": "產業趨勢",
+      "industry": "半導體業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -208,6 +232,8 @@
         "price_range": null,
         "deadline": "2026-12-27"
       },
+      "category": "量產時程",
+      "industry": "半導體業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -224,6 +250,8 @@
         "price_range": null,
         "deadline": "2030-12-31"
       },
+      "category": "量產時程",
+      "industry": "光電業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -240,6 +268,8 @@
         "price_range": null,
         "deadline": "2026-12-31"
       },
+      "category": "獲利能力",
+      "industry": "光電業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -256,6 +286,8 @@
         "price_range": null,
         "deadline": "2026-12-27"
       },
+      "category": "獲利能力",
+      "industry": "光電業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -272,6 +304,8 @@
         "price_range": null,
         "deadline": "2026-12-31"
       },
+      "category": "獲利能力",
+      "industry": "半導體業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -288,6 +322,8 @@
         "price_range": null,
         "deadline": "2026-12-31"
       },
+      "category": "獲利能力",
+      "industry": "半導體業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -304,6 +340,8 @@
         "price_range": null,
         "deadline": "2026-12-27"
       },
+      "category": "獲利能力",
+      "industry": "半導體業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -320,6 +358,8 @@
         "price_range": null,
         "deadline": "2026-12-27"
       },
+      "category": "量產時程",
+      "industry": "電子零組件業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -336,6 +376,8 @@
         "price_range": null,
         "deadline": "2026-12-27"
       },
+      "category": "量產時程",
+      "industry": "電子零組件業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -352,6 +394,8 @@
         "price_range": null,
         "deadline": "2026-12-31"
       },
+      "category": "獲利能力",
+      "industry": "光電業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -368,6 +412,8 @@
         "price_range": null,
         "deadline": "2026-12-27"
       },
+      "category": "量產時程",
+      "industry": "光電業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -384,6 +430,8 @@
         "price_range": null,
         "deadline": "2026-12-31"
       },
+      "category": "獲利能力",
+      "industry": "通信網路業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -400,6 +448,8 @@
         "price_range": null,
         "deadline": "2026-09-30"
       },
+      "category": "量產時程",
+      "industry": "通信網路業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -416,6 +466,8 @@
         "price_range": null,
         "deadline": "2027-12-31"
       },
+      "category": "量產時程",
+      "industry": "通信網路業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -432,6 +484,8 @@
         "price_range": null,
         "deadline": "2026-12-31"
       },
+      "category": "獲利能力",
+      "industry": "光電業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -448,6 +502,8 @@
         "price_range": null,
         "deadline": "2026-12-27"
       },
+      "category": "量產時程",
+      "industry": "光電業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -467,6 +523,8 @@
         ],
         "deadline": "2026-12-27"
       },
+      "category": "股價位置",
+      "industry": "光電業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -483,6 +541,8 @@
         "price_range": null,
         "deadline": "2026-12-31"
       },
+      "category": "量產時程",
+      "industry": "電子零組件業",
       "status": "hit",
       "verified_on": "2026-07-02",
       "evidence": "法說會（07-01）：BBU 連接器已進入逐步量產，AI 連接器與線預期下半年到 2027~2028 逐步轉營收——落點🟡符合預期、非超預期驚喜（見 3526-法說會-2026-07-02 預測追蹤表）。"
@@ -499,6 +559,8 @@
         "price_range": null,
         "deadline": "2026-12-31"
       },
+      "category": "獲利能力",
+      "industry": "電子零組件業",
       "status": "hit",
       "verified_on": "2026-07-02",
       "evidence": "法說會（07-01）未正面量化保證，僅稱產品結構優化助益毛利；財報狗顯示 2026 Q1 毛利率 50.38% 已達標，惟公司不掛保證（見 3526-法說會-2026-07-02 預測追蹤表）。"
@@ -515,6 +577,8 @@
         "price_range": null,
         "deadline": "2026-12-31"
       },
+      "category": "產業趨勢",
+      "industry": "電子零組件業",
       "status": "miss",
       "verified_on": "2026-07-02",
       "evidence": "法說會（07-01）：中國電動車電池新規 7/1 上路，總經理稱『對凡甲愈正面』，車用毛利反而改善、大陸車市不再那麼捲——原預期的殺價壓力風險未發生，反轉為利多，落點🐂優於快報預期（見 3526-法說會-2026-07-02 預測追蹤表）。"
@@ -531,6 +595,8 @@
         "price_range": null,
         "deadline": "2026-12-31"
       },
+      "category": "獲利能力",
+      "industry": "電子零組件業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -547,6 +613,8 @@
         "price_range": null,
         "deadline": "2027-12-31"
       },
+      "category": "獲利能力",
+      "industry": "電子零組件業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -563,6 +631,8 @@
         "price_range": null,
         "deadline": "2026-12-27"
       },
+      "category": "量產時程",
+      "industry": "其他電子業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -579,6 +649,8 @@
         "price_range": null,
         "deadline": "2026-12-27"
       },
+      "category": "量產時程",
+      "industry": "其他電子業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -595,6 +667,8 @@
         "price_range": null,
         "deadline": "2026-12-31"
       },
+      "category": "獲利能力",
+      "industry": "半導體業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -611,6 +685,8 @@
         "price_range": null,
         "deadline": "2026-12-31"
       },
+      "category": "量產時程",
+      "industry": "半導體業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -627,6 +703,8 @@
         "price_range": null,
         "deadline": "2026-12-31"
       },
+      "category": "獲利能力",
+      "industry": "半導體業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -643,6 +721,8 @@
         "price_range": null,
         "deadline": "2026-12-31"
       },
+      "category": "題材發酵",
+      "industry": "半導體業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -659,6 +739,8 @@
         "price_range": null,
         "deadline": "2026-12-27"
       },
+      "category": "獲利能力",
+      "industry": "半導體業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -675,6 +757,8 @@
         "price_range": null,
         "deadline": "2026-12-31"
       },
+      "category": "獲利能力",
+      "industry": "半導體業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -691,6 +775,8 @@
         "price_range": null,
         "deadline": "2026-12-27"
       },
+      "category": "獲利能力",
+      "industry": "半導體業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -707,6 +793,8 @@
         "price_range": null,
         "deadline": "2026-12-31"
       },
+      "category": "量產時程",
+      "industry": "半導體業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -723,6 +811,8 @@
         "price_range": null,
         "deadline": "2026-09-30"
       },
+      "category": "獲利能力",
+      "industry": "半導體業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -739,6 +829,8 @@
         "price_range": null,
         "deadline": "2026-12-31"
       },
+      "category": "量產時程",
+      "industry": "半導體業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -755,6 +847,8 @@
         "price_range": null,
         "deadline": "2026-12-31"
       },
+      "category": "量產時程",
+      "industry": "半導體業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -771,6 +865,8 @@
         "price_range": null,
         "deadline": "2026-06-29"
       },
+      "category": "獲利能力",
+      "industry": "半導體業",
       "status": "miss",
       "verified_on": "2026-06-30",
       "evidence": "法說會（06-29）與媒體查證：Q1 EPS 3.36 元中約 145 億元來自 P5 廠售予美光的一次性處分利益，扣除後本業 EPS 僅約 0.13 元，原快報判斷有誤，已於 6770-法說會-2026-06-30「重要更正」段公開更正。"
@@ -787,6 +883,8 @@
         "price_range": null,
         "deadline": "2027-12-31"
       },
+      "category": "量產時程",
+      "industry": "半導體業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -806,6 +904,8 @@
         ],
         "deadline": "2026-12-27"
       },
+      "category": "股價位置",
+      "industry": "半導體業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -822,6 +922,8 @@
         "price_range": null,
         "deadline": "2027-12-31"
       },
+      "category": "題材發酵",
+      "industry": "電機機械",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -838,6 +940,8 @@
         "price_range": null,
         "deadline": "2026-12-31"
       },
+      "category": "量產時程",
+      "industry": "電機機械",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -854,6 +958,8 @@
         "price_range": null,
         "deadline": "2026-12-27"
       },
+      "category": "題材發酵",
+      "industry": "電機機械",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -870,6 +976,8 @@
         "price_range": null,
         "deadline": "2026-12-31"
       },
+      "category": "獲利能力",
+      "industry": "電子通路業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -886,6 +994,8 @@
         "price_range": null,
         "deadline": "2026-12-31"
       },
+      "category": "題材發酵",
+      "industry": "電子通路業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -902,6 +1012,8 @@
         "price_range": null,
         "deadline": "2026-12-31"
       },
+      "category": "產業趨勢",
+      "industry": "電子零組件業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -921,6 +1033,8 @@
         ],
         "deadline": "2026-12-31"
       },
+      "category": "股價位置",
+      "industry": "電子零組件業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -937,6 +1051,8 @@
         "price_range": null,
         "deadline": "2026-12-31"
       },
+      "category": "獲利能力",
+      "industry": "電子零組件業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -953,6 +1069,8 @@
         "price_range": null,
         "deadline": "2026-12-30"
       },
+      "category": "題材發酵",
+      "industry": "電子零組件業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -969,6 +1087,8 @@
         "price_range": null,
         "deadline": "2026-12-31"
       },
+      "category": "量產時程",
+      "industry": "電子零組件業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -985,6 +1105,8 @@
         "price_range": null,
         "deadline": "2026-12-31"
       },
+      "category": "量產時程",
+      "industry": "電子零組件業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -1004,6 +1126,8 @@
         ],
         "deadline": "2026-12-31"
       },
+      "category": "股價位置",
+      "industry": "電子零組件業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -1020,6 +1144,8 @@
         "price_range": null,
         "deadline": "2026-12-30"
       },
+      "category": "量產時程",
+      "industry": "電子零組件業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -1036,6 +1162,8 @@
         "price_range": null,
         "deadline": "2026-12-31"
       },
+      "category": "量產時程",
+      "industry": "電子零組件業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -1052,6 +1180,8 @@
         "price_range": null,
         "deadline": "2026-12-31"
       },
+      "category": "獲利能力",
+      "industry": "電子零組件業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -1068,6 +1198,8 @@
         "price_range": null,
         "deadline": "2026-12-30"
       },
+      "category": "產業趨勢",
+      "industry": "電子零組件業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -1084,6 +1216,8 @@
         "price_range": null,
         "deadline": "2026-12-31"
       },
+      "category": "題材發酵",
+      "industry": "半導體業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -1100,6 +1234,8 @@
         "price_range": null,
         "deadline": "2026-12-30"
       },
+      "category": "量產時程",
+      "industry": "半導體業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -1116,6 +1252,8 @@
         "price_range": null,
         "deadline": "2026-08-31"
       },
+      "category": "獲利能力",
+      "industry": "半導體業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -1132,6 +1270,8 @@
         "price_range": null,
         "deadline": "2026-12-30"
       },
+      "category": "量產時程",
+      "industry": "半導體業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -1148,6 +1288,8 @@
         "price_range": null,
         "deadline": "2027-12-31"
       },
+      "category": "量產時程",
+      "industry": "半導體業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -1164,6 +1306,8 @@
         "price_range": null,
         "deadline": "2028-12-31"
       },
+      "category": "量產時程",
+      "industry": "電子零組件業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -1180,6 +1324,8 @@
         "price_range": null,
         "deadline": "2027-01-02"
       },
+      "category": "題材發酵",
+      "industry": "電子零組件業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -1196,6 +1342,8 @@
         "price_range": null,
         "deadline": "2027-01-02"
       },
+      "category": "題材發酵",
+      "industry": "電子零組件業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
@@ -1212,6 +1360,8 @@
         "price_range": null,
         "deadline": "2027-01-02"
       },
+      "category": "產業趨勢",
+      "industry": "電子零組件業",
       "status": "pending",
       "verified_on": null,
       "evidence": null
