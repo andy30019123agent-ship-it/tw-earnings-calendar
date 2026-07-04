@@ -1,4 +1,4 @@
-import { marked } from 'marked'
+import { renderReportMarkdown, extractHighlights } from './reportMarkdown'
 
 /**
  * 解析 markdown 檔案的 frontmatter（--- 區塊）與內文。
@@ -42,7 +42,8 @@ export async function loadReports() {
     Object.entries(modules).map(async ([path, loader]) => {
       const raw = await loader()
       const meta = parseFrontmatter(raw)
-      const html = marked(meta.body || '')
+      const { html, toc } = renderReportMarkdown(meta.body || '')
+      const highlights = extractHighlights(meta.body || '')
       const filename = path.split('/').pop()
       return {
         id: meta.id ?? '',
@@ -52,6 +53,8 @@ export async function loadReports() {
         type: meta.type ?? '',
         body: meta.body ?? '',
         html,
+        toc,
+        highlights,
         filename,
       }
     })

@@ -82,6 +82,7 @@ input, select { font-family: inherit; }
     animation-iteration-count: 1 !important;
     transition-duration: .001ms !important;
   }
+  html { scroll-behavior: auto; }
 }
 
 /* Numbers align in columns */
@@ -840,6 +841,76 @@ input, select { font-family: inherit; }
   font-variant-numeric: tabular-nums;
 }
 
+/* ── 重點卡（重點速覽） ── */
+.report-highlight-card {
+  background: var(--surface-tint);
+  border-radius: var(--r-lg);
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.report-highlight-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 1rem;
+  color: var(--primary-ink);
+  margin: 0 0 8px;
+}
+
+.report-highlight-summary,
+.report-highlight-outlook {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--ink-body);
+  margin: 8px 0 0;
+}
+
+.report-highlight-summary strong,
+.report-highlight-outlook strong {
+  font-weight: 800;
+  color: var(--primary-ink);
+}
+
+/* ── 章節目錄 pill 列 ── */
+.report-toc {
+  margin-bottom: 24px;
+}
+
+.report-toc-scroll {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 4px 2px;
+  scrollbar-width: thin;
+}
+
+.report-toc-pill {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 16px;
+  border-radius: var(--r-pill);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--ink-body);
+  font-size: .875rem;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: background 200ms ease, border-color 200ms ease, color 200ms ease;
+}
+
+.report-toc-pill:hover,
+.report-toc-pill:active {
+  background: var(--primary-tint);
+  border-color: var(--primary-tint);
+  color: var(--primary-ink);
+}
+
 /* ── Prose (rendered markdown) ── */
 .prose {
   font-size: 1rem;
@@ -861,6 +932,19 @@ input, select { font-family: inherit; }
   font-weight: 800;
   margin: 1.3em 0 0.5em;
   color: var(--ink);
+  scroll-margin-top: 16px;
+}
+
+.prose h2, .prose h3 {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.prose h2 .h-icon, .prose h3 .h-icon {
+  flex-shrink: 0;
+  margin-top: 0.15em;
+  color: var(--primary-ink);
 }
 
 .prose h2 {
@@ -881,12 +965,17 @@ input, select { font-family: inherit; }
 .prose strong { font-weight: 800; color: var(--primary-ink); }
 .prose em { font-style: italic; color: var(--ink-muted); }
 
-.prose table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 1.3em 0;
+/* 手機版長表格（如同業比較）外包捲動容器，絕不用 overflow:hidden 撐爆版面 */
+.prose .table-scroll {
   overflow-x: auto;
-  display: block;
+  -webkit-overflow-scrolling: touch;
+  margin: 1.3em 0;
+}
+
+.prose table {
+  min-width: 100%;
+  width: max-content;
+  border-collapse: collapse;
   font-variant-numeric: tabular-nums;
 }
 

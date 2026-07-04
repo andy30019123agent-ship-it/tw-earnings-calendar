@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 import { ArrowLeft, Inbox } from 'lucide-react'
 import { loadReports } from '../lib/reports'
 import { TYPE_LABEL, typeColorClass } from '../lib/reportTypes'
+import ReportHighlightCard from './ReportHighlightCard'
+import ReportToc from './ReportToc'
 
 export default function ReportView({ filename }) {
   const [report, setReport] = useState(undefined) // undefined = loading, null = not found
@@ -86,6 +88,9 @@ export default function ReportView({ filename }) {
         </div>
         <div className="report-view-date">{report.date}</div>
       </header>
+
+      <ReportHighlightCard highlights={report.highlights} />
+      <ReportToc toc={report.toc} />
 
       {/*
         安全性說明：report.html 由 marked 轉換本地 .md 檔案而來，
