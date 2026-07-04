@@ -38,3 +38,38 @@ export function uniqueStocks(predictions) {
   }
   return [...map.entries()].sort(([a], [b]) => a.localeCompare(b))
 }
+
+/**
+ * 依指定欄位（如 category、industry）聚合命中率統計，供成績單頁「分維度統計」使用。
+ * 每個維度值算出 hit/miss/pending 與已判定命中率（分母為 0 時 hitRate 為 null）。
+ * 缺該欄位（undefined/null）的預測不計入任何維度。
+ * 結果依「該維度總筆數（hit+miss+pending）」多到少排序。
+ * @param {Array<{status: string}>} predictions
+ * @param {string} key - 要聚合的欄位名稱，如 'category' 或 'industry'
+ * @returns {Array<{key:string, hit:number, miss:number, pending:number, judged:number, hitRate:number|null}>}
+ */
+export function statsByDimension(predictions, key) {
+  const map = new Map()
+  for (const p of predictions) {
+    const dimValue = p[key]
+    if (dimValue === undefined || dimValue === null) continue
+    if (!map.has(dimValue)) map.set(dimValue, { hit: 0, miss: 0, pending: 0 })
+    const entry = map.get(dimValue)
+    if (p.status === 'hit') entry.hit++
+    else if (p.status === 'miss') entry.miss++
+    else entry.pending++
+  }
+  return [...map.entries()]
+    .map(([dimValue, v]) => {
+      const judged = v.hit + v.miss
+      return {
+        key: dimValue,
+        hit: v.hit,
+        miss: v.miss,
+        pending: v.pending,
+        judged,
+        hitRate: judged === 0 ? null : v.hit / judged,
+      }
+    })
+    .sort((a, b) => (b.hit + b.miss + b.pending) - (a.hit + a.miss + a.pending))
+}

@@ -1153,6 +1153,105 @@ input, select { font-family: inherit; }
 
 .sc-card { min-width: 0; }
 
+/* ── 分維度統計 ── */
+.dim-stats-section {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+
+.dim-stats-title { margin-bottom: 0; }
+
+.dim-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.dim-card {
+  background: var(--surface-tint);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 20px;
+  min-width: 0;
+}
+
+.dim-card-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0 0 16px;
+}
+
+.dim-empty { font-size: .875rem; color: var(--ink-muted); }
+
+.dim-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dim-row { min-width: 0; }
+
+.dim-row-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.dim-name {
+  font-size: .875rem;
+  font-weight: 500;
+  color: var(--ink-body);
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.dim-rate {
+  flex: none;
+  font-size: .875rem;
+  color: var(--ink-muted);
+}
+
+.dim-rate-value {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  color: var(--primary-ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.dim-bar-track {
+  height: 4px;
+  border-radius: var(--r-pill);
+  background: var(--border);
+  overflow: hidden;
+}
+
+.dim-bar-fill {
+  height: 100%;
+  background: var(--up);
+  border-radius: var(--r-pill);
+}
+
+.dim-detail {
+  margin-top: 6px;
+  font-size: .875rem;
+  color: var(--ink-muted);
+}
+
+.dim-stats-note {
+  margin-top: 16px;
+  font-size: .875rem;
+  color: var(--ink-muted);
+  line-height: 1.6;
+}
+
 /* ── Desktop ── */
 @media (min-width: 768px) {
   .app { padding: 0 32px 64px; }
@@ -1163,4 +1262,5 @@ input, select { font-family: inherit; }
   .search-input { flex: 1; }
   .sc-stat-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .sc-rate-tile { grid-column: auto; }
+  .dim-stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }

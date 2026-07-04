@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { computeStats, sortByPredictedOnDesc, uniqueStocks } from './scorecard'
+import { computeStats, sortByPredictedOnDesc, uniqueStocks, statsByDimension } from './scorecard'
 
 describe('computeStats', () => {
   it('算出 hit/miss/pending 與命中率', () => {
@@ -49,6 +49,67 @@ describe('uniqueStocks', () => {
     expect(uniqueStocks(preds)).toEqual([
       ['2303', '聯電'],
       ['2308', '台達電'],
+    ])
+  })
+})
+
+describe('statsByDimension', () => {
+  it('空陣列回傳空陣列', () => {
+    expect(statsByDimension([], 'category')).toEqual([])
+  })
+
+  it('全為 pending 時各維度 hitRate 為 null 且 judged 為 0', () => {
+    const preds = [
+      { category: '量產時程', status: 'pending' },
+      { category: '量產時程', status: 'pending' },
+      { category: '獲利能力', status: 'pending' },
+    ]
+    const result = statsByDimension(preds, 'category')
+    expect(result).toEqual([
+      { key: '量產時程', hit: 0, miss: 0, pending: 2, judged: 0, hitRate: null },
+      { key: '獲利能力', hit: 0, miss: 0, pending: 1, judged: 0, hitRate: null },
+    ])
+  })
+
+  it('混合情境：算出各維度 hit/miss/pending、命中率，並依總筆數多到少排序', () => {
+    const preds = [
+      { category: '量產時程', status: 'hit' },
+      { category: '量產時程', status: 'miss' },
+      { category: '量產時程', status: 'pending' },
+      { category: '量產時程', status: 'pending' },
+      { category: '獲利能力', status: 'hit' },
+      { category: '獲利能力', status: 'hit' },
+      { category: '獲利能力', status: 'miss' },
+      { category: '題材發酵', status: 'pending' },
+    ]
+    const result = statsByDimension(preds, 'category')
+    expect(result).toEqual([
+      { key: '量產時程', hit: 1, miss: 1, pending: 2, judged: 2, hitRate: 0.5 },
+      { key: '獲利能力', hit: 2, miss: 1, pending: 0, judged: 3, hitRate: 2 / 3 },
+      { key: '題材發酵', hit: 0, miss: 0, pending: 1, judged: 0, hitRate: null },
+    ])
+  })
+
+  it('缺該欄位的預測不計入任何維度', () => {
+    const preds = [
+      { category: '量產時程', status: 'hit' },
+      { status: 'hit' },
+      { category: null, status: 'miss' },
+    ]
+    const result = statsByDimension(preds, 'category')
+    expect(result).toEqual([{ key: '量產時程', hit: 1, miss: 0, pending: 0, judged: 1, hitRate: 1 }])
+  })
+
+  it('依 industry 欄位聚合', () => {
+    const preds = [
+      { industry: '半導體業', status: 'miss' },
+      { industry: '電子零組件業', status: 'hit' },
+      { industry: '電子零組件業', status: 'hit' },
+    ]
+    const result = statsByDimension(preds, 'industry')
+    expect(result).toEqual([
+      { key: '電子零組件業', hit: 2, miss: 0, pending: 0, judged: 2, hitRate: 1 },
+      { key: '半導體業', hit: 0, miss: 1, pending: 0, judged: 1, hitRate: 0 },
     ])
   })
 })

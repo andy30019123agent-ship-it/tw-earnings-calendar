@@ -1,11 +1,47 @@
 import { useMemo, useState } from 'react'
-import { ArrowLeft, CalendarClock, CheckCircle2, ClipboardList, Clock, XCircle } from 'lucide-react'
+import { ArrowLeft, BarChart3, CalendarClock, CheckCircle2, ClipboardList, Clock, XCircle } from 'lucide-react'
 import scorecardData from '../data/scorecard.json'
-import { computeStats, sortByPredictedOnDesc, uniqueStocks } from '../lib/scorecard'
+import { computeStats, sortByPredictedOnDesc, statsByDimension, uniqueStocks } from '../lib/scorecard'
 
 const STATUS_LABEL = { hit: '命中', miss: '未中', pending: '未到期' }
 const STATUS_ICON = { hit: CheckCircle2, miss: XCircle, pending: Clock }
 const STATUS_ORDER = ['hit', 'miss', 'pending']
+
+/** 分維度統計卡：一列一個維度值，附命中率、細項與進度條。 */
+function DimensionCard({ title, rows }) {
+  return (
+    <div className="dim-card">
+      <h4 className="dim-card-title">{title}</h4>
+      {rows.length === 0 ? (
+        <p className="dim-empty">無資料</p>
+      ) : (
+        <ul className="dim-list">
+          {rows.map((row) => {
+            const rateDisplay = row.hitRate === null ? '—' : `${Math.round(row.hitRate * 100)}%`
+            return (
+              <li className="dim-row" key={row.key}>
+                <div className="dim-row-top">
+                  <span className="dim-name">{row.key}</span>
+                  <span className={row.hitRate === null ? 'dim-rate' : 'dim-rate dim-rate-value'}>
+                    {rateDisplay}
+                  </span>
+                </div>
+                <div className="dim-bar-track">
+                  {row.judged > 0 && (
+                    <div className="dim-bar-fill" style={{ width: `${row.hitRate * 100}%` }} />
+                  )}
+                </div>
+                <div className="dim-detail">
+                  命中 {row.hit}／未中 {row.miss}／未到期 {row.pending}
+                </div>
+              </li>
+            )
+          })}
+        </ul>
+      )}
+    </div>
+  )
+}
 
 export default function Scorecard() {
   const predictions = scorecardData.predictions ?? []
@@ -14,6 +50,9 @@ export default function Scorecard() {
 
   const stats = useMemo(() => computeStats(predictions), [predictions])
   const stockOptions = useMemo(() => uniqueStocks(predictions), [predictions])
+  const categoryStats = useMemo(() => statsByDimension(predictions, 'category'), [predictions])
+  const industryStats = useMemo(() => statsByDimension(predictions, 'industry'), [predictions])
+  const judgedCount = stats.hit + stats.miss
 
   const filtered = useMemo(() => {
     return sortByPredictedOnDesc(predictions).filter((p) => {
@@ -64,6 +103,20 @@ export default function Scorecard() {
         回驗規則：寫新報告順手回驗＋每月全面回驗；準確第一，判不準維持未到期。
       </p>
       <p className="sc-disclaimer">AI 輔助研究，僅供參考，非投資建議。</p>
+
+      <div className="dim-stats-section">
+        <h3 className="section-title dim-stats-title">
+          <BarChart3 size={18} strokeWidth={1.75} aria-hidden="true" />
+          分維度統計
+        </h3>
+        <div className="dim-stats-grid">
+          <DimensionCard title="按預測類型" rows={categoryStats} />
+          <DimensionCard title="按產業" rows={industryStats} />
+        </div>
+        <p className="dim-stats-note">
+          已判定樣本滿 30 筆將啟動「研究驗證分」回饋選股（規格已備）；目前已判定 {judgedCount} 筆，樣本仍少，命中率僅供參考。
+        </p>
+      </div>
 
       <div className="filter-bar">
         <div className="filter-row">
