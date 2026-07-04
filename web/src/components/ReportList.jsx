@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
+import { FileText } from 'lucide-react'
 import { loadReports } from '../lib/reports'
+import { typeColorClass } from '../lib/reportTypes'
 
 const TYPE_LABEL = {
   快報: '快報',
@@ -23,7 +25,10 @@ export default function ReportList() {
   if (reports === null) {
     return (
       <section className="report-list-section">
-        <h2 className="section-title">📄 最近報告</h2>
+        <h2 className="section-title">
+          <FileText size={20} strokeWidth={1.75} aria-hidden="true" />
+          最近報告
+        </h2>
         <p className="placeholder">載入中…</p>
       </section>
     )
@@ -31,7 +36,10 @@ export default function ReportList() {
 
   return (
     <section className="report-list-section">
-      <h2 className="section-title">📄 最近報告</h2>
+      <h2 className="section-title">
+        <FileText size={20} strokeWidth={1.75} aria-hidden="true" />
+        最近報告
+      </h2>
 
       {err && <p className="error-note">報告載入失敗，請稍後再試。</p>}
 
@@ -44,7 +52,7 @@ export default function ReportList() {
               <a href={`#/r/${encodeURIComponent(r.filename ?? '')}`} className="report-link">
                 <span className="report-code">{r.id}</span>
                 <span className="report-name">{r.name}</span>
-                <span className={`report-type tag tag-${r.type === '法說會' ? 'conf' : 'earn'}`}>
+                <span className={`report-type tag tag-${typeColorClass(r.type)}`}>
                   {TYPE_LABEL[r.type] ?? r.type ?? '—'}
                 </span>
                 <span className="report-date">{r.date}</span>

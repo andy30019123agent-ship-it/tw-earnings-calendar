@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
+import { ArrowLeft, CalendarDays, Library, Megaphone, X } from 'lucide-react'
 import { loadReports } from '../lib/reports'
 import { TYPE_LABEL, TYPE_ORDER, typeColorClass } from '../lib/reportTypes'
 
@@ -102,7 +103,10 @@ export default function ReportLibrary() {
   if (reports === null) {
     return (
       <div className="library-wrap">
-        <h2 className="section-title">📚 報告庫</h2>
+        <h2 className="section-title">
+          <Library size={20} strokeWidth={1.75} aria-hidden="true" />
+          報告庫
+        </h2>
         <p className="placeholder">載入中…</p>
       </div>
     )
@@ -112,10 +116,14 @@ export default function ReportLibrary() {
     <div className="library-wrap">
       <div className="library-header">
         <h2 className="section-title">
-          📚 報告庫
+          <Library size={20} strokeWidth={1.75} aria-hidden="true" />
+          報告庫
           <span className="range-label">{filtered.length} / {reports.length} 篇</span>
         </h2>
-        <a href="#/" className="nav-back">← 返回首頁</a>
+        <a href="#/" className="nav-back">
+          <ArrowLeft size={16} strokeWidth={1.75} aria-hidden="true" />
+          返回首頁
+        </a>
       </div>
 
       {err && <p className="error-note">報告載入失敗，請稍後再試。</p>}
@@ -228,7 +236,7 @@ export default function ReportLibrary() {
                 }}
                 aria-label="清除日期"
               >
-                ✕
+                <X size={18} strokeWidth={1.75} aria-hidden="true" />
               </button>
             )}
           </div>
@@ -246,7 +254,12 @@ export default function ReportLibrary() {
           {grouped.map(([groupKey, items]) => (
             <div key={groupKey} className="library-group">
               <div className="library-group-label">
-                {groupBy === 'date' ? `🗓 ${groupKey}` : groupKey}
+                <span className="group-label-text">
+                  {groupBy === 'date' && (
+                    <CalendarDays size={14} strokeWidth={1.75} aria-hidden="true" />
+                  )}
+                  {groupKey}
+                </span>
                 <span className="group-count">{items.length}</span>
               </div>
               <div className="report-cards">
@@ -264,12 +277,18 @@ export default function ReportLibrary() {
                       </span>
                     </div>
                     <div className="report-card-meta">
-                      <span>🗓 報告 {r.date}</span>
+                      <span className="meta-item">
+                        <CalendarDays size={14} strokeWidth={1.75} aria-hidden="true" />
+                        報告 {r.date}
+                      </span>
                       {relativeDay(r.date) && (
                         <span className="meta-rel">{relativeDay(r.date)}</span>
                       )}
                       {r.event_date && (
-                        <span>📣 法說 {shortDate(r.event_date)}</span>
+                        <span className="meta-item">
+                          <Megaphone size={14} strokeWidth={1.75} aria-hidden="true" />
+                          法說 {shortDate(r.event_date)}
+                        </span>
                       )}
                     </div>
                   </a>
