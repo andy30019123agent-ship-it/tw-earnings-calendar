@@ -112,4 +112,20 @@ describe('statsByDimension', () => {
       { key: '半導體業', hit: 0, miss: 1, pending: 0, judged: 1, hitRate: 0 },
     ])
   })
+
+  it('依 confidence（數字 key）聚合，confidence 為 null 的舊預測不計入', () => {
+    const preds = [
+      { confidence: 5, status: 'hit' },
+      { confidence: 5, status: 'hit' },
+      { confidence: 3, status: 'miss' },
+      { confidence: 3, status: 'pending' },
+      { confidence: null, status: 'hit' },
+      { status: 'miss' },
+    ]
+    const result = statsByDimension(preds, 'confidence')
+    expect(result).toEqual([
+      { key: 5, hit: 2, miss: 0, pending: 0, judged: 2, hitRate: 1 },
+      { key: 3, hit: 0, miss: 1, pending: 1, judged: 1, hitRate: 0 },
+    ])
+  })
 })

@@ -17,7 +17,8 @@
       "industry": "半導體業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "2303-2026-06-27-02",
@@ -35,7 +36,8 @@
       "industry": "半導體業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "2303-2026-06-27-03",
@@ -53,7 +55,8 @@
       "industry": "半導體業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "2308-2026-06-27-01",
@@ -71,7 +74,8 @@
       "industry": "電子零組件業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "2308-2026-06-27-02",
@@ -89,7 +93,8 @@
       "industry": "電子零組件業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "2308-2026-06-27-03",
@@ -107,7 +112,8 @@
       "industry": "電子零組件業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "2308-2026-06-27-04",
@@ -128,7 +134,8 @@
       "industry": "電子零組件業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "2404-2026-06-27-01",
@@ -146,7 +153,8 @@
       "industry": "其他電子業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "2404-2026-06-27-02",
@@ -164,7 +172,8 @@
       "industry": "其他電子業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "2404-2026-06-27-03",
@@ -182,7 +191,8 @@
       "industry": "其他電子業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "2408-2026-06-27-01",
@@ -200,7 +210,8 @@
       "industry": "半導體業",
       "status": "hit",
       "verified_on": "2026-07-04",
-      "evidence": "H1 累計營收 1,316.36 億反推 Q2≈825 億、季增約 +68% 遠優於 Q1 490.87 億（公司公告 2026-07-03）；毛利率法人估 Q2 76.7% 已越過 70% 目標（官方數字待 8 月財報）"
+      "evidence": "H1 累計營收 1,316.36 億反推 Q2≈825 億、季增約 +68% 遠優於 Q1 490.87 億（公司公告 2026-07-03）；毛利率法人估 Q2 76.7% 已越過 70% 目標（官方數字待 8 月財報）",
+      "confidence": null
     },
     {
       "pid": "2408-2026-06-27-02",
@@ -218,7 +229,8 @@
       "industry": "半導體業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "2408-2026-06-27-03",
@@ -236,7 +248,8 @@
       "industry": "半導體業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "2409-2026-06-27-01",
@@ -254,7 +267,8 @@
       "industry": "光電業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "2409-2026-06-27-02",
@@ -272,7 +286,8 @@
       "industry": "光電業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "2409-2026-06-27-03",
@@ -290,7 +305,8 @@
       "industry": "光電業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "2454-2026-06-27-01",
@@ -308,7 +324,8 @@
       "industry": "半導體業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "2454-2026-06-27-02",
@@ -326,7 +343,8 @@
       "industry": "半導體業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "2454-2026-06-27-03",
@@ -344,7 +362,8 @@
       "industry": "半導體業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "2467-2026-06-27-01",
@@ -362,7 +381,8 @@
       "industry": "電子零組件業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "2467-2026-06-27-02",
@@ -380,7 +400,8 @@
       "industry": "電子零組件業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "2486-2026-06-27-01",
@@ -398,7 +419,8 @@
       "industry": "光電業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "2486-2026-06-27-02",
@@ -416,7 +438,8 @@
       "industry": "光電業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "3363-2026-06-27-01",
@@ -434,7 +457,8 @@
       "industry": "通信網路業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "3363-2026-06-27-02",
@@ -452,7 +476,8 @@
       "industry": "通信網路業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "3363-2026-06-27-03",
@@ -470,7 +495,8 @@
       "industry": "通信網路業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "3481-2026-06-27-01",
@@ -488,7 +514,8 @@
       "industry": "光電業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "3481-2026-06-27-02",
@@ -506,7 +533,8 @@
       "industry": "光電業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "3481-2026-06-27-03",
@@ -527,7 +555,8 @@
       "industry": "光電業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "3526-2026-06-27-01",
@@ -545,7 +574,8 @@
       "industry": "電子零組件業",
       "status": "hit",
       "verified_on": "2026-07-02",
-      "evidence": "法說會（07-01）：BBU 連接器已進入逐步量產，AI 連接器與線預期下半年到 2027~2028 逐步轉營收——落點🟡符合預期、非超預期驚喜（見 3526-法說會-2026-07-02 預測追蹤表）。"
+      "evidence": "法說會（07-01）：BBU 連接器已進入逐步量產，AI 連接器與線預期下半年到 2027~2028 逐步轉營收——落點🟡符合預期、非超預期驚喜（見 3526-法說會-2026-07-02 預測追蹤表）。",
+      "confidence": null
     },
     {
       "pid": "3526-2026-06-27-02",
@@ -563,7 +593,8 @@
       "industry": "電子零組件業",
       "status": "hit",
       "verified_on": "2026-07-02",
-      "evidence": "法說會（07-01）未正面量化保證，僅稱產品結構優化助益毛利；財報狗顯示 2026 Q1 毛利率 50.38% 已達標，惟公司不掛保證（見 3526-法說會-2026-07-02 預測追蹤表）。"
+      "evidence": "法說會（07-01）未正面量化保證，僅稱產品結構優化助益毛利；財報狗顯示 2026 Q1 毛利率 50.38% 已達標，惟公司不掛保證（見 3526-法說會-2026-07-02 預測追蹤表）。",
+      "confidence": null
     },
     {
       "pid": "3526-2026-06-27-03",
@@ -581,7 +612,8 @@
       "industry": "電子零組件業",
       "status": "miss",
       "verified_on": "2026-07-02",
-      "evidence": "法說會（07-01）：中國電動車電池新規 7/1 上路，總經理稱『對凡甲愈正面』，車用毛利反而改善、大陸車市不再那麼捲——原預期的殺價壓力風險未發生，反轉為利多，落點🐂優於快報預期（見 3526-法說會-2026-07-02 預測追蹤表）。"
+      "evidence": "法說會（07-01）：中國電動車電池新規 7/1 上路，總經理稱『對凡甲愈正面』，車用毛利反而改善、大陸車市不再那麼捲——原預期的殺價壓力風險未發生，反轉為利多，落點🐂優於快報預期（見 3526-法說會-2026-07-02 預測追蹤表）。",
+      "confidence": null
     },
     {
       "pid": "3526-2026-06-27-04",
@@ -599,7 +631,8 @@
       "industry": "電子零組件業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "3526-2026-06-27-05",
@@ -617,7 +650,8 @@
       "industry": "電子零組件業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "3665-2026-06-27-01",
@@ -635,7 +669,8 @@
       "industry": "其他電子業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "3665-2026-06-27-02",
@@ -653,7 +688,8 @@
       "industry": "其他電子業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "3711-2026-06-27-01",
@@ -671,7 +707,8 @@
       "industry": "半導體業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "3711-2026-06-27-02",
@@ -689,7 +726,8 @@
       "industry": "半導體業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "3711-2026-06-27-03",
@@ -707,7 +745,8 @@
       "industry": "半導體業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "5443-2026-06-27-01",
@@ -725,7 +764,8 @@
       "industry": "半導體業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "5443-2026-06-27-02",
@@ -743,7 +783,8 @@
       "industry": "半導體業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "6187-2026-06-27-01",
@@ -761,7 +802,8 @@
       "industry": "半導體業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "6187-2026-06-27-02",
@@ -779,7 +821,8 @@
       "industry": "半導體業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "6451-2026-06-27-01",
@@ -797,7 +840,8 @@
       "industry": "半導體業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "6451-2026-06-27-02",
@@ -815,7 +859,8 @@
       "industry": "半導體業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "6451-2026-06-27-03",
@@ -833,7 +878,8 @@
       "industry": "半導體業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "6451-2026-06-27-04",
@@ -851,7 +897,8 @@
       "industry": "半導體業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "6770-2026-06-27-01",
@@ -869,7 +916,8 @@
       "industry": "半導體業",
       "status": "miss",
       "verified_on": "2026-06-30",
-      "evidence": "法說會（06-29）與媒體查證：Q1 EPS 3.36 元中約 145 億元來自 P5 廠售予美光的一次性處分利益，扣除後本業 EPS 僅約 0.13 元，原快報判斷有誤，已於 6770-法說會-2026-06-30「重要更正」段公開更正。"
+      "evidence": "法說會（06-29）與媒體查證：Q1 EPS 3.36 元中約 145 億元來自 P5 廠售予美光的一次性處分利益，扣除後本業 EPS 僅約 0.13 元，原快報判斷有誤，已於 6770-法說會-2026-06-30「重要更正」段公開更正。",
+      "confidence": null
     },
     {
       "pid": "6770-2026-06-27-02",
@@ -887,7 +935,8 @@
       "industry": "半導體業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "6770-2026-06-27-03",
@@ -908,7 +957,8 @@
       "industry": "半導體業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "8027-2026-06-27-01",
@@ -926,7 +976,8 @@
       "industry": "電機機械",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "8027-2026-06-27-02",
@@ -944,7 +995,8 @@
       "industry": "電機機械",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "8027-2026-06-27-03",
@@ -962,7 +1014,8 @@
       "industry": "電機機械",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "8032-2026-06-27-01",
@@ -980,7 +1033,8 @@
       "industry": "電子通路業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "8032-2026-06-27-02",
@@ -998,7 +1052,8 @@
       "industry": "電子通路業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "2327-2026-06-30-01",
@@ -1016,7 +1071,8 @@
       "industry": "電子零組件業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "2327-2026-06-30-02",
@@ -1037,7 +1093,8 @@
       "industry": "電子零組件業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "2327-2026-06-30-03",
@@ -1055,7 +1112,8 @@
       "industry": "電子零組件業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "2327-2026-06-30-04",
@@ -1073,7 +1131,8 @@
       "industry": "電子零組件業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "2472-2026-06-30-01",
@@ -1091,7 +1150,8 @@
       "industry": "電子零組件業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "2472-2026-06-30-02",
@@ -1109,7 +1169,8 @@
       "industry": "電子零組件業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "2472-2026-06-30-03",
@@ -1130,7 +1191,8 @@
       "industry": "電子零組件業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "2472-2026-06-30-04",
@@ -1148,7 +1210,8 @@
       "industry": "電子零組件業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "2492-2026-06-30-01",
@@ -1166,7 +1229,8 @@
       "industry": "電子零組件業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "2492-2026-06-30-02",
@@ -1184,7 +1248,8 @@
       "industry": "電子零組件業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "2492-2026-06-30-03",
@@ -1202,7 +1267,8 @@
       "industry": "電子零組件業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "5425-2026-06-30-01",
@@ -1220,7 +1286,8 @@
       "industry": "半導體業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "5425-2026-06-30-02",
@@ -1238,7 +1305,8 @@
       "industry": "半導體業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "6770-2026-06-30-01",
@@ -1256,7 +1324,8 @@
       "industry": "半導體業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "6770-2026-06-30-02",
@@ -1274,7 +1343,8 @@
       "industry": "半導體業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "6770-2026-06-30-03",
@@ -1292,7 +1362,8 @@
       "industry": "半導體業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "3526-2026-07-02-01",
@@ -1310,7 +1381,8 @@
       "industry": "電子零組件業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "3526-2026-07-02-02",
@@ -1328,7 +1400,8 @@
       "industry": "電子零組件業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "3526-2026-07-02-03",
@@ -1346,7 +1419,8 @@
       "industry": "電子零組件業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "3526-2026-07-02-04",
@@ -1364,7 +1438,8 @@
       "industry": "電子零組件業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "2408-2026-07-04-01",
@@ -1382,7 +1457,8 @@
       "industry": "半導體業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "2408-2026-07-04-02",
@@ -1400,7 +1476,8 @@
       "industry": "半導體業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "2408-2026-07-04-03",
@@ -1421,7 +1498,8 @@
       "industry": "半導體業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "5425-2026-07-04-01",
@@ -1439,7 +1517,8 @@
       "industry": "半導體業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "5425-2026-07-04-02",
@@ -1457,7 +1536,8 @@
       "industry": "半導體業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "5425-2026-07-04-03",
@@ -1475,7 +1555,8 @@
       "industry": "半導體業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "8046-2026-07-04-01",
@@ -1493,7 +1574,8 @@
       "industry": "電子零組件業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "8046-2026-07-04-02",
@@ -1514,7 +1596,8 @@
       "industry": "電子零組件業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "8046-2026-07-04-03",
@@ -1532,7 +1615,8 @@
       "industry": "電子零組件業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "8046-2026-07-04-04",
@@ -1550,7 +1634,8 @@
       "industry": "電子零組件業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": null
     },
     {
       "pid": "3008-2026-07-05-01",
@@ -1568,7 +1653,8 @@
       "industry": "光電業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": 4
     },
     {
       "pid": "3008-2026-07-05-02",
@@ -1586,7 +1672,8 @@
       "industry": "光電業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": 5
     },
     {
       "pid": "3008-2026-07-05-03",
@@ -1607,7 +1694,8 @@
       "industry": "光電業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": 3
     },
     {
       "pid": "3008-2026-07-05-04",
@@ -1625,7 +1713,8 @@
       "industry": "光電業",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": 4
     },
     {
       "pid": "8027-2026-07-05-01",
@@ -1643,7 +1732,8 @@
       "industry": "電機機械",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": 3
     },
     {
       "pid": "8027-2026-07-05-02",
@@ -1661,7 +1751,8 @@
       "industry": "電機機械",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": 3
     },
     {
       "pid": "8027-2026-07-05-03",
@@ -1679,7 +1770,8 @@
       "industry": "電機機械",
       "status": "pending",
       "verified_on": null,
-      "evidence": null
+      "evidence": null,
+      "confidence": 3
     }
   ]
 }

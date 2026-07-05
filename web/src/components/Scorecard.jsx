@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import { ArrowLeft, BarChart3, CalendarClock, CheckCircle2, ClipboardList, Clock, XCircle } from 'lucide-react'
+import { ArrowLeft, BarChart3, CalendarClock, CheckCircle2, ClipboardList, Clock, Gauge, XCircle } from 'lucide-react'
 import scorecardData from '../data/scorecard.json'
 import { computeStats, sortByPredictedOnDesc, statsByDimension, uniqueStocks } from '../lib/scorecard'
 
@@ -7,8 +7,18 @@ const STATUS_LABEL = { hit: '命中', miss: '未中', pending: '未到期' }
 const STATUS_ICON = { hit: CheckCircle2, miss: XCircle, pending: Clock }
 const STATUS_ORDER = ['hit', 'miss', 'pending']
 
-/** 分維度統計卡：一列一個維度值，附命中率、細項與進度條。 */
-function DimensionCard({ title, rows }) {
+/** 5 級信心量表對照表：信心分數（1-5）→ 顯示標籤。 */
+const CONFIDENCE_LABEL = {
+  5: '🟢 很可能（~80%↑）',
+  4: '🟢 有機會（~60–80%）',
+  3: '🟡 一半一半（~40–60%）',
+  2: '🟠 偏低（~20–40%）',
+  1: '🔴 不太可能（~<20%）',
+}
+const confidenceLabel = (level) => CONFIDENCE_LABEL[level] ?? `信心 ${level}`
+
+/** 分維度統計卡：一列一個維度值，附命中率、細項與進度條。labelFor 可自訂列標籤顯示（預設直接顯示 key）。 */
+function DimensionCard({ title, rows, labelFor = (key) => key }) {
   return (
     <div className="dim-card">
       <h4 className="dim-card-title">{title}</h4>
@@ -21,7 +31,7 @@ function DimensionCard({ title, rows }) {
             return (
               <li className="dim-row" key={row.key}>
                 <div className="dim-row-top">
-                  <span className="dim-name">{row.key}</span>
+                  <span className="dim-name">{labelFor(row.key)}</span>
                   <span className={row.hitRate === null ? 'dim-rate' : 'dim-rate dim-rate-value'}>
                     {rateDisplay}
                   </span>
@@ -52,6 +62,11 @@ export default function Scorecard() {
   const stockOptions = useMemo(() => uniqueStocks(predictions), [predictions])
   const categoryStats = useMemo(() => statsByDimension(predictions, 'category'), [predictions])
   const industryStats = useMemo(() => statsByDimension(predictions, 'industry'), [predictions])
+  const confidenceStats = useMemo(
+    () => [...statsByDimension(predictions, 'confidence')].sort((a, b) => b.key - a.key),
+    [predictions],
+  )
+  const confidenceJudged = confidenceStats.reduce((sum, row) => sum + row.judged, 0)
   const judgedCount = stats.hit + stats.miss
 
   const filtered = useMemo(() => {
@@ -116,6 +131,25 @@ export default function Scorecard() {
         <p className="dim-stats-note">
           已判定樣本滿 30 筆將啟動「研究驗證分」回饋選股（規格已備）；目前已判定 {judgedCount} 筆，樣本仍少，命中率僅供參考。
         </p>
+      </div>
+
+      <div className="dim-stats-section">
+        <h3 className="section-title dim-stats-title">
+          <Gauge size={18} strokeWidth={1.75} aria-hidden="true" />
+          信心校準
+        </h3>
+        <p className="dim-stats-note">
+          檢視「說越有把握，是否真的越常命中」；只計入已標註信心分數的預測，舊預測（未評分）不列入。
+        </p>
+        {confidenceJudged === 0 ? (
+          <p className="dim-empty" style={{ marginTop: 16 }}>
+            預測陸續驗證後，這裡會顯示各信心級的命中率。
+          </p>
+        ) : (
+          <div className="dim-stats-grid" style={{ gridTemplateColumns: '1fr' }}>
+            <DimensionCard title="依信心級命中率" rows={confidenceStats} labelFor={confidenceLabel} />
+          </div>
+        )}
       </div>
 
       <div className="filter-bar">
