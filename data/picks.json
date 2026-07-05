@@ -16,5 +16,17 @@
     "event_date": "2026-06-29",
     "event_type": "法說會",
     "status": "event_passed"
+  },
+  "3008": {
+    "name": "大立光",
+    "event_date": "2026-07-09",
+    "event_type": "法說會",
+    "status": "watching"
+  },
+  "8027": {
+    "name": "鈦昇",
+    "event_date": "2026-07-07",
+    "event_type": "法說會",
+    "status": "watching"
   }
 }

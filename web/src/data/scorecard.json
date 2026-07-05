@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-04",
+  "updated": "2026-07-05",
   "predictions": [
     {
       "pid": "2303-2026-06-27-01",
@@ -1548,6 +1548,135 @@
       },
       "category": "量產時程",
       "industry": "電子零組件業",
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "3008-2026-07-05-01",
+      "stock_id": "3008",
+      "stock_name": "大立光",
+      "report": "3008-快報-2026-07-05.md",
+      "predicted_on": "2026-07-05",
+      "claim": "2026 全年 EPS 法人估中位 185.91 元（Factset 18 人，vs 2025 的 159.46、+16.6%）",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2027-03-31"
+      },
+      "category": "獲利能力",
+      "industry": "光電業",
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "3008-2026-07-05-02",
+      "stock_id": "3008",
+      "stock_name": "大立光",
+      "report": "3008-快報-2026-07-05.md",
+      "predicted_on": "2026-07-05",
+      "claim": "CPO（微稜鏡＋FAU 玻璃）2026 仍在送樣／認證、量產要 1~2 年，2026 對營收無實質貢獻",
+      "verifiable": {
+        "direction": "na",
+        "price_range": null,
+        "deadline": "2026-12-31"
+      },
+      "category": "量產時程",
+      "industry": "光電業",
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "3008-2026-07-05-03",
+      "stock_id": "3008",
+      "stock_name": "大立光",
+      "report": "3008-快報-2026-07-05.md",
+      "predicted_on": "2026-07-05",
+      "claim": "法人目標價中位 3,030 元低於現價 4,230 約 28%，股價已超越共識、短期追高易回檔",
+      "verifiable": {
+        "direction": "down",
+        "price_range": [
+          3030,
+          3030
+        ],
+        "deadline": "2026-12-31"
+      },
+      "category": "股價位置",
+      "industry": "光電業",
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "3008-2026-07-05-04",
+      "stock_id": "3008",
+      "stock_name": "大立光",
+      "report": "3008-快報-2026-07-05.md",
+      "predicted_on": "2026-07-05",
+      "claim": "手機本業毛利率跌破 50%（Q1 49.4%）、規格升級放緩，H2 毛利率承壓",
+      "verifiable": {
+        "direction": "down",
+        "price_range": null,
+        "deadline": "2026-12-31"
+      },
+      "category": "獲利能力",
+      "industry": "光電業",
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "8027-2026-07-05-01",
+      "stock_id": "8027",
+      "stock_name": "鈦昇",
+      "report": "8027-快報-2026-07-05.md",
+      "predicted_on": "2026-07-05",
+      "claim": "玻璃基板由小量產轉放量、美日+北美客戶出機推升營收",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2027-12-31"
+      },
+      "category": "題材發酵",
+      "industry": "電機機械",
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "8027-2026-07-05-02",
+      "stock_id": "8027",
+      "stock_name": "鈦昇",
+      "report": "8027-快報-2026-07-05.md",
+      "predicted_on": "2026-07-05",
+      "claim": "高雄橋頭新廠 2026 Q3 啟用、產能 1.8 倍專攻高毛利玻璃基板/14A，帶動毛利率翻正",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2027-06-30"
+      },
+      "category": "獲利能力",
+      "industry": "電機機械",
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "8027-2026-07-05-03",
+      "stock_id": "8027",
+      "stock_name": "鈦昇",
+      "report": "8027-快報-2026-07-05.md",
+      "predicted_on": "2026-07-05",
+      "claim": "現價 PB 約 11 已計入大量樂觀，法說若無明確轉盈指引易高位回檔",
+      "verifiable": {
+        "direction": "down",
+        "price_range": null,
+        "deadline": "2026-09-30"
+      },
+      "category": "股價位置",
+      "industry": "電機機械",
       "status": "pending",
       "verified_on": null,
       "evidence": null
