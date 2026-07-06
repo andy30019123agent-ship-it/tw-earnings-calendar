@@ -2250,6 +2250,82 @@
       "status": "pending",
       "verified_on": null,
       "evidence": null
+    },
+    {
+      "pid": "3402-2026-07-07-01",
+      "stock_id": "3402",
+      "stock_name": "漢科",
+      "report": "3402-快報-2026-07-07.md",
+      "predicted_on": "2026-07-07",
+      "claim": "2026 全年 EPS 恐低於法人估 9.7~10、較可能落在 8~9.5",
+      "verifiable": {
+        "direction": "na",
+        "price_range": null,
+        "deadline": "2027-03-31"
+      },
+      "category": "獲利能力",
+      "industry": "",
+      "confidence": 3,
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "3402-2026-07-07-02",
+      "stock_id": "3402",
+      "stock_name": "漢科",
+      "report": "3402-快報-2026-07-07.md",
+      "predicted_on": "2026-07-07",
+      "claim": "股價短期（H2）追高風報比不佳、除息後有回檔整理機會",
+      "verifiable": {
+        "direction": "flat",
+        "price_range": null,
+        "deadline": "2026-12-31"
+      },
+      "category": "股價位置",
+      "industry": "",
+      "confidence": 2,
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "3402-2026-07-07-03",
+      "stock_id": "3402",
+      "stock_name": "漢科",
+      "report": "3402-快報-2026-07-07.md",
+      "predicted_on": "2026-07-07",
+      "claim": "半導體廠務族群中期訂單能見度維持強勁（台積 2026 capex 逾 5,000 億＋先進封裝＋海外廠）",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2027-06-30"
+      },
+      "category": "產業趨勢",
+      "industry": "",
+      "confidence": 4,
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "3402-2026-07-07-04",
+      "stock_id": "3402",
+      "stock_name": "漢科",
+      "report": "3402-快報-2026-07-07.md",
+      "predicted_on": "2026-07-07",
+      "claim": "先進封裝（CoWoS/CoPoS）與海外擴產成為漢科被低估的增量動能",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-12-31"
+      },
+      "category": "題材發酵",
+      "industry": "",
+      "confidence": 3,
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
     }
   ]
 }
