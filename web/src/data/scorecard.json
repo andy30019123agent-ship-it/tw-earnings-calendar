@@ -2038,6 +2038,63 @@
       "status": "pending",
       "verified_on": null,
       "evidence": null
+    },
+    {
+      "pid": "3707-2026-07-06-02",
+      "stock_id": "3707",
+      "stock_name": "漢磊",
+      "report": "3707-快報-2026-07-06.md",
+      "predicted_on": "2026-07-06",
+      "claim": "漢磊 2026 全年營收年增雙位數成長（前 5 月已 +24%）",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-12-31"
+      },
+      "category": "獲利能力",
+      "industry": "半導體業",
+      "confidence": 4,
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "3707-2026-07-06-03",
+      "stock_id": "3707",
+      "stock_name": "漢磊",
+      "report": "3707-快報-2026-07-06.md",
+      "predicted_on": "2026-07-06",
+      "claim": "漢磊 8 吋 SiC（與世界先進合作）2026 下半年進入量產",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-12-31"
+      },
+      "category": "量產時程",
+      "industry": "半導體業",
+      "confidence": 3,
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "3707-2026-07-06-04",
+      "stock_id": "3707",
+      "stock_name": "漢磊",
+      "report": "3707-快報-2026-07-06.md",
+      "predicted_on": "2026-07-06",
+      "claim": "漢磊 2026 出現至少一個單季本業轉盈",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-12-31"
+      },
+      "category": "獲利能力",
+      "industry": "半導體業",
+      "confidence": 2,
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
     }
   ]
 }
