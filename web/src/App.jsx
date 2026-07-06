@@ -5,27 +5,53 @@ import ReportList from './components/ReportList'
 import ReportLibrary from './components/ReportLibrary'
 import ReportView from './components/ReportView'
 import Scorecard from './components/Scorecard'
+import { BASE, parsePath, pathFor, legacyHashToPath } from './lib/router'
 import './App.css'
 
-function parseHash(hash) {
-  const h = hash.replace(/^#/, '')
-  if (!h || h === '/') return { route: 'home' }
-  if (h === '/library') return { route: 'library' }
-  if (h === '/scorecard') return { route: 'scorecard' }
-  const m = h.match(/^\/r\/(.+)$/)
-  if (m) return { route: 'report', filename: decodeURIComponent(m[1]) }
-  return { route: 'home' }
+// 啟動時：舊 hash 連結（#/r/xxx.md 等）用 replaceState 轉成新真實路徑，
+// 已發出去的舊連結不會壞。回傳解析後的初始路由。
+function initialLocation() {
+  const legacy = legacyHashToPath(window.location.hash)
+  if (legacy) {
+    window.history.replaceState(null, '', legacy)
+  }
+  return parsePath(window.location.pathname)
 }
 
 export default function App() {
-  const [loc, setLoc] = useState(() => parseHash(window.location.hash))
+  const [loc, setLoc] = useState(initialLocation)
   // 首頁行事曆載入完成後回報統計數字，供 hero 大數字列顯示（僅首頁使用）
   const [heroStats, setHeroStats] = useState(null)
 
   useEffect(() => {
-    const onHashChange = () => setLoc(parseHash(window.location.hash))
-    window.addEventListener('hashchange', onHashChange)
-    return () => window.removeEventListener('hashchange', onHashChange)
+    // 前進/後退
+    const onPop = () => setLoc(parsePath(window.location.pathname))
+    window.addEventListener('popstate', onPop)
+
+    // 站內連結全域攔截：改用 pushState 不整頁重載
+    function onClick(e) {
+      if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return
+      const a = e.target.closest?.('a')
+      if (!a) return
+      const href = a.getAttribute('href')
+      if (!href || a.target === '_blank') return
+      const url = new URL(a.href, window.location.href)
+      if (url.origin !== window.location.origin) return
+      if (!url.pathname.startsWith(BASE)) return
+      e.preventDefault()
+      const to = url.pathname + url.search
+      if (to !== window.location.pathname + window.location.search) {
+        window.history.pushState(null, '', to)
+        window.scrollTo(0, 0)
+      }
+      setLoc(parsePath(url.pathname))
+    }
+    document.addEventListener('click', onClick)
+
+    return () => {
+      window.removeEventListener('popstate', onPop)
+      document.removeEventListener('click', onClick)
+    }
   }, [])
 
   const isHome = loc.route === 'home'
@@ -46,21 +72,21 @@ export default function App() {
           </div>
           <nav className="seg app-nav">
             <a
-              href="#/"
+              href={pathFor('home')}
               className={`seg-btn${isHome ? ' on' : ''}`}
               aria-current={isHome ? 'page' : undefined}
             >
               首頁
             </a>
             <a
-              href="#/library"
+              href={pathFor('library')}
               className={`seg-btn${loc.route === 'library' || loc.route === 'report' ? ' on' : ''}`}
               aria-current={loc.route === 'library' || loc.route === 'report' ? 'page' : undefined}
             >
               報告庫
             </a>
             <a
-              href="#/scorecard"
+              href={pathFor('scorecard')}
               className={`seg-btn${loc.route === 'scorecard' ? ' on' : ''}`}
               aria-current={loc.route === 'scorecard' ? 'page' : undefined}
             >
@@ -92,7 +118,7 @@ export default function App() {
         )}
         {loc.route === 'library' && <ReportLibrary />}
         {loc.route === 'scorecard' && <Scorecard />}
-        {loc.route === 'report' && <ReportView filename={loc.filename} />}
+        {loc.route === 'report' && <ReportView slug={loc.slug} />}
       </main>
 
       <footer className="app-footer">

@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { ArrowLeft, CalendarDays, Library, Megaphone, X } from 'lucide-react'
 import { loadReports } from '../lib/reports'
 import { TYPE_LABEL, TYPE_ORDER, typeColorClass } from '../lib/reportTypes'
+import { pathFor, slugFromFilename } from '../lib/router'
 
 // 相對時間：今天 / 昨天 / N 天前（以台北日期計）
 function relativeDay(dateStr) {
@@ -120,7 +121,7 @@ export default function ReportLibrary() {
           報告庫
           <span className="range-label">{filtered.length} / {reports.length} 篇</span>
         </h2>
-        <a href="#/" className="nav-back">
+        <a href={pathFor('home')} className="nav-back">
           <ArrowLeft size={16} strokeWidth={1.75} aria-hidden="true" />
           返回首頁
         </a>
@@ -266,7 +267,7 @@ export default function ReportLibrary() {
                 {items.map((r) => (
                   <a
                     key={r.filename}
-                    href={`#/r/${encodeURIComponent(r.filename ?? '')}`}
+                    href={pathFor('report', slugFromFilename(r.filename))}
                     className="report-card"
                   >
                     <div className="report-card-top">

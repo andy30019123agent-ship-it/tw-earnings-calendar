@@ -1,29 +1,71 @@
 import { useEffect, useState } from 'react'
-import { ArrowLeft, Inbox } from 'lucide-react'
+import { ArrowLeft, Check, Inbox, Link2 } from 'lucide-react'
 import { loadReports } from '../lib/reports'
 import { TYPE_LABEL, typeColorClass } from '../lib/reportTypes'
+import { pathFor, slugFromFilename } from '../lib/router'
 import ReportHighlightCard from './ReportHighlightCard'
 import ReportToc from './ReportToc'
 
-export default function ReportView({ filename }) {
+const SITE_TITLE = '台股法說會行事曆'
+
+/** 組報告頁標題：「<name>｜<type> <date>｜台股法說會行事曆」。 */
+function reportTitle(report) {
+  return `${report.name}｜${report.type} ${report.date}｜${SITE_TITLE}`
+}
+
+export default function ReportView({ slug }) {
   const [report, setReport] = useState(undefined) // undefined = loading, null = not found
   const [err, setErr] = useState(false)
+  const [copied, setCopied] = useState(false)
 
   useEffect(() => {
-    if (!filename) {
+    if (!slug) {
       setReport(null)
       return
     }
     loadReports()
       .then((all) => {
-        const found = all.find((r) => r.filename === filename)
+        const found = all.find((r) => slugFromFilename(r.filename) === slug)
         setReport(found ?? null)
       })
       .catch(() => {
         setErr(true)
         setReport(null)
       })
-  }, [filename])
+  }, [slug])
+
+  // 進報告頁把 document.title 換成該報告；離開／找不到時還原站名。
+  useEffect(() => {
+    if (report && report !== null) {
+      document.title = reportTitle(report)
+    }
+    return () => {
+      document.title = SITE_TITLE
+    }
+  }, [report])
+
+  async function handleCopy() {
+    const url = `${window.location.origin}${pathFor('report', slug)}`
+    try {
+      await navigator.clipboard.writeText(url)
+    } catch {
+      // clipboard API 不可用時的手動 fallback
+      const ta = document.createElement('textarea')
+      ta.value = url
+      ta.style.position = 'fixed'
+      ta.style.opacity = '0'
+      document.body.appendChild(ta)
+      ta.select()
+      try {
+        document.execCommand('copy')
+      } catch {
+        window.prompt('複製這個連結：', url)
+      }
+      document.body.removeChild(ta)
+    }
+    setCopied(true)
+    setTimeout(() => setCopied(false), 1600)
+  }
 
   if (report === undefined) {
     return (
@@ -36,7 +78,7 @@ export default function ReportView({ filename }) {
   if (err) {
     return (
       <div className="report-view-wrap">
-        <a href="#/" className="nav-back">
+        <a href={pathFor('home')} className="nav-back">
           <ArrowLeft size={16} strokeWidth={1.75} aria-hidden="true" />
           返回首頁
         </a>
@@ -50,7 +92,7 @@ export default function ReportView({ filename }) {
   if (report === null) {
     return (
       <div className="report-view-wrap">
-        <a href="#/" className="nav-back">
+        <a href={pathFor('home')} className="nav-back">
           <ArrowLeft size={16} strokeWidth={1.75} aria-hidden="true" />
           返回首頁
         </a>
@@ -60,7 +102,7 @@ export default function ReportView({ filename }) {
           <p className="report-not-found-hint">
             可能已移除或連結有誤，請回首頁查看最近報告。
           </p>
-          <a href="#/library" className="btn-secondary">前往報告庫</a>
+          <a href={pathFor('library')} className="btn-secondary">前往報告庫</a>
         </div>
       </div>
     )
@@ -71,11 +113,30 @@ export default function ReportView({ filename }) {
   return (
     <article className="report-view-wrap">
       <nav className="report-view-nav">
-        <a href="#/" className="nav-back">
+        <a href={pathFor('home')} className="nav-back">
           <ArrowLeft size={16} strokeWidth={1.75} aria-hidden="true" />
           首頁
         </a>
-        <a href="#/library" className="nav-back">報告庫</a>
+        <a href={pathFor('library')} className="nav-back">報告庫</a>
+        <button
+          type="button"
+          className="nav-back"
+          style={{ marginLeft: 'auto', background: 'none', border: 'none', cursor: 'pointer', fontFamily: 'inherit' }}
+          onClick={handleCopy}
+          aria-live="polite"
+        >
+          {copied ? (
+            <>
+              <Check size={16} strokeWidth={1.75} aria-hidden="true" />
+              已複製
+            </>
+          ) : (
+            <>
+              <Link2 size={16} strokeWidth={1.75} aria-hidden="true" />
+              複製分享連結
+            </>
+          )}
+        </button>
       </nav>
 
       <header className="report-view-header">

@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import { ArrowLeft, BarChart3, CalendarClock, CheckCircle2, ClipboardList, Clock, Gauge, XCircle } from 'lucide-react'
 import scorecardData from '../data/scorecard.json'
 import { computeStats, sortByPredictedOnDesc, statsByDimension, uniqueStocks } from '../lib/scorecard'
+import { pathFor, slugFromFilename } from '../lib/router'
 
 const STATUS_LABEL = { hit: '命中', miss: '未中', pending: '未到期' }
 const STATUS_ICON = { hit: CheckCircle2, miss: XCircle, pending: Clock }
@@ -89,7 +90,7 @@ export default function Scorecard() {
             {filtered.length} / {predictions.length} 筆
           </span>
         </h2>
-        <a href="#/" className="nav-back">
+        <a href={pathFor('home')} className="nav-back">
           <ArrowLeft size={16} strokeWidth={1.75} aria-hidden="true" />
           返回首頁
         </a>
@@ -206,7 +207,7 @@ export default function Scorecard() {
             return (
               <a
                 key={p.pid}
-                href={`#/r/${encodeURIComponent(p.report ?? '')}`}
+                href={pathFor('report', slugFromFilename(p.report))}
                 className="report-card sc-card"
               >
                 <div className="report-card-top">
