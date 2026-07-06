@@ -981,9 +981,14 @@ input, select { font-family: inherit; }
 
 .prose table {
   width: 100%;
+  /* 手機上不讓多欄表格硬縮成一團（代號會被斷成直的 2/4/8/1）：保底寬度，
+     窄螢幕時由外層 .table-scroll 水平捲動，桌面 width:100% 照常填滿。 */
+  min-width: 34rem;
   border-collapse: collapse;
   font-variant-numeric: tabular-nums;
 }
+/* 代號欄不斷字，保持 2481 在同一行 */
+.prose td:first-child { white-space: nowrap; }
 
 .prose th, .prose td {
   padding: 8px 12px;
