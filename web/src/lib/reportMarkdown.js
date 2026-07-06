@@ -1,5 +1,11 @@
 import { marked, Renderer } from 'marked'
 
+// 關掉 marked 的刪除線（~del~）解析：研究報告大量用單個 `~` 當數字區間符號
+// （例：170~290%、2027~2029、218~403），marked 預設會把兩個 `~` 之間整段當成
+// <del> 劃掉，還會連帶拆壞中間的 **粗體**。報告從不用刪除線語法，直接關掉最乾淨。
+// 全站共用同一個 marked 實例，此設定同時作用於內文渲染與重點卡 parseInline。
+marked.use({ tokenizer: { del: () => undefined } })
+
 /**
  * 這個檔案處理「報告閱讀體驗優化」的三件事：
  * 1. renderReportMarkdown()：把報告 markdown 轉成 HTML，同時
