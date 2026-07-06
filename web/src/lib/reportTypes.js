@@ -1,12 +1,13 @@
 /** Shared label map and helpers for report types. Single source of truth. */
-export const TYPE_LABEL = { 快報: '快報', 財報: '財報', 法說會: '法說會', 詳細: '法說會' }
+export const TYPE_LABEL = { 快報: '快報', 財報: '財報', 法說會: '法說會', 詳細: '法說會', 產業分析: '產業分析' }
 
 /** Report types available as filters (in display order). */
-export const TYPE_ORDER = ['快報', '財報', '法說會']
+export const TYPE_ORDER = ['快報', '財報', '法說會', '產業分析']
 
 /** Returns the CSS colour-class suffix for a given report type. */
 export function typeColorClass(type) {
   if (type === '財報') return 'earn'
   if (type === '法說會' || type === '詳細') return 'conf'
+  if (type === '產業分析') return 'industry'
   return 'flash' // 快報（預設）
 }

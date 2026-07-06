@@ -1886,6 +1886,158 @@
       "verified_on": null,
       "evidence": null,
       "confidence": 4
+    },
+    {
+      "pid": "2481-2026-07-06-01",
+      "stock_id": "2481",
+      "stock_name": "強茂",
+      "report": "功率半導體-產業分析-2026-07-06.md",
+      "predicted_on": "2026-07-06",
+      "claim": "功率半導體漲價循環延續，台廠漲價 H2 反映到毛利率（漲幅上看20%）",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-12-31"
+      },
+      "category": "產業趨勢",
+      "industry": "半導體業",
+      "confidence": 4,
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "6435-2026-07-06-01",
+      "stock_id": "6435",
+      "stock_name": "大中",
+      "report": "功率半導體-產業分析-2026-07-06.md",
+      "predicted_on": "2026-07-06",
+      "claim": "大中 2026 全年 EPS 顯著年增（Q1 已 +55% 打底）",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2027-03-31"
+      },
+      "category": "獲利能力",
+      "industry": "半導體業",
+      "confidence": 4,
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "3675-2026-07-06-01",
+      "stock_id": "3675",
+      "stock_name": "德微",
+      "report": "功率半導體-產業分析-2026-07-06.md",
+      "predicted_on": "2026-07-06",
+      "claim": "德微毛利率維持 40% 以上為常態",
+      "verifiable": {
+        "direction": "flat",
+        "price_range": null,
+        "deadline": "2026-12-31"
+      },
+      "category": "獲利能力",
+      "industry": "半導體業",
+      "confidence": 3,
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "功率半導體-2026-07-06-01",
+      "stock_id": "功率半導體",
+      "stock_name": "功率半導體(產業)",
+      "report": "功率半導體-產業分析-2026-07-06.md",
+      "predicted_on": "2026-07-06",
+      "claim": "AI 800V HVDC 2026 僅局部直流化、真正放量 2027~2029；2026 台廠 AI 電力營收占比仍偏低",
+      "verifiable": {
+        "direction": "na",
+        "price_range": null,
+        "deadline": "2026-12-31"
+      },
+      "category": "產業趨勢",
+      "industry": "半導體業",
+      "confidence": 4,
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "5425-2026-07-06-03",
+      "stock_id": "5425",
+      "stock_name": "台半",
+      "report": "功率半導體-產業分析-2026-07-06.md",
+      "predicted_on": "2026-07-06",
+      "claim": "台半 2026 車用營收占比突破 50%",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2027-03-31"
+      },
+      "category": "題材發酵",
+      "industry": "半導體業",
+      "confidence": 3,
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "8261-2026-07-06-05",
+      "stock_id": "8261",
+      "stock_name": "富鼎",
+      "report": "功率半導體-產業分析-2026-07-06.md",
+      "predicted_on": "2026-07-06",
+      "claim": "富鼎 2026 全年營收年增溫和、遠低於股價 +347% 漲幅（本益比已透支）",
+      "verifiable": {
+        "direction": "flat",
+        "price_range": null,
+        "deadline": "2027-03-31"
+      },
+      "category": "獲利能力",
+      "industry": "半導體業",
+      "confidence": 3,
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "功率半導體-2026-07-06-02",
+      "stock_id": "功率半導體",
+      "stock_name": "功率半導體(產業)",
+      "report": "功率半導體-產業分析-2026-07-06.md",
+      "predicted_on": "2026-07-06",
+      "claim": "安世(Nexperia)轉單效應延續至 2026 下半年（五雄訂單能見度到 2027）",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-12-31"
+      },
+      "category": "題材發酵",
+      "industry": "半導體業",
+      "confidence": 4,
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "3707-2026-07-06-01",
+      "stock_id": "3707",
+      "stock_name": "漢磊",
+      "report": "功率半導體-產業分析-2026-07-06.md",
+      "predicted_on": "2026-07-06",
+      "claim": "漢磊為功率二階落後補漲候選（相對五雄補漲）",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-12-31"
+      },
+      "category": "股價位置",
+      "industry": "半導體業",
+      "confidence": 2,
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
     }
   ]
 }

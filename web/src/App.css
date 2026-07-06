@@ -379,6 +379,13 @@ input, select { font-family: inherit; }
   border-color: var(--border-strong);
 }
 
+/* 產業分析：與粉色主題和諧、但明顯區隔的靛紫（非個股、是整個產業的俯瞰報告） */
+.tag-industry {
+  background: #ECEAFB;
+  color: #4C3BB5;
+  border-color: #D6D0F5;
+}
+
 /* ── Report list ── */
 .report-list {
   list-style: none;
