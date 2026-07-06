@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-06",
+  "updated": "2026-07-07",
   "predictions": [
     {
       "pid": "2303-2026-06-27-01",
@@ -2090,6 +2090,161 @@
         "deadline": "2026-12-31"
       },
       "category": "獲利能力",
+      "industry": "半導體業",
+      "confidence": 2,
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "2481-2026-07-06-02",
+      "stock_id": "2481",
+      "stock_name": "強茂",
+      "report": "MOSFET缺貨-產業分析-2026-07-06.md",
+      "predicted_on": "2026-07-06",
+      "claim": "強茂 2Q26 財報毛利率較 1Q26 上升，開始反映 4 月起功率元件漲價效應",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-08-31"
+      },
+      "category": "獲利能力",
+      "industry": "半導體業",
+      "confidence": 4,
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "MOSFET缺貨-2026-07-06-01",
+      "stock_id": "MOSFET缺貨",
+      "stock_name": "MOSFET缺貨(產業)",
+      "report": "MOSFET缺貨-產業分析-2026-07-06.md",
+      "predicted_on": "2026-07-06",
+      "claim": "2Q26 財報季 IDM 廠（強茂/台半/德微）毛利率改善幅度明顯優於 fabless 廠（大中/富鼎/杰力）",
+      "verifiable": {
+        "direction": "na",
+        "price_range": null,
+        "deadline": "2026-08-31"
+      },
+      "category": "獲利能力",
+      "industry": "半導體業",
+      "confidence": 3,
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "3016-2026-07-06-01",
+      "stock_id": "3016",
+      "stock_name": "嘉晶",
+      "report": "MOSFET缺貨-產業分析-2026-07-06.md",
+      "predicted_on": "2026-07-06",
+      "claim": "上游磊晶/代工（嘉晶、漢磊）2026 年 6、7 月營收年增率持續高於多數下游品牌廠（富鼎、杰力、尼克森）",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-08-15"
+      },
+      "category": "產業趨勢",
+      "industry": "半導體業",
+      "confidence": 4,
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "3707-2026-07-06-05",
+      "stock_id": "3707",
+      "stock_name": "漢磊",
+      "report": "MOSFET缺貨-產業分析-2026-07-06.md",
+      "predicted_on": "2026-07-06",
+      "claim": "漢磊與世界先進合作的 8 吋 SiC 於 2026 Q4 內完成客戶驗證（依公司對外時間表）",
+      "verifiable": {
+        "direction": "na",
+        "price_range": null,
+        "deadline": "2026-12-31"
+      },
+      "category": "量產時程",
+      "industry": "半導體業",
+      "confidence": 3,
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "2449-2026-07-06-01",
+      "stock_id": "2449",
+      "stock_name": "京元電子",
+      "report": "封測-產業分析-2026-07-06.md",
+      "predicted_on": "2026-07-06",
+      "claim": "未來兩季純測試廠營收年增持續高於封裝廠：京元電單月營收 YoY 持續高於日月光",
+      "verifiable": {
+        "direction": "na",
+        "price_range": null,
+        "deadline": "2027-01-10"
+      },
+      "category": "產業趨勢",
+      "industry": "半導體業",
+      "confidence": 4,
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "2449-2026-07-06-02",
+      "stock_id": "2449",
+      "stock_name": "京元電子",
+      "report": "封測-產業分析-2026-07-06.md",
+      "predicted_on": "2026-07-06",
+      "claim": "京元電單月營收年增在 2026 年 9 月（含）前維持 30% 以上",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-10-10"
+      },
+      "category": "獲利能力",
+      "industry": "半導體業",
+      "confidence": 4,
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "3711-2026-07-06-01",
+      "stock_id": "3711",
+      "stock_name": "日月光投控",
+      "report": "封測-產業分析-2026-07-06.md",
+      "predicted_on": "2026-07-06",
+      "claim": "日月光 LEAP 先進封裝 2026 全年營收達成公司上修後目標 35 億美元以上",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2027-02-15"
+      },
+      "category": "量產時程",
+      "industry": "半導體業",
+      "confidence": 3,
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "6257-2026-07-06-01",
+      "stock_id": "6257",
+      "stock_name": "矽格",
+      "report": "封測-產業分析-2026-07-06.md",
+      "predicted_on": "2026-07-06",
+      "claim": "矽格價值重估兌現：2026 年底收盤價高於 2026-07-06 現價 273 元",
+      "verifiable": {
+        "direction": "up",
+        "price_range": [
+          273,
+          340
+        ],
+        "deadline": "2026-12-31"
+      },
+      "category": "股價位置",
       "industry": "半導體業",
       "confidence": 2,
       "status": "pending",
