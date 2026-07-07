@@ -2326,6 +2326,63 @@
       "status": "pending",
       "verified_on": null,
       "evidence": null
+    },
+    {
+      "pid": "3363-2026-07-07-01",
+      "stock_id": "3363",
+      "stock_name": "上詮",
+      "report": "3363-財報-2026-07-07.md",
+      "predicted_on": "2026-07-07",
+      "claim": "2026 H2 月營收延續月增，Q3 單月挑戰破 2 億、年增由負轉正",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-09-30"
+      },
+      "category": "量產時程",
+      "industry": "通信網路業",
+      "confidence": 3,
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "3363-2026-07-07-02",
+      "stock_id": "3363",
+      "stock_name": "上詮",
+      "report": "3363-財報-2026-07-07.md",
+      "predicted_on": "2026-07-07",
+      "claim": "Q1 一次性認股費用(約1.27億)H2消失＋FAU放量，季度損益由虧轉盈或大幅收斂",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-12-31"
+      },
+      "category": "獲利能力",
+      "industry": "通信網路業",
+      "confidence": 3,
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "3363-2026-07-07-03",
+      "stock_id": "3363",
+      "stock_name": "上詮",
+      "report": "3363-財報-2026-07-07.md",
+      "predicted_on": "2026-07-07",
+      "claim": "現價631(位置約50%、近半年+49%)已反映H2 CPO放量預期，Q3兌現前追高風險報酬比不佳",
+      "verifiable": {
+        "direction": "na",
+        "price_range": null,
+        "deadline": "2026-09-30"
+      },
+      "category": "股價位置",
+      "industry": "通信網路業",
+      "confidence": 3,
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
     }
   ]
 }
