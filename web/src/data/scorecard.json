@@ -2530,6 +2530,114 @@
       "verified_on": null,
       "evidence": null,
       "confidence": 4
+    },
+    {
+      "pid": "2383-2026-07-08-01",
+      "stock_id": "2383",
+      "stock_name": "台光電",
+      "report": "CCL銅箔基板-產業分析-2026-07-08.md",
+      "predicted_on": "2026-07-08",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-11-30"
+      },
+      "category": "獲利能力",
+      "industry": "電子零組件業",
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null,
+      "confidence": 4
+    },
+    {
+      "pid": "6274-2026-07-08-01",
+      "stock_id": "6274",
+      "stock_name": "台燿",
+      "report": "CCL銅箔基板-產業分析-2026-07-08.md",
+      "predicted_on": "2026-07-08",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-12-31"
+      },
+      "category": "題材發酵",
+      "industry": "電子零組件業",
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null,
+      "confidence": 4
+    },
+    {
+      "pid": "6213-2026-07-08-01",
+      "stock_id": "6213",
+      "stock_name": "聯茂",
+      "report": "CCL銅箔基板-產業分析-2026-07-08.md",
+      "predicted_on": "2026-07-08",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-11-30"
+      },
+      "category": "獲利能力",
+      "industry": "電子零組件業",
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null,
+      "confidence": 3
+    },
+    {
+      "pid": "1815-2026-07-08-01",
+      "stock_id": "1815",
+      "stock_name": "富喬",
+      "report": "CCL銅箔基板-產業分析-2026-07-08.md",
+      "predicted_on": "2026-07-08",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-10-31"
+      },
+      "category": "產業趨勢",
+      "industry": "玻璃陶瓷",
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null,
+      "confidence": 3
+    },
+    {
+      "pid": "CCL銅箔基板-2026-07-08-01",
+      "stock_id": "CCL銅箔基板",
+      "stock_name": "CCL銅箔基板",
+      "report": "CCL銅箔基板-產業分析-2026-07-08.md",
+      "predicted_on": "2026-07-08",
+      "verifiable": {
+        "direction": "na",
+        "price_range": null,
+        "deadline": "2026-11-30"
+      },
+      "category": "產業趨勢",
+      "industry": "電子零組件業",
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null,
+      "confidence": 4
+    },
+    {
+      "pid": "CCL銅箔基板-2026-07-08-02",
+      "stock_id": "CCL銅箔基板",
+      "stock_name": "CCL銅箔基板",
+      "report": "CCL銅箔基板-產業分析-2026-07-08.md",
+      "predicted_on": "2026-07-08",
+      "verifiable": {
+        "direction": "flat",
+        "price_range": null,
+        "deadline": "2026-12-31"
+      },
+      "category": "股價位置",
+      "industry": "電子零組件業",
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null,
+      "confidence": 3
     }
   ]
 }
