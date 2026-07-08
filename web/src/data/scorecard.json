@@ -2692,6 +2692,63 @@
       "verified_on": null,
       "evidence": null,
       "confidence": 2
+    },
+    {
+      "pid": "3481-2026-07-08-01",
+      "stock_id": "3481",
+      "stock_name": "群創",
+      "report": "3481-快報-2026-07-08.md",
+      "predicted_on": "2026-07-08",
+      "claim": "2026 全年「本業」EPS（扣除賣廠等一次性業外）仍偏薄、預估 < 0.8 元",
+      "verifiable": {
+        "direction": "flat",
+        "price_range": null,
+        "deadline": "2027-03-31"
+      },
+      "category": "獲利能力",
+      "industry": "光電業",
+      "confidence": 4,
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "3481-2026-07-08-02",
+      "stock_id": "3481",
+      "stock_name": "群創",
+      "report": "3481-快報-2026-07-08.md",
+      "predicted_on": "2026-07-08",
+      "claim": "2026 年內群創不會出現「成為台積電 CoPoS 量產封裝供應商」的官方一手證實（題材停在自有 FOPLP＋賣廠）",
+      "verifiable": {
+        "direction": "na",
+        "price_range": null,
+        "deadline": "2026-12-31"
+      },
+      "category": "題材發酵",
+      "industry": "光電業",
+      "confidence": 3,
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "3481-2026-07-08-03",
+      "stock_id": "3481",
+      "stock_name": "群創",
+      "report": "3481-快報-2026-07-08.md",
+      "predicted_on": "2026-07-08",
+      "claim": "股價約 570 倍 PE、一年區間 85%+ 高位，題材若無一手兌現，H2 有明顯回檔風險",
+      "verifiable": {
+        "direction": "down",
+        "price_range": null,
+        "deadline": "2026-12-31"
+      },
+      "category": "股價位置",
+      "industry": "光電業",
+      "confidence": 3,
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
     }
   ]
 }
