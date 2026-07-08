@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-07",
+  "updated": "2026-07-08",
   "predictions": [
     {
       "pid": "2303-2026-06-27-01",
@@ -1768,9 +1768,9 @@
       },
       "category": "股價位置",
       "industry": "電機機械",
-      "status": "pending",
-      "verified_on": null,
-      "evidence": null,
+      "status": "hit",
+      "verified_on": "2026-07-08",
+      "evidence": "法說(2026-07-07)未給轉盈/毛利轉正指引；股價 7/3 249→7/8 210(-15.7%)、7/7 單日 -9.6%；三大法人賣超約 500 張(外資 -433、投信 0)；PB 約 11→約 9.3。回檔已實現。(來源:Yahoo 8027.TWO、TPEX OpenAPI 2026-07-07)",
       "confidence": 3
     },
     {
@@ -2383,6 +2383,153 @@
       "status": "pending",
       "verified_on": null,
       "evidence": null
+    },
+    {
+      "pid": "8027-2026-07-08-01",
+      "stock_id": "8027",
+      "stock_name": "鈦昇",
+      "report": "8027-法說會-2026-07-08.md",
+      "predicted_on": "2026-07-08",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2027-12-31"
+      },
+      "category": "量產時程",
+      "industry": "電機機械",
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null,
+      "confidence": 4
+    },
+    {
+      "pid": "8027-2026-07-08-02",
+      "stock_id": "8027",
+      "stock_name": "鈦昇",
+      "report": "8027-法說會-2026-07-08.md",
+      "predicted_on": "2026-07-08",
+      "verifiable": {
+        "direction": "flat",
+        "price_range": null,
+        "deadline": "2026-12-31"
+      },
+      "category": "獲利能力",
+      "industry": "電機機械",
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null,
+      "confidence": 4
+    },
+    {
+      "pid": "8027-2026-07-08-03",
+      "stock_id": "8027",
+      "stock_name": "鈦昇",
+      "report": "8027-法說會-2026-07-08.md",
+      "predicted_on": "2026-07-08",
+      "verifiable": {
+        "direction": "down",
+        "price_range": null,
+        "deadline": "2026-09-30"
+      },
+      "category": "股價位置",
+      "industry": "電機機械",
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null,
+      "confidence": 3
+    },
+    {
+      "pid": "8027-2026-07-08-04",
+      "stock_id": "8027",
+      "stock_name": "鈦昇",
+      "report": "8027-法說會-2026-07-08.md",
+      "predicted_on": "2026-07-08",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2027-06-30"
+      },
+      "category": "量產時程",
+      "industry": "電機機械",
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null,
+      "confidence": 3
+    },
+    {
+      "pid": "2481-2026-07-08-01",
+      "stock_id": "2481",
+      "stock_name": "強茂",
+      "report": "2481-快報-2026-07-08.md",
+      "predicted_on": "2026-07-08",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2027-03-31"
+      },
+      "category": "獲利能力",
+      "industry": "半導體業",
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null,
+      "confidence": 3
+    },
+    {
+      "pid": "2481-2026-07-08-02",
+      "stock_id": "2481",
+      "stock_name": "強茂",
+      "report": "2481-快報-2026-07-08.md",
+      "predicted_on": "2026-07-08",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-11-30"
+      },
+      "category": "獲利能力",
+      "industry": "半導體業",
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null,
+      "confidence": 4
+    },
+    {
+      "pid": "2481-2026-07-08-03",
+      "stock_id": "2481",
+      "stock_name": "強茂",
+      "report": "2481-快報-2026-07-08.md",
+      "predicted_on": "2026-07-08",
+      "verifiable": {
+        "direction": "down",
+        "price_range": [
+          150,
+          180
+        ],
+        "deadline": "2026-12-31"
+      },
+      "category": "股價位置",
+      "industry": "半導體業",
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null,
+      "confidence": 3
+    },
+    {
+      "pid": "2481-2026-07-08-04",
+      "stock_id": "2481",
+      "stock_name": "強茂",
+      "report": "2481-快報-2026-07-08.md",
+      "predicted_on": "2026-07-08",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-12-31"
+      },
+      "category": "題材發酵",
+      "industry": "半導體業",
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null,
+      "confidence": 4
     }
   ]
 }
