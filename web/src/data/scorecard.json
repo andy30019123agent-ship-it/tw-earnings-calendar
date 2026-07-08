@@ -2638,6 +2638,60 @@
       "verified_on": null,
       "evidence": null,
       "confidence": 3
+    },
+    {
+      "pid": "1815-2026-07-08-02",
+      "stock_id": "1815",
+      "stock_name": "富喬",
+      "report": "1815-快報-2026-07-08.md",
+      "predicted_on": "2026-07-08",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-11-30"
+      },
+      "category": "獲利能力",
+      "industry": "玻璃陶瓷",
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null,
+      "confidence": 4
+    },
+    {
+      "pid": "1815-2026-07-08-03",
+      "stock_id": "1815",
+      "stock_name": "富喬",
+      "report": "1815-快報-2026-07-08.md",
+      "predicted_on": "2026-07-08",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-12-31"
+      },
+      "category": "獲利能力",
+      "industry": "玻璃陶瓷",
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null,
+      "confidence": 3
+    },
+    {
+      "pid": "1815-2026-07-08-04",
+      "stock_id": "1815",
+      "stock_name": "富喬",
+      "report": "1815-快報-2026-07-08.md",
+      "predicted_on": "2026-07-08",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-12-31"
+      },
+      "category": "股價位置",
+      "industry": "玻璃陶瓷",
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null,
+      "confidence": 2
     }
   ]
 }
