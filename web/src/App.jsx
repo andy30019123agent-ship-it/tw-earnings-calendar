@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { CalendarDays } from 'lucide-react'
+import { CalendarDays, Compass } from 'lucide-react'
 import CalendarCard from './components/CalendarCard'
 import ReportList from './components/ReportList'
 import ReportLibrary from './components/ReportLibrary'
@@ -119,6 +119,21 @@ export default function App() {
         {loc.route === 'library' && <ReportLibrary />}
         {loc.route === 'scorecard' && <Scorecard />}
         {loc.route === 'report' && <ReportView slug={loc.slug} />}
+        {loc.route === 'notFound' && (
+          <section className="report-view-wrap">
+            <div className="report-not-found">
+              <Compass size={40} strokeWidth={1.5} className="report-not-found-icon" aria-hidden="true" />
+              <p className="report-not-found-title">找不到這個頁面</p>
+              <p className="report-not-found-hint">
+                這個網址不存在或已變更，請回首頁或報告庫重新開始。
+              </p>
+              <div className="not-found-actions">
+                <a href={pathFor('home')} className="btn-secondary">回首頁</a>
+                <a href={pathFor('library')} className="btn-secondary">前往報告庫</a>
+              </div>
+            </div>
+          </section>
+        )}
       </main>
 
       <footer className="app-footer">

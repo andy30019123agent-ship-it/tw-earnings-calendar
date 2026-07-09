@@ -55,7 +55,8 @@ export function parsePath(pathname) {
     }
     return { route: 'report', slug }
   }
-  return { route: 'home' }
+  // 無法辨識的路徑：回 notFound，由 App 顯示 404 視圖（別靜默假裝到了首頁）
+  return { route: 'notFound' }
 }
 
 /**

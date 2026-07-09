@@ -81,6 +81,14 @@ function main() {
   // dist/404.html：index 複本（通用 og），讓未預產生路徑落回 app
   fs.writeFileSync(path.join(DIST_DIR, '404.html'), indexHtml)
 
+  // /library、/scorecard 深連結：預產出實體頁（index 複本），讓伺服器直接回 200，
+  // 不必靠 404 fallback。noindex meta 隨 index.html 複本一併帶入。
+  for (const route of ['library', 'scorecard']) {
+    const dir = path.join(DIST_DIR, route)
+    fs.mkdirSync(dir, { recursive: true })
+    fs.writeFileSync(path.join(dir, 'index.html'), indexHtml)
+  }
+
   const files = fs.existsSync(REPORTS_DIR)
     ? fs.readdirSync(REPORTS_DIR).filter((f) => f.endsWith('.md'))
     : []
@@ -128,7 +136,7 @@ function main() {
     count++
   }
 
-  console.log(`[gen-report-pages] 產生 ${count} 篇報告 stub + 404.html`)
+  console.log(`[gen-report-pages] 產生 ${count} 篇報告 stub + 404.html + library/scorecard 深連結頁`)
 }
 
 main()

@@ -1,5 +1,19 @@
 import { useMemo, useState } from 'react'
-import { ArrowLeft, BarChart3, CalendarClock, CheckCircle2, ClipboardList, Clock, Gauge, XCircle } from 'lucide-react'
+import {
+  ArrowLeft,
+  BarChart3,
+  CalendarClock,
+  CheckCircle2,
+  ClipboardList,
+  Clock,
+  Gauge,
+  Signal,
+  SignalHigh,
+  SignalLow,
+  SignalMedium,
+  SignalZero,
+  XCircle,
+} from 'lucide-react'
 import scorecardData from '../data/scorecard.json'
 import { computeStats, sortByPredictedOnDesc, statsByDimension, uniqueStocks } from '../lib/scorecard'
 import { pathFor, slugFromFilename } from '../lib/router'
@@ -8,15 +22,29 @@ const STATUS_LABEL = { hit: '命中', miss: '未中', pending: '未到期' }
 const STATUS_ICON = { hit: CheckCircle2, miss: XCircle, pending: Clock }
 const STATUS_ORDER = ['hit', 'miss', 'pending']
 
-/** 5 級信心量表對照表：信心分數（1-5）→ 顯示標籤。 */
-const CONFIDENCE_LABEL = {
-  5: '🟢 很可能（~80%↑）',
-  4: '🟢 有機會（~60–80%）',
-  3: '🟡 一半一半（~40–60%）',
-  2: '🟠 偏低（~20–40%）',
-  1: '🔴 不太可能（~<20%）',
+/**
+ * 5 級信心量表對照表：信心分數（1-5）→ 訊號強度 icon（lucide）＋文字。
+ * 刻意不用 🟢🟡🟠🔴 交通燈 emoji：紅/綠是本站保留給漲跌的語意色，
+ * 信心不是漲跌，故改用「訊號強弱」的 lucide icon（單一色，靠格數表達高低）。
+ */
+const CONFIDENCE_META = {
+  5: { Icon: Signal, text: '很可能（~80%↑）' },
+  4: { Icon: SignalHigh, text: '有機會（~60–80%）' },
+  3: { Icon: SignalMedium, text: '一半一半（~40–60%）' },
+  2: { Icon: SignalLow, text: '偏低（~20–40%）' },
+  1: { Icon: SignalZero, text: '不太可能（~<20%）' },
 }
-const confidenceLabel = (level) => CONFIDENCE_LABEL[level] ?? `信心 ${level}`
+function confidenceLabel(level) {
+  const meta = CONFIDENCE_META[level]
+  if (!meta) return `信心 ${level}`
+  const { Icon, text } = meta
+  return (
+    <span className="conf-label">
+      <Icon size={16} strokeWidth={1.75} aria-hidden="true" />
+      {text}
+    </span>
+  )
+}
 
 /** 分維度統計卡：一列一個維度值，附命中率、細項與進度條。labelFor 可自訂列標籤顯示（預設直接顯示 key）。 */
 function DimensionCard({ title, rows, labelFor = (key) => key }) {
@@ -100,6 +128,10 @@ export default function Scorecard() {
         <div className="stat-tile sc-rate-tile">
           <div className="st-name">已判定命中率</div>
           <div className="st-value">{rateDisplay}</div>
+          <div className="sc-rate-sub">命中 {stats.hit}／已判定 {judgedCount}</div>
+          <div className="sc-rate-note">
+            未到期 {stats.pending} 筆不列入{judgedCount > 0 && judgedCount < 30 ? '・樣本仍少，僅供參考' : ''}
+          </div>
         </div>
         <div className="stat-tile">
           <div className="st-name">命中</div>

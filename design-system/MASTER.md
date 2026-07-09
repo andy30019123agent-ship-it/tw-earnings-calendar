@@ -48,6 +48,17 @@
 
 規則：漲跌數字一律 `--up`/`--down` ＋ font-weight 700；漲跌與 `--primary` 永不同時承擔「強調」語意（粉紅只做 UI 強調，不做行情語意）。
 
+### 成績單命中/未中專用色（刻意非紅非綠，避免與漲跌語意撞色）
+
+| Role | Hex | CSS Variable | 用法 |
+|------|-----|--------------|------|
+| Score Hit | `#B8125C` | `--score-hit` | 命中（主題粉，正向）；當文字色對白底 ≥4.5:1 |
+| Score Hit BG | `#FCE0EC` | `--score-hit-bg` | 命中 pill 底色 |
+| Score Miss | `#8A5E00` | `--score-miss` | 未中（中性琥珀，未達標但非「下跌」）；對白底 ≈5.7:1 |
+| Score Miss BG | `#FBEFD6` | `--score-miss-bg` | 未中 pill 底色 |
+
+規則：成績單 hit/miss **只能**用這組，**不得**借用 `--up`/`--down`（那是漲跌語意）；pending 用 `--flat`。信心量表不用 🟢🟡🟠🔴 交通燈，改用 lucide 訊號 icon（單色，靠格數表達高低）。
+
 ### 裝飾色塊（僅限 hero／空狀態的有機圓潤色塊，不進資料區）
 
 `#FFB1CC`（粉）、`#E7C6F5`（薰衣草紫）、`#FFD9A6`（杏）、`#F2E3ED`（霧粉）。柔和實心或 blur ≥ 60px 的光暈；禁止彩虹漸層。

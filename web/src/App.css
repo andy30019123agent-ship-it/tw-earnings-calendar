@@ -37,6 +37,14 @@
   --down-bg: #E7F4EE;
   --flat: #8A7A85;
 
+  /* ===== 成績單命中/未中專用色（刻意非紅非綠：紅綠保留給漲跌語意）=====
+     hit＝主題粉（正向）、miss＝中性琥珀（未達標但非「下跌」）、pending 沿用 --flat。
+     兩者當文字色對白底皆 ≥4.5:1（hit 4.6、miss 5.7）。 */
+  --score-hit: #B8125C;
+  --score-hit-bg: #FCE0EC;
+  --score-miss: #8A5E00;
+  --score-miss-bg: #FBEFD6;
+
   /* ===== 裝飾色塊（僅限 hero／空狀態，資料區不可用）===== */
   --deco-pink: #FFB1CC;
   --deco-lavender: #E7C6F5;
@@ -292,9 +300,11 @@ input, select { font-family: inherit; }
   font-weight: 700;
   color: var(--primary-ink);
   margin-bottom: 12px;
+  padding-top: 4px;
   padding-bottom: 8px;
   letter-spacing: 0.02em;
   border-bottom: 1px solid var(--border);
+  background: var(--surface);
 }
 
 .event-list {
@@ -306,9 +316,8 @@ input, select { font-family: inherit; }
 
 .event-item {
   display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 8px;
+  flex-direction: column;
+  gap: 6px;
   padding: 12px 16px;
   min-height: 44px;
   background: var(--surface);
@@ -324,6 +333,15 @@ input, select { font-family: inherit; }
   }
 }
 
+/* 兩排掃讀：上排 代號/名稱/市值，下排 類型/產業/市場 */
+.event-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-width: 0;
+}
+
 .event-code {
   font-family: 'Manrope', sans-serif;
   font-weight: 800;
@@ -332,7 +350,7 @@ input, select { font-family: inherit; }
 }
 
 .event-name {
-  flex: 1 1 140px;
+  flex: 1 1 120px;
   min-width: 0;
   overflow-wrap: anywhere;
   word-break: break-word;
@@ -340,8 +358,11 @@ input, select { font-family: inherit; }
   color: var(--ink);
 }
 
+.event-mktcap { margin-left: auto; }
+
 .event-industry,
-.event-mktcap {
+.event-mktcap,
+.event-market {
   font-size: .875rem;
   color: var(--ink-muted);
   font-weight: 600;
@@ -881,9 +902,14 @@ input, select { font-family: inherit; }
   color: var(--primary-ink);
 }
 
-/* ── 章節目錄 pill 列 ── */
+/* ── 章節目錄 pill 列（sticky mini 目錄 ＋ 閱讀進度條）── */
 .report-toc {
+  position: sticky;
+  top: 0;
+  z-index: 10;
   margin-bottom: 24px;
+  padding-top: 8px;
+  background: var(--surface);
 }
 
 .report-toc-scroll {
@@ -893,6 +919,23 @@ input, select { font-family: inherit; }
   -webkit-overflow-scrolling: touch;
   padding: 4px 2px;
   scrollbar-width: thin;
+}
+
+/* 閱讀進度條：整頁捲動百分比，scaleX 由 JS 帶入 */
+.report-toc-progress {
+  height: 3px;
+  margin-top: 8px;
+  border-radius: var(--r-pill);
+  background: var(--border);
+  overflow: hidden;
+}
+.report-toc-progress-fill {
+  height: 100%;
+  background: var(--primary);
+  border-radius: var(--r-pill);
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition: transform 120ms ease;
 }
 
 .report-toc-pill {
@@ -918,6 +961,13 @@ input, select { font-family: inherit; }
   color: var(--primary-ink);
 }
 
+/* 目前章節高亮 */
+.report-toc-pill.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--on-primary);
+}
+
 /* ── Prose (rendered markdown) ── */
 .prose {
   font-size: 1rem;
@@ -939,7 +989,8 @@ input, select { font-family: inherit; }
   font-weight: 800;
   margin: 1.3em 0 0.5em;
   color: var(--ink);
-  scroll-margin-top: 16px;
+  /* 讓 scrollIntoView 的標題不被 sticky mini 目錄蓋住（目錄高度約 64px） */
+  scroll-margin-top: 72px;
 }
 
 .prose h2, .prose h3 {
@@ -1098,9 +1149,27 @@ input, select { font-family: inherit; }
 }
 .sc-rate-tile .st-value { color: var(--primary-ink); }
 
-.sc-value-hit { color: var(--up); }
-.sc-value-miss { color: var(--down); }
-.sc-value-pending { color: var(--flat); }
+/* 用 .st-value.sc-value-* 提高特異度，蓋過 .stat-tile .st-value 的 --ink，
+   讓成績專用色實際顯示（單靠 .sc-value-* 會被 (0,2,0) 的 .stat-tile .st-value 蓋掉）。 */
+.st-value.sc-value-hit { color: var(--score-hit); }
+.st-value.sc-value-miss { color: var(--score-miss); }
+.st-value.sc-value-pending { color: var(--flat); }
+
+/* 主數字補充：命中/已判定 與 未到期註記 */
+.sc-rate-sub {
+  margin-top: 8px;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: .9375rem;
+  color: var(--primary-ink);
+  font-variant-numeric: tabular-nums;
+}
+.sc-rate-note {
+  margin-top: 4px;
+  font-size: .875rem;
+  color: var(--ink-muted);
+  line-height: 1.5;
+}
 
 .sc-note {
   margin-top: 16px;
@@ -1123,9 +1192,8 @@ input, select { font-family: inherit; }
   flex: 1 1 200px;
 }
 
-/* 狀態語意 pill：底色沿用紅漲綠跌語意，文字固定用 --ink 確保對比 ≥4.5:1
-   （--up/--down/--flat 直接當文字色在淡底上量測後對比僅 3.6~4.3，未達 4.5，
-   故只用於 icon —— icon 為裝飾用，WCAG 非文字圖形只需 3:1，符合規範）。 */
+/* 狀態語意 pill：命中/未中改用成績專用色（--score-hit/miss，非紅非綠），
+   文字固定用 --ink 確保對比 ≥4.5:1，icon 用成績色（非文字圖形只需 3:1）。 */
 .status-pill {
   display: inline-flex;
   align-items: center;
@@ -1138,12 +1206,20 @@ input, select { font-family: inherit; }
   color: var(--ink);
   white-space: nowrap;
 }
-.status-hit { background: var(--up-bg); }
-.status-hit svg { color: var(--up); flex: none; }
-.status-miss { background: var(--down-bg); }
-.status-miss svg { color: var(--down); flex: none; }
+.status-hit { background: var(--score-hit-bg); }
+.status-hit svg { color: var(--score-hit); flex: none; }
+.status-miss { background: var(--score-miss-bg); }
+.status-miss svg { color: var(--score-miss); flex: none; }
 .status-pending { background: var(--surface-tint); }
 .status-pending svg { color: var(--flat); flex: none; }
+
+/* 信心量表標籤：訊號 icon（單色）＋文字，色走主題 ink，不用紅綠交通燈 */
+.conf-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.conf-label svg { color: var(--primary-ink); flex: none; }
 
 .sc-claim {
   margin-top: 8px;
@@ -1247,7 +1323,7 @@ input, select { font-family: inherit; }
 
 .dim-bar-fill {
   height: 100%;
-  background: var(--up);
+  background: var(--score-hit);
   border-radius: var(--r-pill);
 }
 
@@ -1262,6 +1338,55 @@ input, select { font-family: inherit; }
   font-size: .875rem;
   color: var(--ink-muted);
   line-height: 1.6;
+}
+
+/* ── 行事曆錯誤態（與「暫無法說會」空狀態區分）── */
+.calendar-error {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 0;
+}
+.calendar-error svg { flex: none; color: var(--primary-ink); }
+
+/* ── 404 視圖動作列 ── */
+.not-found-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+.not-found-actions .btn-secondary { margin-top: 8px; }
+
+/* ── Mobile 專屬（≤767）：縮短 hero、統計併成小 pill、日期標題 sticky ── */
+@media (max-width: 767px) {
+  .hero { padding: 24px 16px; margin: 16px 0 24px; }
+  .hero-titles h1 { margin-top: 8px; }
+  .hero-titles .subtitle { margin-top: 4px; }
+
+  .hero .stat-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    max-width: none;
+    margin-top: 16px;
+  }
+  .hero .stat-tile {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: var(--r-pill);
+  }
+  .hero .stat-tile .st-name { margin-bottom: 0; font-size: .875rem; }
+  .hero .stat-tile .st-value { font-size: 1.375rem; }
+
+  .day-label {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+  }
 }
 
 /* ── Desktop ── */

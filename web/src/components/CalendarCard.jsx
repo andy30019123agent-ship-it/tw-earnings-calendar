@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { CalendarDays } from 'lucide-react'
+import { CalendarDays, TriangleAlert } from 'lucide-react'
 
 /**
  * 將 YYYY-MM-DD 格式轉成中文日期標題，例如 06/30（一）
@@ -72,6 +72,7 @@ export default function CalendarCard({ onStats }) {
       .catch(() => {
         setError(true)
         setGroupedEvents({})
+        if (onStats) onStats(null)
       })
   }, [])
 
@@ -100,8 +101,13 @@ export default function CalendarCard({ onStats }) {
         )}
       </h2>
 
-      {isEmpty ? (
-        <p className="placeholder">下週暫無行程{error ? '（資料讀取失敗）' : ''}</p>
+      {error ? (
+        <p className="error-note calendar-error" role="alert">
+          <TriangleAlert size={18} strokeWidth={1.75} aria-hidden="true" />
+          資料讀取失敗，請稍後再試。
+        </p>
+      ) : isEmpty ? (
+        <p className="placeholder">下週暫無法說會</p>
       ) : (
         <div className="calendar-days">
           {dates.map((date) => (
@@ -110,19 +116,26 @@ export default function CalendarCard({ onStats }) {
               <ul className="event-list">
                 {groupedEvents[date].map((ev, i) => (
                   <li key={i} className="event-item">
-                    <span className="event-code">{ev.id ?? ev.stock_id ?? '—'}</span>
-                    <span className="event-name">{ev.name ?? ev.stock_name ?? '—'}</span>
-                    <span className={`event-type tag tag-${ev.type === '法說會' ? 'conf' : 'earn'}`}>
-                      {ev.type ?? '—'}
-                    </span>
-                    {ev.industry && (
-                      <span className="event-industry">{ev.industry}</span>
-                    )}
-                    {ev.market_cap ? (
-                      <span className="event-mktcap">
-                        {Math.round(ev.market_cap)} 億{ev.cap_is_estimate ? '(估)' : ''}
+                    <div className="event-row event-row-main">
+                      <span className="event-code">{ev.id ?? ev.stock_id ?? '—'}</span>
+                      <span className="event-name">{ev.name ?? ev.stock_name ?? '—'}</span>
+                      {ev.market_cap ? (
+                        <span className="event-mktcap">
+                          {Math.round(ev.market_cap)} 億{ev.cap_is_estimate ? '(估)' : ''}
+                        </span>
+                      ) : null}
+                    </div>
+                    <div className="event-row event-row-sub">
+                      <span className={`event-type tag tag-${ev.type === '法說會' ? 'conf' : 'earn'}`}>
+                        {ev.type ?? '—'}
                       </span>
-                    ) : null}
+                      {ev.industry && (
+                        <span className="event-industry">{ev.industry}</span>
+                      )}
+                      {ev.market && (
+                        <span className="event-market">{ev.market}</span>
+                      )}
+                    </div>
                   </li>
                 ))}
               </ul>
