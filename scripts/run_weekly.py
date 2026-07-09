@@ -111,9 +111,12 @@ def run_weekly(today: date | None = None) -> dict:
         print(f"[SKIP] 週窗口 {start} 已推播過，冪等跳過重複推播")
     else:
         message = build_calendar_message(events, start, end)
-        push_all(message)
-        state["weekly_calendar"] = start
-        _save_notify_state(state)
+        # 推播成功（至少一管道）才寫冪等 state；全失敗則不寫，讓下次 cron 重試（否則會漏掉整週推播）
+        if push_all(message):
+            state["weekly_calendar"] = start
+            _save_notify_state(state)
+        else:
+            print(f"[WARN] 週窗口 {start} 推播全部失敗，不寫入 state，下次 cron 會重試")
 
     return {"count": len(events), "start": start, "end": end}
 

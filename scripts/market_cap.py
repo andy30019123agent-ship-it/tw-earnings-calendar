@@ -87,8 +87,12 @@ def refresh_shares() -> dict:
         except Exception:
             pass
 
-    _CACHE_PATH.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
-    return result
+    # 與舊快取 merge：若某來源（TWSE 或 TPEX）本次抓取失敗，該市場的股數不會出現在
+    # result 裡；直接覆寫會把上次成功抓到的股數洗掉（隔週該市場市值消失）。先讀舊檔再
+    # 以新值覆蓋，讓「部分來源暫時失敗」不會弄丟另一市場的既有資料。
+    merged = {**load_shares(), **result}
+    _CACHE_PATH.write_text(json.dumps(merged, ensure_ascii=False, indent=2), encoding="utf-8")
+    return merged
 
 
 # ── 價格 helpers（module-level 以支援 monkeypatch） ────────────────────────

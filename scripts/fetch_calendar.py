@@ -142,13 +142,19 @@ def fetch_events(start_iso: str, end_iso: str) -> list[CalendarEvent]:
     }
     all_events: list[CalendarEvent] = []
 
+    # 跨年防護：MOPS 是「整年查詢」，若週窗口跨年（如 12/28~1/3），只查 end 年會漏掉
+    # 前一年 12 月的場次。改成涵蓋 start~end 的每個西元年各查一次，parse_events 會依
+    # [start_iso, end_iso] 過濾、且各年表格不重疊，故合併不會重複。同年週只查一次、無回歸。
+    years = sorted({int(start_iso[:4]), int(end_iso[:4])})
+
     for typek, market_label in _MARKET_MAP.items():
-        raw = get_text(_MOPS_URL, data=_build_body(typek, end_iso), headers=headers)
-        if not raw:
-            raise CalendarFetchError(
-                f"MOPS 抓取 {market_label}（{typek}）失敗，無法繼續，不推出空表。"
-            )
-        events = parse_events(raw, start_iso, end_iso, market=market_label)
-        all_events.extend(events)
+        for year in years:
+            raw = get_text(_MOPS_URL, data=_build_body(typek, f"{year}-12-31"), headers=headers)
+            if not raw:
+                raise CalendarFetchError(
+                    f"MOPS 抓取 {market_label}（{typek}，{year}）失敗，無法繼續，不推出空表。"
+                )
+            events = parse_events(raw, start_iso, end_iso, market=market_label)
+            all_events.extend(events)
 
     return all_events

@@ -12,7 +12,7 @@ def _post(url, payload):
             data=data,
             headers={'Content-Type': 'application/json'}
         )
-        with urllib.request.urlopen(req) as response:
+        with urllib.request.urlopen(req, timeout=10) as response:
             return 200 <= response.status < 300
     except Exception:
         return False
@@ -80,13 +80,17 @@ def push_discord(text):
 
 
 def push_all(text):
-    """Push text to both Telegram and Discord. Each error is swallowed independently."""
+    """Push text to both Telegram and Discord. Each error is swallowed independently.
+    回傳 True 代表「至少一個管道成功」；兩個都失敗（或都沒設定）回 False，
+    讓呼叫端據此決定要不要寫入 notify_state（避免推播失敗卻被冪等旗標標記成已推）。"""
     try:
-        push_telegram(text)
+        tg = push_telegram(text)
     except Exception:
-        pass
+        tg = False
 
     try:
-        push_discord(text)
+        dc = push_discord(text)
     except Exception:
-        pass
+        dc = False
+
+    return bool(tg or dc)

@@ -72,7 +72,7 @@ def test_run_weekly_idempotent_same_window_pushes_once(monkeypatch, tmp_path):
     monkeypatch.setattr(rw, "refresh_industry", lambda: None)
     monkeypatch.setattr(rw, "enrich_industry", lambda evs: evs)
     calls = []
-    monkeypatch.setattr(rw, "push_all", lambda t: calls.append(t))
+    monkeypatch.setattr(rw, "push_all", lambda t: calls.append(t) or True)
     monkeypatch.setattr(rw, "LATEST_PATH", tmp_path / "latest.json")
     monkeypatch.setattr(rw, "STATE_PATH", tmp_path / "notify_state.json")
 
@@ -85,6 +85,28 @@ def test_run_weekly_idempotent_same_window_pushes_once(monkeypatch, tmp_path):
     # 下一週窗口是新的，應照常推播
     rw.run_weekly(today=date(2026, 7, 4))
     assert len(calls) == 2
+
+
+def test_run_weekly_push_failure_does_not_mark_pushed_and_retries(monkeypatch, tmp_path):
+    """推播全部失敗（push_all 回 False）時不得寫入冪等旗標，同窗口下次 cron 要能重試。"""
+    e = CalendarEvent("2330", "台積電", "上市", "半導體", "2026-07-01", "法說會", 285000.0, False)
+    monkeypatch.setattr(rw, "fetch_events", lambda s, en: [e])
+    monkeypatch.setattr(rw, "enrich_market_cap", lambda evs: evs)
+    monkeypatch.setattr(rw, "load_shares", lambda: {"2330": 25930380458})
+    monkeypatch.setattr(rw, "refresh_shares", lambda: None)
+    monkeypatch.setattr(rw, "refresh_industry", lambda: None)
+    monkeypatch.setattr(rw, "enrich_industry", lambda evs: evs)
+    calls = []
+    monkeypatch.setattr(rw, "push_all", lambda t: (calls.append(t), False)[1])  # 記錄但回 False＝全失敗
+    monkeypatch.setattr(rw, "LATEST_PATH", tmp_path / "latest.json")
+    monkeypatch.setattr(rw, "STATE_PATH", tmp_path / "notify_state.json")
+
+    rw.run_weekly(today=date(2026, 6, 27))
+    rw.run_weekly(today=date(2026, 6, 27))  # 失敗後同窗口 cron 重跑
+
+    assert len(calls) == 2, "推播失敗後同窗口應重試，不得被冪等旗標擋掉"
+    state = json.loads((tmp_path / "notify_state.json").read_text()) if (tmp_path / "notify_state.json").exists() else {}
+    assert state.get("weekly_calendar") is None, "推播失敗不得寫入 weekly_calendar 冪等旗標"
 
 
 # ── 失敗路徑（CalendarFetchError） ────────────────────────────────────────

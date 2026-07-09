@@ -72,10 +72,13 @@ def run_today_broadcast(today_iso: Optional[str] = None) -> bool:
     if not todays:
         return False
 
-    push_all(_build_today_broadcast(todays))
-    state["today_broadcast"] = today_iso
-    _save_notify_state(state)
-    return True
+    # 推播成功才寫冪等旗標；失敗則不寫，讓下次 cron 重試（否則整日廣播漏掉）
+    if push_all(_build_today_broadcast(todays)):
+        state["today_broadcast"] = today_iso
+        _save_notify_state(state)
+        return True
+    print(f"[WARN] {today_iso} 今日廣播推播失敗，不寫 state，下次 cron 重試")
+    return False
 
 
 def run_daily(today_iso: Optional[str] = None) -> int:
@@ -101,9 +104,12 @@ def run_daily(today_iso: Optional[str] = None) -> int:
         signal_line = fetch_screener_signal(item["id"])
         if signal_line:
             msg = f"{msg}\n{signal_line}"
-        push_all(msg)
-        set_status(item["id"], "event_passed")
-        count += 1
+        # 推播成功才標記 event_passed，否則保留 watching 讓下次 cron 重試（避免提醒漏發卻被當已提醒）
+        if push_all(msg):
+            set_status(item["id"], "event_passed")
+            count += 1
+        else:
+            print(f"[WARN] {item['id']} 到期提醒推播失敗，保留 watching，下次 cron 重試")
 
     return count
 
