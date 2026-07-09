@@ -968,6 +968,405 @@ input, select { font-family: inherit; }
   color: var(--on-primary);
 }
 
+/* 章節 pill 分「先看／深入」兩組 */
+.report-toc-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.report-toc-group + .report-toc-group { margin-top: 6px; }
+.report-toc-group-label {
+  flex-shrink: 0;
+  font-family: 'Manrope', sans-serif;
+  font-size: .8125rem;
+  font-weight: 800;
+  color: var(--ink-muted);
+  padding: 0 2px;
+}
+
+/* ═══ 決策儀表板（讀 decision，缺則整塊不顯示；see DecisionDashboard.jsx）═══ */
+.decision-dashboard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 20px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.dd-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 12px;
+}
+
+/* 立場色塊：只走 score/中性系，絕不用漲跌紅綠 */
+.dd-stance {
+  flex: 1 1 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px 18px;
+  border-radius: var(--r-md);
+  border: 1px solid var(--border);
+}
+.dd-stance-label {
+  font-size: .8125rem;
+  font-weight: 500;
+  color: var(--ink-muted);
+}
+.dd-stance-value {
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1.15;
+}
+.dd-stance-tf {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  align-self: flex-start;
+  margin-top: 4px;
+  padding: 3px 10px;
+  border-radius: var(--r-pill);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  font-size: .8125rem;
+  color: var(--ink-body);
+}
+.dd-stance-tf svg { flex: none; }
+
+/* 立場語意（非紅綠）：偏多＝主題粉正向、警示＝中性琥珀、觀望＝中性灰 */
+.stance-bull {
+  background: var(--score-hit-bg);
+  border-color: var(--score-hit-bg);
+}
+.stance-bull .dd-stance-value { color: var(--score-hit); }
+.stance-bear {
+  background: var(--score-miss-bg);
+  border-color: var(--score-miss-bg);
+}
+.stance-bear .dd-stance-value { color: var(--score-miss); }
+.stance-hold {
+  background: var(--surface-tint);
+  border-color: var(--surface-tint);
+}
+.stance-hold .dd-stance-value { color: var(--ink); }
+
+.dd-confidence {
+  flex: 1 1 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 18px;
+  border-radius: var(--r-md);
+  background: var(--surface-tint);
+}
+.dd-mini-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: .875rem;
+  font-weight: 500;
+  color: var(--ink-muted);
+}
+.dd-mini-label svg { flex: none; color: var(--primary-ink); }
+
+/* 信心 5 格條 */
+.conf-bar { display: flex; align-items: center; gap: 10px; }
+.conf-segs { display: flex; gap: 5px; flex: 1; }
+.conf-seg {
+  flex: 1;
+  height: 12px;
+  border-radius: var(--r-sm);
+  background: var(--border);
+}
+.conf-seg.on { background: var(--primary); }
+.conf-num {
+  font-family: 'Manrope', sans-serif;
+  font-size: .9375rem;
+  font-weight: 800;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+/* 合理價刻度條 */
+.dd-valuation { display: flex; flex-direction: column; gap: 12px; }
+.dd-val-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.dd-price {
+  font-size: .9375rem;
+  color: var(--ink-body);
+  font-variant-numeric: tabular-nums;
+}
+.dd-price b { font-family: 'Manrope', sans-serif; font-weight: 800; color: var(--ink); }
+
+.dd-range { padding: 0 4px; }
+.dd-range-track {
+  position: relative;
+  height: 8px;
+  border-radius: var(--r-pill);
+  background: linear-gradient(90deg, var(--surface-tint), var(--primary-tint));
+  margin: 22px 0 8px;
+}
+.dd-range-mid {
+  position: absolute;
+  top: -4px;
+  width: 2px;
+  height: 16px;
+  border-radius: var(--r-pill);
+  background: var(--primary-ink);
+  transform: translateX(-1px);
+}
+.dd-range-price {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.dd-range-price-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--primary);
+  border: 2px solid var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+.dd-range-price-tag {
+  position: absolute;
+  bottom: 14px;
+  font-size: .875rem;
+  font-weight: 700;
+  color: var(--primary-ink);
+  white-space: nowrap;
+}
+.dd-range-scale {
+  display: flex;
+  justify-content: space-between;
+  font-size: .8125rem;
+  color: var(--ink-body);
+  font-variant-numeric: tabular-nums;
+}
+.dd-range-scale span { display: flex; flex-direction: column; }
+.dd-range-scale i { font-style: normal; font-size: .875rem; color: var(--ink-muted); }
+.dd-range-scale-mid { align-items: center; }
+.dd-range-scale-hi { align-items: flex-end; }
+
+.dd-range-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.dd-chip {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: var(--r-pill);
+  background: var(--surface-tint);
+  font-size: .9375rem;
+  font-weight: 700;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+.dd-chip i { font-style: normal; font-size: .875rem; font-weight: 500; color: var(--ink-muted); }
+
+/* 進場 / 停損 / 停利：三條橫的、上中下堆疊（每排標籤在左、內容填滿右側不擠） */
+.dd-levels {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+.dd-level {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: var(--r-md);
+  background: var(--surface-tint);
+  min-width: 0;
+}
+.dd-level-k { flex: 0 0 auto; }
+.dd-level-v { flex: 1 1 auto; min-width: 0; }
+.dd-level-k {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: .8125rem;
+  color: var(--ink-muted);
+}
+.dd-level-k svg { flex: none; color: var(--primary-ink); }
+.dd-level-v {
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.0625rem;
+  font-weight: 800;
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+
+/* 翻盤條件 / 下一事件 */
+.dd-note {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  font-size: .9375rem;
+  line-height: 1.6;
+  color: var(--ink-body);
+}
+.dd-note-k {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  flex-shrink: 0;
+  font-size: .8125rem;
+  font-weight: 700;
+  color: var(--primary-ink);
+}
+.dd-note-k svg { flex: none; }
+.dd-note-v { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+
+/* ═══ 關鍵數字卡（讀 key_stats，橫向可捲）═══ */
+.key-stats { margin-bottom: 24px; }
+.key-stats-scroll {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 2px;
+  scrollbar-width: thin;
+}
+.ks-card {
+  flex: 0 0 auto;
+  min-width: 128px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 14px 16px;
+  border-radius: var(--r-md);
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+.ks-label { font-size: .8125rem; color: var(--ink-muted); }
+.ks-value {
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+.ks-status {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 10px;
+  border-radius: var(--r-pill);
+  font-size: .8125rem;
+  font-weight: 700;
+}
+.ks-status svg { flex: none; }
+/* status 色標：便宜＝正向粉、合理＝中性、偏貴/危險＝警示琥珀（非紅綠）*/
+.stat-cheap .ks-status { background: var(--score-hit-bg); color: var(--score-hit); }
+.stat-fair .ks-status { background: var(--surface-tint); color: var(--ink-muted); }
+.stat-expensive .ks-status { background: var(--score-miss-bg); color: var(--score-miss); }
+.stat-danger { border-color: var(--border-strong); }
+.stat-danger .ks-status { background: var(--score-miss-bg); color: var(--score-miss); border: 1px solid var(--score-miss); }
+
+/* ═══ 進階洞察折疊（details）═══ */
+.report-advanced {
+  margin: 1.9em 0 0.5em;
+  scroll-margin-top: 72px;
+}
+.report-advanced-summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0.4em 0;
+  border-bottom: 2px solid var(--border);
+  cursor: pointer;
+  list-style: none;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: var(--ink);
+}
+.report-advanced-summary::-webkit-details-marker { display: none; }
+.report-advanced-summary .h-icon { flex-shrink: 0; color: var(--primary-ink); display: inline-flex; }
+.report-advanced-chevron {
+  margin-left: auto;
+  color: var(--ink-muted);
+  display: inline-flex;
+  transition: transform 200ms ease;
+}
+.report-advanced[open] .report-advanced-chevron { transform: rotate(180deg); }
+.report-advanced-body { padding-top: 0.2em; }
+
+/* 內文標記 emoji 弱化成小標籤 */
+.emoji-mark { font-size: .85em; opacity: .7; }
+
+/* ═══ 手機底部常駐條（立場＋停損＋下一事件）═══ */
+.bottom-decision-bar { display: none; }
+@media (max-width: 767px) {
+  .bottom-decision-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: fixed;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    bottom: calc(8px + env(safe-area-inset-bottom, 0px));
+    z-index: 40;
+    padding: 10px 14px;
+    border-radius: var(--r-pill);
+    background: var(--surface-deep);
+    color: var(--on-deep);
+    box-shadow: var(--shadow-lg);
+    font-size: .875rem;
+  }
+  .bottom-decision-bar b { font-family: 'Manrope', sans-serif; font-weight: 800; }
+  .bdb-stance {
+    flex-shrink: 0;
+    padding: 4px 12px;
+    border-radius: var(--r-pill);
+    font-weight: 800;
+    font-size: .875rem;
+  }
+  /* 常駐條在深色底：立場用 tint 底＋深字維持對比 */
+  .bdb-stance.stance-bull { background: var(--score-hit-bg); color: var(--score-hit); }
+  .bdb-stance.stance-bear { background: var(--score-miss-bg); color: var(--score-miss); }
+  .bdb-stance.stance-hold { background: var(--surface-tint); color: var(--ink); }
+  .bdb-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    min-width: 0;
+  }
+  .bdb-item svg { flex: none; opacity: .85; }
+  .bdb-k { opacity: .8; }
+  .bdb-next { flex: 1; overflow: hidden; }
+  .bdb-v {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  /* 底部條會蓋住內容，報告尾端留出空間 */
+  .report-view-wrap { padding-bottom: 84px; }
+}
+
 /* ── Prose (rendered markdown) ── */
 .prose {
   font-size: 1rem;

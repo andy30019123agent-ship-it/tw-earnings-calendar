@@ -59,6 +59,30 @@ describe('renderReportMarkdown', () => {
     expect(toc).toHaveLength(1)
   })
 
+  it('toc 標上「先看(primary)／深入(deep)」分組', () => {
+    const body = `## 0. 操作結論\na\n\n## 估值面\nb\n\n## 財務品質紅旗\nc\n`
+    const { toc } = renderReportMarkdown(body)
+    const g = Object.fromEntries(toc.map((t) => [t.label, t.group]))
+    expect(g['操作結論']).toBe('primary')
+    expect(g['估值面']).toBe('primary')
+    expect(g['財務品質紅旗']).toBe('deep')
+  })
+
+  it('進階洞察（含舊名深度延伸）章節包進 <details> 折疊', () => {
+    const { html } = renderReportMarkdown('## 進階洞察\n供應鏈內容\n\n## 來源彙整\nx\n')
+    expect(html).toContain('<details class="report-advanced"')
+    expect(html).toContain('report-advanced-summary')
+    expect(html).toContain('供應鏈內容')
+    // 折疊區塊保留原 h2 的 id，供目錄 scrollIntoView
+    expect(html).toMatch(/<details class="report-advanced" id="rh-\d+"/)
+  })
+
+  it('內文標記 emoji 弱化成 .emoji-mark 小標籤', () => {
+    const { html } = renderReportMarkdown('段落 ✅ 命中 🔮 想像\n')
+    expect(html).toContain('<span class="emoji-mark">✅</span>')
+    expect(html).toContain('<span class="emoji-mark">🔮</span>')
+  })
+
   it('table 外面包一層 .table-scroll 容器', () => {
     const body = `| a | b |\n|---|---|\n| 1 | 2 |\n`
     const { html } = renderReportMarkdown(body)

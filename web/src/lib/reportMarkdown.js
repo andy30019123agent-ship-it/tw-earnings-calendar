@@ -109,6 +109,7 @@ const ICON_NODES = {
       },
     ],
   ],
+  'chevron-down': [['path', { d: 'm6 9 6 6 6-6' }]],
 }
 
 /** 產生一顆 Lucide 風格的 inline SVG 字串（stroke 1.75，跟全站 icon 一致）。 */
@@ -145,9 +146,23 @@ const EMOJI_ICON_MAP = {
 // 開頭 emoji（unicode pictographic + 可選 VS16）＋其後空白
 const LEADING_EMOJI_RE = /^(\p{Extended_Pictographic}️?)[ \t]*/u
 
+// 「先看」組：決策價值高的章節（契約 §4）。認不出的一律歸「深入」。
+const PRIMARY_SECTION_RE = /操作結論|一句話|關鍵矛盾|估值|催化劑|多空/
+
+/** 依 h2 原始標題判斷章節屬「先看(primary)」或「深入(deep)」。 */
+function sectionGroup(rawText) {
+  const t = rawText
+    .replace(LEADING_EMOJI_RE, '')
+    .replace(/^\d+\.\s*/, '')
+    .trim()
+  return PRIMARY_SECTION_RE.test(t) ? 'primary' : 'deep'
+}
+
 /** 目錄 pill 標籤清理：去開頭 emoji、去「（請先讀）」類註記、截 8 字內。 */
 function cleanTocLabel(rawText) {
   let text = rawText.replace(LEADING_EMOJI_RE, '').trim()
+  // 去掉章節編號前綴（新章節慣例「## 0. 操作結論」）：0. / 3、 都算
+  text = text.replace(/^\d+[.、]\s*/, '').trim()
   // 去掉「請先讀」類提示性註記（全形/半形括號都算）
   text = text.replace(/[（(]請先讀[）)]/g, '').trim()
   if (!text) return ''
@@ -189,7 +204,7 @@ function createReportRenderer() {
 
     if (depth === 2) {
       const label = cleanTocLabel(text)
-      if (label) toc.push({ id, label })
+      if (label) toc.push({ id, label, group: sectionGroup(text) })
     }
 
     return `<h${depth} id="${id}">${iconPrefix}${inlineHtml}</h${depth}>\n`
@@ -202,14 +217,58 @@ function createReportRenderer() {
   return { renderer, getToc: () => toc }
 }
 
+// 「進階洞察」章節（含舊名「深度延伸」）預設折疊（契約 §4）。
+const ADVANCED_SECTION_RE = /進階洞察|深度延伸/
+
+/**
+ * 把「進階洞察／深度延伸」這個 h2 章節（標題＋到下一個 h2 前的所有內容）
+ * 包進 <details> 收合。其餘章節原樣保留。找不到就整段不動（舊報告降級）。
+ */
+function collapseAdvancedSection(html) {
+  // 以每個 <h2 為界切段，段 = 該 h2 標題 + 其後直到下一個 h2 的內容
+  const parts = html.split(/(?=<h2 )/)
+  return parts
+    .map((part) => {
+      if (!part.startsWith('<h2 ')) return part
+      const headClose = part.indexOf('</h2>')
+      if (headClose === -1) return part
+      const tagClose = part.indexOf('>')
+      const openTag = part.slice(0, tagClose + 1)
+      const inner = part.slice(tagClose + 1, headClose) // 標題內層 html（icon + 文字）
+      const textOnly = inner.replace(/<[^>]+>/g, '')
+      if (!ADVANCED_SECTION_RE.test(textOnly)) return part
+      const idMatch = openTag.match(/id="([^"]*)"/)
+      const idAttr = idMatch ? ` id="${idMatch[1]}"` : ''
+      const rest = part.slice(headClose + 5)
+      const chevron = `<span class="report-advanced-chevron" aria-hidden="true">${iconSvg('chevron-down', { size: 20 })}</span>`
+      return (
+        `<details class="report-advanced"${idAttr}>` +
+        `<summary class="report-advanced-summary">${inner}${chevron}</summary>` +
+        `<div class="report-advanced-body">${rest}</div>` +
+        `</details>`
+      )
+    })
+    .join('')
+}
+
+// 內文裡的標記 emoji（✅🔮🟡…）弱化成小標籤，不搶重點（契約 §4）。
+const INLINE_EMOJI_RE = /(✅|🔮|🟡|🟢|🔴|⚠️|🆕|💡)/gu
+
+/** 把內文標記 emoji 包進 .emoji-mark 小標籤（縮小＋降透明）。 */
+function deemphasizeInlineEmojis(html) {
+  return html.replace(INLINE_EMOJI_RE, '<span class="emoji-mark">$1</span>')
+}
+
 /**
  * 把報告 markdown 內文轉成 HTML，並回傳目錄（h2 清單）。
  * @param {string} body 已去除 frontmatter 的 markdown 內文
- * @returns {{ html: string, toc: Array<{id:string,label:string}> }}
+ * @returns {{ html: string, toc: Array<{id:string,label:string,group:string}> }}
  */
 export function renderReportMarkdown(body) {
   const { renderer, getToc } = createReportRenderer()
-  const html = marked(body || '', { renderer })
+  let html = marked(body || '', { renderer })
+  html = collapseAdvancedSection(html)
+  html = deemphasizeInlineEmojis(html)
   return { html, toc: getToc() }
 }
 

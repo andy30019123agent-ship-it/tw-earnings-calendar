@@ -4,6 +4,9 @@ import { useEffect, useState } from 'react'
  * 章節目錄 pill 列（sticky mini 目錄）。點擊捲動到對應標題（用 scrollIntoView，不碰 URL）。
  * 另加：捲動時「目前章節」高亮 + 一條閱讀進度條。
  *
+ * 分組（契約 §4）：pill 依 toc[].group 分「先看(primary)／深入(deep)」兩排。
+ * 降級：若沒有任何 primary 章節（舊報告），退化成單排不分組顯示，不破版。
+ *
  * 為什麼用 button 而不是 <a href="#rh-x">：App.jsx 用真實路徑路由並全域攔截站內
  * <a> 點擊（見 lib/router.js），in-page 錨點連結會被誤攔成路由跳轉。改用
  * button + scrollIntoView 完全不動 URL，天然安全。
@@ -52,24 +55,44 @@ export default function ReportToc({ toc }) {
     document.getElementById(id)?.scrollIntoView()
   }
 
+  const primary = toc.filter((t) => t.group === 'primary')
+  const deep = toc.filter((t) => t.group !== 'primary')
+  // 有 primary 才分組；否則（舊報告）退化成單排不分組
+  const grouped = primary.length > 0
+
+  const renderPill = (item) => {
+    const isActive = activeId === item.id
+    return (
+      <button
+        key={item.id}
+        type="button"
+        className={`report-toc-pill${isActive ? ' active' : ''}`}
+        aria-current={isActive ? 'true' : undefined}
+        onClick={() => handleClick(item.id)}
+      >
+        {item.label}
+      </button>
+    )
+  }
+
   return (
     <nav className="report-toc" aria-label="報告章節目錄">
-      <div className="report-toc-scroll">
-        {toc.map((item) => {
-          const isActive = activeId === item.id
-          return (
-            <button
-              key={item.id}
-              type="button"
-              className={`report-toc-pill${isActive ? ' active' : ''}`}
-              aria-current={isActive ? 'true' : undefined}
-              onClick={() => handleClick(item.id)}
-            >
-              {item.label}
-            </button>
-          )
-        })}
-      </div>
+      {grouped ? (
+        <>
+          <div className="report-toc-group">
+            <span className="report-toc-group-label">先看</span>
+            <div className="report-toc-scroll">{primary.map(renderPill)}</div>
+          </div>
+          {deep.length > 0 && (
+            <div className="report-toc-group">
+              <span className="report-toc-group-label">深入</span>
+              <div className="report-toc-scroll">{deep.map(renderPill)}</div>
+            </div>
+          )}
+        </>
+      ) : (
+        <div className="report-toc-scroll">{toc.map(renderPill)}</div>
+      )}
       <div className="report-toc-progress" aria-hidden="true">
         <div className="report-toc-progress-fill" style={{ transform: `scaleX(${progress})` }} />
       </div>

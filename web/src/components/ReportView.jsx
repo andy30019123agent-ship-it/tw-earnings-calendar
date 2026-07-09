@@ -5,6 +5,9 @@ import { TYPE_LABEL, typeColorClass } from '../lib/reportTypes'
 import { pathFor, slugFromFilename } from '../lib/router'
 import ReportHighlightCard from './ReportHighlightCard'
 import ReportToc from './ReportToc'
+import DecisionDashboard from './DecisionDashboard'
+import KeyStatsStrip from './KeyStatsStrip'
+import BottomDecisionBar from './BottomDecisionBar'
 
 const SITE_TITLE = '台股法說會行事曆'
 
@@ -150,6 +153,8 @@ export default function ReportView({ slug }) {
         <div className="report-view-date">{report.date}</div>
       </header>
 
+      <DecisionDashboard decision={report.decision} />
+      <KeyStatsStrip keyStats={report.keyStats} />
       <ReportHighlightCard highlights={report.highlights} />
       <ReportToc toc={report.toc} />
 
@@ -166,6 +171,8 @@ export default function ReportView({ slug }) {
       <footer className="report-view-footer">
         僅供研究參考，非投資建議。
       </footer>
+
+      <BottomDecisionBar decision={report.decision} />
     </article>
   )
 }
