@@ -1,198 +1,88 @@
 {
-  "updated": "2026-07-08T19:16:35.686155+08:00",
+  "updated": "2026-07-11T10:53:58.030126+08:00",
   "range": [
-    "2026-07-06",
-    "2026-07-12"
+    "2026-07-13",
+    "2026-07-19"
   ],
   "events": [
     {
-      "id": "2308",
-      "name": "台達電",
+      "id": "2301",
+      "name": "光寶科",
+      "market": "上市",
+      "industry": "電腦及週邊設備業",
+      "date": "2026-07-13",
+      "type": "法說會",
+      "market_cap": 4944.89,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "2328",
+      "name": "廣宇",
       "market": "上市",
       "industry": "電子零組件業",
-      "date": "2026-07-08",
+      "date": "2026-07-14",
       "type": "法說會",
-      "market_cap": 48963.69,
+      "market_cap": 251.4,
       "cap_is_estimate": false
     },
     {
-      "id": "2317",
-      "name": "鴻海",
-      "market": "上市",
-      "industry": "其他電子業",
-      "date": "2026-07-07",
-      "type": "法說會",
-      "market_cap": 33318.04,
-      "cap_is_estimate": false
-    },
-    {
-      "id": "2408",
-      "name": "南亞科",
+      "id": "2330",
+      "name": "台積電",
       "market": "上市",
       "industry": "半導體業",
-      "date": "2026-07-10",
+      "date": "2026-07-16",
       "type": "法說會",
-      "market_cap": 13662.82,
+      "market_cap": 626266.74,
       "cap_is_estimate": false
     },
     {
-      "id": "2889",
-      "name": "國票金",
-      "market": "上市",
-      "industry": "金融保險業",
-      "date": "2026-07-07",
-      "type": "法說會",
-      "market_cap": 570.47,
-      "cap_is_estimate": false
-    },
-    {
-      "id": "3008",
-      "name": "大立光",
-      "market": "上市",
-      "industry": "光電業",
-      "date": "2026-07-09",
-      "type": "法說會",
-      "market_cap": 5166.53,
-      "cap_is_estimate": false
-    },
-    {
-      "id": "3518",
-      "name": "柏騰",
-      "market": "上市",
-      "industry": "其他電子業",
-      "date": "2026-07-08",
-      "type": "法說會",
-      "market_cap": 33.1,
-      "cap_is_estimate": false
-    },
-    {
-      "id": "4441",
-      "name": "振大環球",
-      "market": "上市",
-      "industry": "紡織纖維",
-      "date": "2026-07-09",
-      "type": "法說會",
-      "market_cap": 129.19,
-      "cap_is_estimate": false
-    },
-    {
-      "id": "4590",
-      "name": "富田-創",
-      "market": "上市",
-      "industry": "電機機械",
-      "date": "2026-07-08",
-      "type": "法說會",
-      "market_cap": 50.18,
-      "cap_is_estimate": false
-    },
-    {
-      "id": "4904",
-      "name": "遠傳",
+      "id": "3045",
+      "name": "台灣大",
       "market": "上市",
       "industry": "通信網路業",
-      "date": "2026-07-08",
+      "date": "2026-07-13",
       "type": "法說會",
-      "market_cap": 3362.38,
+      "market_cap": 4039.74,
       "cap_is_estimate": false
     },
     {
-      "id": "6281",
-      "name": "全國電",
+      "id": "6414",
+      "name": "樺漢",
       "market": "上市",
-      "industry": "電子通路業",
-      "date": "2026-07-08",
+      "industry": "電腦及週邊設備業",
+      "date": "2026-07-14",
       "type": "法說會",
-      "market_cap": 51.07,
+      "market_cap": 574.79,
       "cap_is_estimate": false
     },
     {
-      "id": "6534",
-      "name": "正瀚-創",
-      "market": "上市",
-      "industry": "生技醫療業",
-      "date": "2026-07-08",
-      "type": "法說會",
-      "market_cap": 95.09,
-      "cap_is_estimate": false
-    },
-    {
-      "id": "6645",
-      "name": "金萬林-創",
-      "market": "上市",
-      "industry": "生技醫療業",
-      "date": "2026-07-08",
-      "type": "法說會",
-      "market_cap": 9.62,
-      "cap_is_estimate": false
-    },
-    {
-      "id": "7730",
-      "name": "暉盛-創",
-      "market": "上市",
-      "industry": "半導體業",
-      "date": "2026-07-08",
-      "type": "法說會",
-      "market_cap": 68.44,
-      "cap_is_estimate": false
-    },
-    {
-      "id": "7823",
-      "name": "奧義賽博-KY創",
+      "id": "7721",
+      "name": "微程式",
       "market": "上市",
       "industry": "數位雲端",
-      "date": "2026-07-08",
+      "date": "2026-07-14",
       "type": "法說會",
-      "market_cap": 28.07,
+      "market_cap": 39.31,
       "cap_is_estimate": false
     },
     {
-      "id": "8016",
-      "name": "矽創",
-      "market": "上市",
-      "industry": "半導體業",
-      "date": "2026-07-08",
-      "type": "法說會",
-      "market_cap": 422.88,
-      "cap_is_estimate": false
-    },
-    {
-      "id": "4109",
-      "name": "加捷生醫",
+      "id": "4147",
+      "name": "中裕",
       "market": "上櫃",
       "industry": "生技醫療業",
-      "date": "2026-07-09",
+      "date": "2026-07-16",
       "type": "法說會",
-      "market_cap": 14.31,
+      "market_cap": 189.88,
       "cap_is_estimate": false
     },
     {
-      "id": "4529",
-      "name": "淳紳",
+      "id": "6945",
+      "name": "圓祥生技",
       "market": "上櫃",
-      "industry": "其他業",
-      "date": "2026-07-06",
+      "industry": "生技醫療業",
+      "date": "2026-07-16",
       "type": "法說會",
-      "market_cap": 4.02,
-      "cap_is_estimate": false
-    },
-    {
-      "id": "5236",
-      "name": "凌陽創新",
-      "market": "上櫃",
-      "industry": "半導體業",
-      "date": "2026-07-09",
-      "type": "法說會",
-      "market_cap": 96.91,
-      "cap_is_estimate": false
-    },
-    {
-      "id": "8027",
-      "name": "鈦昇",
-      "market": "上櫃",
-      "industry": "電機機械",
-      "date": "2026-07-07",
-      "type": "法說會",
-      "market_cap": 241.45,
+      "market_cap": 108.63,
       "cap_is_estimate": false
     }
   ]
