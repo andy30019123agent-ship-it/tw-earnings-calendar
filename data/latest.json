@@ -1,10 +1,30 @@
 {
-  "updated": "2026-07-11T18:47:40.712698+08:00",
+  "updated": "2026-07-13T20:43:12.015540+08:00",
   "range": [
     "2026-07-13",
     "2026-07-19"
   ],
   "events": [
+    {
+      "id": "1539",
+      "name": "巨庭",
+      "market": "上市",
+      "industry": "電機機械",
+      "date": "2026-07-16",
+      "type": "法說會",
+      "market_cap": 10.26,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "1709",
+      "name": "和益",
+      "market": "上市",
+      "industry": "化學工業",
+      "date": "2026-07-14",
+      "type": "法說會",
+      "market_cap": 127.84,
+      "cap_is_estimate": false
+    },
     {
       "id": "2301",
       "name": "光寶科",
@@ -12,7 +32,27 @@
       "industry": "電腦及週邊設備業",
       "date": "2026-07-13",
       "type": "法說會",
-      "market_cap": 4944.89,
+      "market_cap": 5141.76,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "2317",
+      "name": "鴻海",
+      "market": "上市",
+      "industry": "其他電子業",
+      "date": "2026-07-16",
+      "type": "法說會",
+      "market_cap": 33177.75,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "2317",
+      "name": "鴻海",
+      "market": "上市",
+      "industry": "其他電子業",
+      "date": "2026-07-14",
+      "type": "法說會",
+      "market_cap": 33177.75,
       "cap_is_estimate": false
     },
     {
@@ -32,7 +72,7 @@
       "industry": "半導體業",
       "date": "2026-07-16",
       "type": "法說會",
-      "market_cap": 626266.74,
+      "market_cap": 632749.83,
       "cap_is_estimate": false
     },
     {
@@ -42,7 +82,37 @@
       "industry": "通信網路業",
       "date": "2026-07-13",
       "type": "法說會",
-      "market_cap": 4039.74,
+      "market_cap": 4076.97,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "3413",
+      "name": "京鼎",
+      "market": "上市",
+      "industry": "半導體業",
+      "date": "2026-07-15",
+      "type": "法說會",
+      "market_cap": 369.95,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "4927",
+      "name": "泰鼎-KY",
+      "market": "上市",
+      "industry": "電子零組件業",
+      "date": "2026-07-14",
+      "type": "法說會",
+      "market_cap": 107.7,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "5243",
+      "name": "乙盛-KY",
+      "market": "上市",
+      "industry": "光電業",
+      "date": "2026-07-15",
+      "type": "法說會",
+      "market_cap": 160.61,
       "cap_is_estimate": false
     },
     {
@@ -52,7 +122,17 @@
       "industry": "電腦及週邊設備業",
       "date": "2026-07-14",
       "type": "法說會",
-      "market_cap": 574.79,
+      "market_cap": 566.77,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "6770",
+      "name": "力積電",
+      "market": "上市",
+      "industry": "半導體業",
+      "date": "2026-07-14",
+      "type": "法說會",
+      "market_cap": 3218.02,
       "cap_is_estimate": false
     },
     {
@@ -62,7 +142,17 @@
       "industry": "數位雲端",
       "date": "2026-07-14",
       "type": "法說會",
-      "market_cap": 39.31,
+      "market_cap": 38.37,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "9938",
+      "name": "百和",
+      "market": "上市",
+      "industry": "其他業",
+      "date": "2026-07-16",
+      "type": "法說會",
+      "market_cap": 136.91,
       "cap_is_estimate": false
     },
     {
@@ -72,7 +162,17 @@
       "industry": "生技醫療業",
       "date": "2026-07-16",
       "type": "法說會",
-      "market_cap": 189.88,
+      "market_cap": 175.67,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "4754",
+      "name": "國碳科",
+      "market": "上櫃",
+      "industry": "化學工業",
+      "date": "2026-07-15",
+      "type": "法說會",
+      "market_cap": 11.13,
       "cap_is_estimate": false
     },
     {
@@ -82,7 +182,7 @@
       "industry": "生技醫療業",
       "date": "2026-07-16",
       "type": "法說會",
-      "market_cap": 108.63,
+      "market_cap": 104.75,
       "cap_is_estimate": false
     }
   ]
