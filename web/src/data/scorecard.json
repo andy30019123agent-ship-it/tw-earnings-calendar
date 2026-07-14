@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-09",
+  "updated": "2026-07-14",
   "predictions": [
     {
       "pid": "2303-2026-06-27-01",
@@ -2806,6 +2806,85 @@
         "deadline": "2026-08-31"
       },
       "category": "題材發酵"
+    },
+    {
+      "pid": "6435-2026-07-14-01",
+      "stock_id": "6435",
+      "stock_name": "大中",
+      "report": "6435-快報-2026-07-14.md",
+      "predicted_on": "2026-07-14",
+      "claim": "2026 Q2 EPS 優於 Q1 的 3.67、毛利率守 26%+（漲價循環延續、兌現到獲利）",
+      "verifiable": {
+        "direction": "up",
+        "price_range": null,
+        "deadline": "2026-08-14"
+      },
+      "category": "獲利能力",
+      "industry": "半導體業",
+      "confidence": 3,
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "6435-2026-07-14-02",
+      "stock_id": "6435",
+      "stock_name": "大中",
+      "report": "6435-快報-2026-07-14.md",
+      "predicted_on": "2026-07-14",
+      "claim": "現價 334 偏中性偏樂觀；短期回檔到 240–290 的機率大於直接續攻 400",
+      "verifiable": {
+        "direction": "down",
+        "price_range": [
+          240,
+          290
+        ],
+        "deadline": "2026-10-14"
+      },
+      "category": "股價位置",
+      "industry": "半導體業",
+      "confidence": 3,
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "8261-2026-07-14-01",
+      "stock_id": "8261",
+      "stock_name": "富鼎",
+      "report": "8261-快報-2026-07-14.md",
+      "predicted_on": "2026-07-14",
+      "claim": "現價 307 已高於樂觀合理價；短中期逢高減碼，回檔風險大於再創高",
+      "verifiable": {
+        "direction": "down",
+        "price_range": null,
+        "deadline": "2026-10-14"
+      },
+      "category": "股價位置",
+      "industry": "半導體業",
+      "confidence": 3,
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
+    },
+    {
+      "pid": "8261-2026-07-14-02",
+      "stock_id": "8261",
+      "stock_name": "富鼎",
+      "report": "8261-快報-2026-07-14.md",
+      "predicted_on": "2026-07-14",
+      "claim": "2026 Q2 營收 YoY 續溫和(<20%)、毛利率原地踏步(約38%)，鴻海國創/SiC 題材尚未落地成基本面",
+      "verifiable": {
+        "direction": "flat",
+        "price_range": null,
+        "deadline": "2026-08-14"
+      },
+      "category": "獲利能力",
+      "industry": "半導體業",
+      "confidence": 3,
+      "status": "pending",
+      "verified_on": null,
+      "evidence": null
     }
   ]
 }
