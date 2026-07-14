@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-13T20:43:12.015540+08:00",
+  "updated": "2026-07-14T18:15:47.722761+08:00",
   "range": [
     "2026-07-13",
     "2026-07-19"
@@ -12,7 +12,7 @@
       "industry": "電機機械",
       "date": "2026-07-16",
       "type": "法說會",
-      "market_cap": 10.26,
+      "market_cap": 10.23,
       "cap_is_estimate": false
     },
     {
@@ -22,7 +22,7 @@
       "industry": "化學工業",
       "date": "2026-07-14",
       "type": "法說會",
-      "market_cap": 127.84,
+      "market_cap": 133.8,
       "cap_is_estimate": false
     },
     {
@@ -32,7 +32,7 @@
       "industry": "電腦及週邊設備業",
       "date": "2026-07-13",
       "type": "法說會",
-      "market_cap": 5141.76,
+      "market_cap": 4921.73,
       "cap_is_estimate": false
     },
     {
@@ -42,7 +42,7 @@
       "industry": "其他電子業",
       "date": "2026-07-16",
       "type": "法說會",
-      "market_cap": 33177.75,
+      "market_cap": 33037.47,
       "cap_is_estimate": false
     },
     {
@@ -52,7 +52,7 @@
       "industry": "其他電子業",
       "date": "2026-07-14",
       "type": "法說會",
-      "market_cap": 33177.75,
+      "market_cap": 33037.47,
       "cap_is_estimate": false
     },
     {
@@ -62,7 +62,7 @@
       "industry": "電子零組件業",
       "date": "2026-07-14",
       "type": "法說會",
-      "market_cap": 251.4,
+      "market_cap": 245.96,
       "cap_is_estimate": false
     },
     {
@@ -72,7 +72,27 @@
       "industry": "半導體業",
       "date": "2026-07-16",
       "type": "法說會",
-      "market_cap": 632749.83,
+      "market_cap": 627563.36,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "2472",
+      "name": "立隆電",
+      "market": "上市",
+      "industry": "電子零組件業",
+      "date": "2026-07-15",
+      "type": "法說會",
+      "market_cap": 528.8,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "2597",
+      "name": "潤弘",
+      "market": "上市",
+      "industry": "建材營造業",
+      "date": "2026-07-17",
+      "type": "法說會",
+      "market_cap": 508.02,
       "cap_is_estimate": false
     },
     {
@@ -82,7 +102,7 @@
       "industry": "通信網路業",
       "date": "2026-07-13",
       "type": "法說會",
-      "market_cap": 4076.97,
+      "market_cap": 4058.36,
       "cap_is_estimate": false
     },
     {
@@ -92,7 +112,7 @@
       "industry": "半導體業",
       "date": "2026-07-15",
       "type": "法說會",
-      "market_cap": 369.95,
+      "market_cap": 373.82,
       "cap_is_estimate": false
     },
     {
@@ -102,7 +122,7 @@
       "industry": "電子零組件業",
       "date": "2026-07-14",
       "type": "法說會",
-      "market_cap": 107.7,
+      "market_cap": 106.24,
       "cap_is_estimate": false
     },
     {
@@ -112,7 +132,7 @@
       "industry": "光電業",
       "date": "2026-07-15",
       "type": "法說會",
-      "market_cap": 160.61,
+      "market_cap": 156.56,
       "cap_is_estimate": false
     },
     {
@@ -122,7 +142,7 @@
       "industry": "電腦及週邊設備業",
       "date": "2026-07-14",
       "type": "法說會",
-      "market_cap": 566.77,
+      "market_cap": 550.72,
       "cap_is_estimate": false
     },
     {
@@ -132,7 +152,7 @@
       "industry": "半導體業",
       "date": "2026-07-14",
       "type": "法說會",
-      "market_cap": 3218.02,
+      "market_cap": 3227.35,
       "cap_is_estimate": false
     },
     {
@@ -142,7 +162,7 @@
       "industry": "數位雲端",
       "date": "2026-07-14",
       "type": "法說會",
-      "market_cap": 38.37,
+      "market_cap": 37.82,
       "cap_is_estimate": false
     },
     {
@@ -152,7 +172,7 @@
       "industry": "其他業",
       "date": "2026-07-16",
       "type": "法說會",
-      "market_cap": 136.91,
+      "market_cap": 135.57,
       "cap_is_estimate": false
     },
     {
@@ -162,7 +182,17 @@
       "industry": "生技醫療業",
       "date": "2026-07-16",
       "type": "法說會",
-      "market_cap": 175.67,
+      "market_cap": 175.4,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "4160",
+      "name": "訊聯基因",
+      "market": "上櫃",
+      "industry": "生技醫療業",
+      "date": "2026-07-16",
+      "type": "法說會",
+      "market_cap": 10.72,
       "cap_is_estimate": false
     },
     {
@@ -172,7 +202,7 @@
       "industry": "化學工業",
       "date": "2026-07-15",
       "type": "法說會",
-      "market_cap": 11.13,
+      "market_cap": 11.07,
       "cap_is_estimate": false
     },
     {
@@ -182,7 +212,7 @@
       "industry": "生技醫療業",
       "date": "2026-07-16",
       "type": "法說會",
-      "market_cap": 104.75,
+      "market_cap": 103.3,
       "cap_is_estimate": false
     }
   ]
