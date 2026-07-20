@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-18T19:19:36.646113+08:00",
+  "updated": "2026-07-20T14:29:31.675325+08:00",
   "range": [
     "2026-07-20",
     "2026-07-26"
@@ -12,7 +12,7 @@
       "industry": "電子零組件業",
       "date": "2026-07-23",
       "type": "法說會",
-      "market_cap": 29.48,
+      "market_cap": 30.19,
       "cap_is_estimate": false
     },
     {
@@ -22,7 +22,7 @@
       "industry": "電子零組件業",
       "date": "2026-07-24",
       "type": "法說會",
-      "market_cap": 24.76,
+      "market_cap": 23.89,
       "cap_is_estimate": false
     },
     {
@@ -32,7 +32,7 @@
       "industry": "電子零組件業",
       "date": "2026-07-20",
       "type": "法說會",
-      "market_cap": 56.09,
+      "market_cap": 55.29,
       "cap_is_estimate": false
     },
     {
@@ -42,7 +42,7 @@
       "industry": "光電業",
       "date": "2026-07-24",
       "type": "法說會",
-      "market_cap": 73.0,
+      "market_cap": 70.95,
       "cap_is_estimate": false
     },
     {
@@ -52,7 +52,7 @@
       "industry": "電機機械",
       "date": "2026-07-20",
       "type": "法說會",
-      "market_cap": 66.66,
+      "market_cap": 73.26,
       "cap_is_estimate": false
     },
     {
@@ -62,7 +62,7 @@
       "industry": "電腦及週邊設備業",
       "date": "2026-07-20",
       "type": "法說會",
-      "market_cap": 2204.64,
+      "market_cap": 2145.64,
       "cap_is_estimate": false
     },
     {
@@ -72,7 +72,7 @@
       "industry": "電腦及週邊設備業",
       "date": "2026-07-21",
       "type": "法說會",
-      "market_cap": 42.23,
+      "market_cap": 46.44,
       "cap_is_estimate": false
     },
     {
@@ -82,7 +82,7 @@
       "industry": "半導體業",
       "date": "2026-07-24",
       "type": "法說會",
-      "market_cap": 246.27,
+      "market_cap": 238.49,
       "cap_is_estimate": false
     },
     {
@@ -93,6 +93,16 @@
       "date": "2026-07-24",
       "type": "法說會",
       "market_cap": 1409.6,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "6026",
+      "name": "福邦證",
+      "market": "上櫃",
+      "industry": "金融保險業",
+      "date": "2026-07-21",
+      "type": "法說會",
+      "market_cap": 55.86,
       "cap_is_estimate": false
     },
     {
