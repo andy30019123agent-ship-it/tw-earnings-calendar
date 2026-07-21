@@ -1,10 +1,20 @@
 {
-  "updated": "2026-07-21T11:06:33.179240+08:00",
+  "updated": "2026-07-21T15:47:34.332213+08:00",
   "range": [
     "2026-07-20",
     "2026-07-26"
   ],
   "events": [
+    {
+      "id": "2025",
+      "name": "千興",
+      "market": "上市",
+      "industry": "鋼鐵工業",
+      "date": "2026-07-22",
+      "type": "法說會",
+      "market_cap": 19.77,
+      "cap_is_estimate": false
+    },
     {
       "id": "2415",
       "name": "錩新",
@@ -12,7 +22,17 @@
       "industry": "電子零組件業",
       "date": "2026-07-23",
       "type": "法說會",
-      "market_cap": 30.19,
+      "market_cap": 30.6,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "2474",
+      "name": "可成",
+      "market": "上市",
+      "industry": "其他電子業",
+      "date": "2026-07-22",
+      "type": "法說會",
+      "market_cap": 1029.15,
       "cap_is_estimate": false
     },
     {
@@ -22,7 +42,7 @@
       "industry": "電子零組件業",
       "date": "2026-07-24",
       "type": "法說會",
-      "market_cap": 23.89,
+      "market_cap": 24.04,
       "cap_is_estimate": false
     },
     {
@@ -32,7 +52,7 @@
       "industry": "電子零組件業",
       "date": "2026-07-20",
       "type": "法說會",
-      "market_cap": 55.29,
+      "market_cap": 60.74,
       "cap_is_estimate": false
     },
     {
@@ -42,7 +62,7 @@
       "industry": "光電業",
       "date": "2026-07-24",
       "type": "法說會",
-      "market_cap": 70.95,
+      "market_cap": 71.97,
       "cap_is_estimate": false
     },
     {
@@ -52,7 +72,7 @@
       "industry": "電機機械",
       "date": "2026-07-20",
       "type": "法說會",
-      "market_cap": 73.26,
+      "market_cap": 75.9,
       "cap_is_estimate": false
     },
     {
@@ -62,7 +82,7 @@
       "industry": "電腦及週邊設備業",
       "date": "2026-07-20",
       "type": "法說會",
-      "market_cap": 2145.64,
+      "market_cap": 2220.73,
       "cap_is_estimate": false
     },
     {
@@ -72,7 +92,7 @@
       "industry": "電腦及週邊設備業",
       "date": "2026-07-21",
       "type": "法說會",
-      "market_cap": 46.44,
+      "market_cap": 49.62,
       "cap_is_estimate": false
     },
     {
@@ -82,7 +102,7 @@
       "industry": "半導體業",
       "date": "2026-07-24",
       "type": "法說會",
-      "market_cap": 238.49,
+      "market_cap": 248.21,
       "cap_is_estimate": false
     },
     {
@@ -92,7 +112,7 @@
       "industry": "其他業",
       "date": "2026-07-23",
       "type": "法說會",
-      "market_cap": 26.86,
+      "market_cap": 27.45,
       "cap_is_estimate": false
     },
     {
