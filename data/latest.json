@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-20T16:22:08.423866+08:00",
+  "updated": "2026-07-21T11:06:33.179240+08:00",
   "range": [
     "2026-07-20",
     "2026-07-26"
@@ -106,6 +106,16 @@
       "cap_is_estimate": false
     },
     {
+      "id": "5609",
+      "name": "中菲行",
+      "market": "上櫃",
+      "industry": "航運業",
+      "date": "2026-07-21",
+      "type": "法說會",
+      "market_cap": 110.88,
+      "cap_is_estimate": false
+    },
+    {
       "id": "6026",
       "name": "福邦證",
       "market": "上櫃",
@@ -133,6 +143,16 @@
       "date": "2026-07-23",
       "type": "法說會",
       "market_cap": 27.11,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "8431",
+      "name": "匯鑽科",
+      "market": "上櫃",
+      "industry": "其他電子業",
+      "date": "2026-07-21",
+      "type": "法說會",
+      "market_cap": 22.58,
       "cap_is_estimate": false
     }
   ]
