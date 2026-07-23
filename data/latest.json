@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-22T14:08:32.552719+08:00",
+  "updated": "2026-07-23T11:04:18.821985+08:00",
   "range": [
     "2026-07-20",
     "2026-07-26"
@@ -132,7 +132,7 @@
       "industry": "半導體業",
       "date": "2026-07-24",
       "type": "法說會",
-      "market_cap": 1439.28,
+      "market_cap": 1521.95,
       "cap_is_estimate": false
     },
     {
@@ -142,7 +142,7 @@
       "industry": "光電業",
       "date": "2026-07-23",
       "type": "法說會",
-      "market_cap": 15.33,
+      "market_cap": 15.29,
       "cap_is_estimate": false
     },
     {
@@ -152,7 +152,17 @@
       "industry": "航運業",
       "date": "2026-07-21",
       "type": "法說會",
-      "market_cap": 112.74,
+      "market_cap": 112.88,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "6020",
+      "name": "大展證",
+      "market": "上櫃",
+      "industry": "金融保險業",
+      "date": "2026-07-24",
+      "type": "法說會",
+      "market_cap": 55.14,
       "cap_is_estimate": false
     },
     {
@@ -162,7 +172,7 @@
       "industry": "金融保險業",
       "date": "2026-07-21",
       "type": "法說會",
-      "market_cap": 57.25,
+      "market_cap": 57.84,
       "cap_is_estimate": false
     },
     {
@@ -172,7 +182,7 @@
       "industry": "半導體業",
       "date": "2026-07-20",
       "type": "法說會",
-      "market_cap": 9.55,
+      "market_cap": 9.67,
       "cap_is_estimate": false
     },
     {
@@ -182,7 +192,7 @@
       "industry": "生技醫療業",
       "date": "2026-07-23",
       "type": "法說會",
-      "market_cap": 27.29,
+      "market_cap": 27.2,
       "cap_is_estimate": false
     },
     {
@@ -192,7 +202,7 @@
       "industry": "其他電子業",
       "date": "2026-07-21",
       "type": "法說會",
-      "market_cap": 23.8,
+      "market_cap": 23.97,
       "cap_is_estimate": false
     }
   ]
