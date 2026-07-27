@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-27T14:47:07.697408+08:00",
+  "updated": "2026-07-27T16:50:14.543310+08:00",
   "range": [
     "2026-07-27",
     "2026-08-02"
@@ -256,13 +256,23 @@
       "cap_is_estimate": false
     },
     {
+      "id": "8261",
+      "name": "富鼎",
+      "market": "上市",
+      "industry": "半導體業",
+      "date": "2026-07-29",
+      "type": "法說會",
+      "market_cap": 257.37,
+      "cap_is_estimate": false
+    },
+    {
       "id": "3211",
       "name": "順達",
       "market": "上櫃",
       "industry": "電腦及週邊設備業",
       "date": "2026-07-29",
       "type": "法說會",
-      "market_cap": 589.45,
+      "market_cap": 577.1,
       "cap_is_estimate": false
     },
     {
@@ -272,7 +282,7 @@
       "industry": "光電業",
       "date": "2026-07-28",
       "type": "法說會",
-      "market_cap": 320.21,
+      "market_cap": 315.13,
       "cap_is_estimate": false
     },
     {
@@ -282,7 +292,7 @@
       "industry": "半導體業",
       "date": "2026-07-29",
       "type": "法說會",
-      "market_cap": 849.24,
+      "market_cap": 872.19,
       "cap_is_estimate": false
     },
     {
@@ -292,7 +302,17 @@
       "industry": "半導體業",
       "date": "2026-07-29",
       "type": "法說會",
-      "market_cap": 646.32,
+      "market_cap": 648.22,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "8050",
+      "name": "廣積",
+      "market": "上櫃",
+      "industry": "電腦及週邊設備業",
+      "date": "2026-07-28",
+      "type": "法說會",
+      "market_cap": 125.79,
       "cap_is_estimate": false
     }
   ]
