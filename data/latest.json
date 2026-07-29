@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-28T15:57:02.681276+08:00",
+  "updated": "2026-07-29T11:04:27.253476+08:00",
   "range": [
     "2026-07-27",
     "2026-08-02"
@@ -53,6 +53,16 @@
       "date": "2026-07-30",
       "type": "法說會",
       "market_cap": 41041.18,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "2317",
+      "name": "鴻海",
+      "market": "上市",
+      "industry": "其他電子業",
+      "date": "2026-07-29",
+      "type": "法說會",
+      "market_cap": 33388.18,
       "cap_is_estimate": false
     },
     {
@@ -282,7 +292,7 @@
       "industry": "電腦及週邊設備業",
       "date": "2026-07-29",
       "type": "法說會",
-      "market_cap": 577.1,
+      "market_cap": 520.01,
       "cap_is_estimate": false
     },
     {
@@ -292,7 +302,7 @@
       "industry": "光電業",
       "date": "2026-07-28",
       "type": "法說會",
-      "market_cap": 315.13,
+      "market_cap": 296.36,
       "cap_is_estimate": false
     },
     {
@@ -302,7 +312,7 @@
       "industry": "半導體業",
       "date": "2026-07-29",
       "type": "法說會",
-      "market_cap": 872.19,
+      "market_cap": 813.17,
       "cap_is_estimate": false
     },
     {
@@ -312,7 +322,7 @@
       "industry": "半導體業",
       "date": "2026-07-29",
       "type": "法說會",
-      "market_cap": 648.22,
+      "market_cap": 589.29,
       "cap_is_estimate": false
     },
     {
@@ -322,7 +332,7 @@
       "industry": "資訊服務業",
       "date": "2026-07-28",
       "type": "法說會",
-      "market_cap": 14.3,
+      "market_cap": 15.47,
       "cap_is_estimate": false
     },
     {
@@ -332,7 +342,7 @@
       "industry": "電腦及週邊設備業",
       "date": "2026-07-28",
       "type": "法說會",
-      "market_cap": 125.79,
+      "market_cap": 120.04,
       "cap_is_estimate": false
     }
   ]
