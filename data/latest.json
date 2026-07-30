@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-29T14:12:36.415871+08:00",
+  "updated": "2026-07-30T11:06:21.612781+08:00",
   "range": [
     "2026-07-27",
     "2026-08-02"
@@ -106,6 +106,16 @@
       "cap_is_estimate": false
     },
     {
+      "id": "2383",
+      "name": "台光電",
+      "market": "上市",
+      "industry": "電子零組件業",
+      "date": "2026-07-30",
+      "type": "法說會",
+      "market_cap": 14691.17,
+      "cap_is_estimate": false
+    },
+    {
       "id": "2409",
       "name": "友達",
       "market": "上市",
@@ -206,6 +216,16 @@
       "cap_is_estimate": false
     },
     {
+      "id": "5525",
+      "name": "順天",
+      "market": "上市",
+      "industry": "建材營造業",
+      "date": "2026-07-31",
+      "type": "法說會",
+      "market_cap": 73.32,
+      "cap_is_estimate": false
+    },
+    {
       "id": "6176",
       "name": "瑞儀",
       "market": "上市",
@@ -302,7 +322,7 @@
       "industry": "電腦及週邊設備業",
       "date": "2026-07-29",
       "type": "法說會",
-      "market_cap": 520.01,
+      "market_cap": 475.26,
       "cap_is_estimate": false
     },
     {
@@ -312,7 +332,27 @@
       "industry": "光電業",
       "date": "2026-07-28",
       "type": "法說會",
-      "market_cap": 296.36,
+      "market_cap": 279.55,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "6274",
+      "name": "台燿",
+      "market": "上櫃",
+      "industry": "電子零組件業",
+      "date": "2026-07-31",
+      "type": "法說會",
+      "market_cap": 2945.5,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "6274",
+      "name": "台燿",
+      "market": "上櫃",
+      "industry": "電子零組件業",
+      "date": "2026-07-30",
+      "type": "法說會",
+      "market_cap": 2945.5,
       "cap_is_estimate": false
     },
     {
@@ -322,7 +362,7 @@
       "industry": "半導體業",
       "date": "2026-07-29",
       "type": "法說會",
-      "market_cap": 813.17,
+      "market_cap": 777.1,
       "cap_is_estimate": false
     },
     {
@@ -332,7 +372,7 @@
       "industry": "半導體業",
       "date": "2026-07-29",
       "type": "法說會",
-      "market_cap": 589.29,
+      "market_cap": 566.48,
       "cap_is_estimate": false
     },
     {
@@ -342,7 +382,7 @@
       "industry": "資訊服務業",
       "date": "2026-07-28",
       "type": "法說會",
-      "market_cap": 15.47,
+      "market_cap": 14.69,
       "cap_is_estimate": false
     },
     {
@@ -352,7 +392,7 @@
       "industry": "電腦及週邊設備業",
       "date": "2026-07-28",
       "type": "法說會",
-      "market_cap": 120.04,
+      "market_cap": 124.76,
       "cap_is_estimate": false
     }
   ]
