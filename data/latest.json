@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-30T15:47:07.113489+08:00",
+  "updated": "2026-07-31T11:05:25.436706+08:00",
   "range": [
     "2026-07-27",
     "2026-08-02"
@@ -196,6 +196,16 @@
       "cap_is_estimate": false
     },
     {
+      "id": "3443",
+      "name": "創意",
+      "market": "上市",
+      "industry": "半導體業",
+      "date": "2026-07-31",
+      "type": "法說會",
+      "market_cap": 4636.81,
+      "cap_is_estimate": false
+    },
+    {
       "id": "3711",
       "name": "日月光投控",
       "market": "上市",
@@ -332,7 +342,7 @@
       "industry": "電腦及週邊設備業",
       "date": "2026-07-29",
       "type": "法說會",
-      "market_cap": 475.26,
+      "market_cap": 440.54,
       "cap_is_estimate": false
     },
     {
@@ -342,7 +352,7 @@
       "industry": "光電業",
       "date": "2026-07-28",
       "type": "法說會",
-      "market_cap": 279.55,
+      "market_cap": 267.82,
       "cap_is_estimate": false
     },
     {
@@ -352,7 +362,7 @@
       "industry": "電子零組件業",
       "date": "2026-07-31",
       "type": "法說會",
-      "market_cap": 2945.5,
+      "market_cap": 2916.62,
       "cap_is_estimate": false
     },
     {
@@ -362,7 +372,7 @@
       "industry": "電子零組件業",
       "date": "2026-07-30",
       "type": "法說會",
-      "market_cap": 2945.5,
+      "market_cap": 2916.62,
       "cap_is_estimate": false
     },
     {
@@ -372,7 +382,7 @@
       "industry": "半導體業",
       "date": "2026-07-29",
       "type": "法說會",
-      "market_cap": 777.1,
+      "market_cap": 744.31,
       "cap_is_estimate": false
     },
     {
@@ -382,7 +392,7 @@
       "industry": "半導體業",
       "date": "2026-07-29",
       "type": "法說會",
-      "market_cap": 566.48,
+      "market_cap": 561.72,
       "cap_is_estimate": false
     },
     {
@@ -392,7 +402,7 @@
       "industry": "資訊服務業",
       "date": "2026-07-28",
       "type": "法說會",
-      "market_cap": 14.69,
+      "market_cap": 13.95,
       "cap_is_estimate": false
     },
     {
@@ -402,7 +412,7 @@
       "industry": "電腦及週邊設備業",
       "date": "2026-07-28",
       "type": "法說會",
-      "market_cap": 124.76,
+      "market_cap": 112.45,
       "cap_is_estimate": false
     }
   ]
