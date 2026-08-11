@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-11T11:05:08.312370+08:00",
+  "updated": "2026-08-11T12:45:41.511105+08:00",
   "range": [
     "2026-08-10",
     "2026-08-16"
@@ -243,6 +243,16 @@
       "date": "2026-08-11",
       "type": "法說會",
       "market_cap": 462.98,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "3209",
+      "name": "全科",
+      "market": "上市",
+      "industry": "電子通路業",
+      "date": "2026-08-13",
+      "type": "法說會",
+      "market_cap": 131.35,
       "cap_is_estimate": false
     },
     {
@@ -733,6 +743,16 @@
       "date": "2026-08-12",
       "type": "法說會",
       "market_cap": 185.62,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "6846",
+      "name": "綠茵",
+      "market": "上櫃",
+      "industry": "食品工業",
+      "date": "2026-08-12",
+      "type": "法說會",
+      "market_cap": 16.37,
       "cap_is_estimate": false
     },
     {
