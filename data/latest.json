@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-12T11:05:56.076104+08:00",
+  "updated": "2026-08-12T13:10:10.563830+08:00",
   "range": [
     "2026-08-10",
     "2026-08-16"
@@ -336,6 +336,16 @@
       "cap_is_estimate": false
     },
     {
+      "id": "4551",
+      "name": "智伸科",
+      "market": "上市",
+      "industry": "汽車工業",
+      "date": "2026-08-12",
+      "type": "法說會",
+      "market_cap": 180.9,
+      "cap_is_estimate": false
+    },
+    {
       "id": "4555",
       "name": "氣立",
       "market": "上市",
@@ -343,6 +353,16 @@
       "date": "2026-08-12",
       "type": "法說會",
       "market_cap": 33.49,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "4746",
+      "name": "台耀",
+      "market": "上市",
+      "industry": "生技醫療業",
+      "date": "2026-08-14",
+      "type": "法說會",
+      "market_cap": 66.14,
       "cap_is_estimate": false
     },
     {
@@ -603,6 +623,16 @@
       "date": "2026-08-12",
       "type": "法說會",
       "market_cap": 365.44,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "9934",
+      "name": "成霖",
+      "market": "上市",
+      "industry": "居家生活",
+      "date": "2026-08-13",
+      "type": "法說會",
+      "market_cap": 46.86,
       "cap_is_estimate": false
     },
     {
