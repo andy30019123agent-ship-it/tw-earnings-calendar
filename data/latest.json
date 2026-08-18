@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-18T11:05:36.827437+08:00",
+  "updated": "2026-08-18T13:50:35.012458+08:00",
   "range": [
     "2026-08-17",
     "2026-08-23"
@@ -76,6 +76,16 @@
       "cap_is_estimate": false
     },
     {
+      "id": "2028",
+      "name": "威致",
+      "market": "上市",
+      "industry": "鋼鐵工業",
+      "date": "2026-08-19",
+      "type": "法說會",
+      "market_cap": 50.65,
+      "cap_is_estimate": false
+    },
+    {
       "id": "2062",
       "name": "橋椿",
       "market": "上市",
@@ -93,6 +103,16 @@
       "date": "2026-08-20",
       "type": "法說會",
       "market_cap": 2869.08,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "2228",
+      "name": "劍麟",
+      "market": "上市",
+      "industry": "汽車工業",
+      "date": "2026-08-19",
+      "type": "法說會",
+      "market_cap": 62.07,
       "cap_is_estimate": false
     },
     {
