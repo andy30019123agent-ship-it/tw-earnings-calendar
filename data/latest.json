@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-02T16:03:55.906701+08:00",
+  "updated": "2026-09-02T17:43:30.128475+08:00",
   "range": [
     "2026-08-31",
     "2026-09-06"
@@ -153,6 +153,16 @@
       "date": "2026-08-31",
       "type": "法說會",
       "market_cap": 10666.49,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "2454",
+      "name": "聯發科",
+      "market": "上市",
+      "industry": "半導體業",
+      "date": "2026-09-03",
+      "type": "法說會",
+      "market_cap": 68566.53,
       "cap_is_estimate": false
     },
     {
@@ -356,6 +366,16 @@
       "cap_is_estimate": false
     },
     {
+      "id": "3045",
+      "name": "台灣大",
+      "market": "上市",
+      "industry": "通信網路業",
+      "date": "2026-09-03",
+      "type": "法說會",
+      "market_cap": 4318.98,
+      "cap_is_estimate": false
+    },
+    {
       "id": "3167",
       "name": "大量",
       "market": "上市",
@@ -383,6 +403,16 @@
       "date": "2026-09-01",
       "type": "法說會",
       "market_cap": 50.9,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "3443",
+      "name": "創意",
+      "market": "上市",
+      "industry": "半導體業",
+      "date": "2026-09-04",
+      "type": "法說會",
+      "market_cap": 7900.0,
       "cap_is_estimate": false
     },
     {
@@ -656,6 +686,16 @@
       "cap_is_estimate": false
     },
     {
+      "id": "2949",
+      "name": "欣新網",
+      "market": "上櫃",
+      "industry": "數位雲端",
+      "date": "2026-09-03",
+      "type": "法說會",
+      "market_cap": 0.0,
+      "cap_is_estimate": false
+    },
+    {
       "id": "3081",
       "name": "聯亞",
       "market": "上櫃",
@@ -663,6 +703,16 @@
       "date": "2026-09-03",
       "type": "法說會",
       "market_cap": 3140.96,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "3363",
+      "name": "上詮",
+      "market": "上櫃",
+      "industry": "通信網路業",
+      "date": "2026-09-04",
+      "type": "法說會",
+      "market_cap": 886.4,
       "cap_is_estimate": false
     },
     {
