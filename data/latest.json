@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-01T18:13:11.189524+08:00",
+  "updated": "2026-09-02T11:08:19.587637+08:00",
   "range": [
     "2026-08-31",
     "2026-09-06"
@@ -123,6 +123,16 @@
       "date": "2026-08-31",
       "type": "法說會",
       "market_cap": 10550.13,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "2455",
+      "name": "全新",
+      "market": "上市",
+      "industry": "通信網路業",
+      "date": "2026-09-04",
+      "type": "法說會",
+      "market_cap": 968.91,
       "cap_is_estimate": false
     },
     {
@@ -483,6 +493,16 @@
       "date": "2026-09-02",
       "type": "法說會",
       "market_cap": 34.72,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "6854",
+      "name": "錼創科技-KY創",
+      "market": "上市",
+      "industry": "半導體業",
+      "date": "2026-09-03",
+      "type": "法說會",
+      "market_cap": 112.97,
       "cap_is_estimate": false
     },
     {
