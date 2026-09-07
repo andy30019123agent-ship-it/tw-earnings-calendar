@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-07T16:33:12.867411+08:00",
+  "updated": "2026-09-07T18:28:46.196094+08:00",
   "range": [
     "2026-09-07",
     "2026-09-13"
@@ -53,6 +53,16 @@
       "date": "2026-09-09",
       "type": "法說會",
       "market_cap": 2740.0,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "1598",
+      "name": "岱宇",
+      "market": "上市",
+      "industry": "運動休閒",
+      "date": "2026-09-08",
+      "type": "法說會",
+      "market_cap": 36.72,
       "cap_is_estimate": false
     },
     {
@@ -193,6 +203,16 @@
       "date": "2026-09-07",
       "type": "法說會",
       "market_cap": 10220.09,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "2891",
+      "name": "中信金",
+      "market": "上市",
+      "industry": "金融保險業",
+      "date": "2026-09-09",
+      "type": "法說會",
+      "market_cap": 13262.23,
       "cap_is_estimate": false
     },
     {
@@ -443,6 +463,16 @@
       "date": "2026-09-09",
       "type": "法說會",
       "market_cap": 414.0,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "6902",
+      "name": "GOGOLOOK",
+      "market": "上市",
+      "industry": "數位雲端",
+      "date": "2026-09-09",
+      "type": "法說會",
+      "market_cap": 44.77,
       "cap_is_estimate": false
     },
     {
