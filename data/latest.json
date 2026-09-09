@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-08T16:15:51.690839+08:00",
+  "updated": "2026-09-09T11:05:40.093083+08:00",
   "range": [
     "2026-09-07",
     "2026-09-13"
@@ -103,6 +103,16 @@
       "date": "2026-09-10",
       "type": "法說會",
       "market_cap": 17230.47,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "2317",
+      "name": "鴻海",
+      "market": "上市",
+      "industry": "其他電子業",
+      "date": "2026-09-09",
+      "type": "法說會",
+      "market_cap": 35282.05,
       "cap_is_estimate": false
     },
     {
@@ -426,6 +436,16 @@
       "cap_is_estimate": false
     },
     {
+      "id": "6005",
+      "name": "群益證",
+      "market": "上市",
+      "industry": "金融保險業",
+      "date": "2026-09-11",
+      "type": "法說會",
+      "market_cap": 708.8,
+      "cap_is_estimate": false
+    },
+    {
       "id": "6136",
       "name": "富爾特",
       "market": "上市",
@@ -693,6 +713,16 @@
       "date": "2026-09-10",
       "type": "法說會",
       "market_cap": 2109.89,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "3548",
+      "name": "兆利",
+      "market": "上櫃",
+      "industry": "電子零組件業",
+      "date": "2026-09-09",
+      "type": "法說會",
+      "market_cap": 55.08,
       "cap_is_estimate": false
     },
     {
