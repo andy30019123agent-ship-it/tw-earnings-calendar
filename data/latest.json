@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-09T16:19:02.119125+08:00",
+  "updated": "2026-09-09T17:54:35.675883+08:00",
   "range": [
     "2026-09-07",
     "2026-09-13"
@@ -23,6 +23,16 @@
       "date": "2026-09-10",
       "type": "法說會",
       "market_cap": 53.17,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "1477",
+      "name": "聚陽",
+      "market": "上市",
+      "industry": "紡織纖維",
+      "date": "2026-09-10",
+      "type": "法說會",
+      "market_cap": 487.22,
       "cap_is_estimate": false
     },
     {
@@ -593,6 +603,16 @@
       "date": "2026-09-10",
       "type": "法說會",
       "market_cap": 115.38,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "7740",
+      "name": "熙特爾-創",
+      "market": "上市",
+      "industry": "綠能環保",
+      "date": "2026-09-10",
+      "type": "法說會",
+      "market_cap": 70.76,
       "cap_is_estimate": false
     },
     {
