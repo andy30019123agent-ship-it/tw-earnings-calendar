@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-13T16:25:24.403670+08:00",
+  "updated": "2026-09-14T11:06:51.097974+08:00",
   "range": [
     "2026-09-14",
     "2026-09-20"
@@ -771,6 +771,16 @@
       "market": "上櫃",
       "industry": "數位雲端",
       "date": "2026-09-17",
+      "type": "法說會",
+      "market_cap": 0.0,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "7717",
+      "name": "萊德光電-KY",
+      "market": "上櫃",
+      "industry": "通信網路業",
+      "date": "2026-09-15",
       "type": "法說會",
       "market_cap": 0.0,
       "cap_is_estimate": false
