@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-14T17:07:36.559090+08:00",
+  "updated": "2026-09-14T18:47:09.119721+08:00",
   "range": [
     "2026-09-14",
     "2026-09-20"
@@ -600,7 +600,7 @@
       "name": "力成",
       "market": "上市",
       "industry": "半導體業",
-      "date": "2026-09-14",
+      "date": "2026-09-15",
       "type": "法說會",
       "market_cap": 2061.08,
       "cap_is_estimate": false
@@ -610,7 +610,7 @@
       "name": "力成",
       "market": "上市",
       "industry": "半導體業",
-      "date": "2026-09-15",
+      "date": "2026-09-14",
       "type": "法說會",
       "market_cap": 2061.08,
       "cap_is_estimate": false
@@ -966,10 +966,40 @@
       "cap_is_estimate": false
     },
     {
+      "id": "5520",
+      "name": "力泰",
+      "market": "上櫃",
+      "industry": "建材營造業",
+      "date": "2026-09-17",
+      "type": "法說會",
+      "market_cap": 0.0,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "5903",
+      "name": "全家",
+      "market": "上櫃",
+      "industry": "居家生活",
+      "date": "2026-09-16",
+      "type": "法說會",
+      "market_cap": 0.0,
+      "cap_is_estimate": false
+    },
+    {
       "id": "6143",
       "name": "振曜",
       "market": "上櫃",
       "industry": "通信網路業",
+      "date": "2026-09-15",
+      "type": "法說會",
+      "market_cap": 0.0,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "6187",
+      "name": "萬潤",
+      "market": "上櫃",
+      "industry": "半導體業",
       "date": "2026-09-15",
       "type": "法說會",
       "market_cap": 0.0,
@@ -1011,6 +1041,16 @@
       "market": "上櫃",
       "industry": "電子零組件業",
       "date": "2026-09-14",
+      "type": "法說會",
+      "market_cap": 0.0,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "6840",
+      "name": "東研信超",
+      "market": "上櫃",
+      "industry": "其他電子業",
+      "date": "2026-09-16",
       "type": "法說會",
       "market_cap": 0.0,
       "cap_is_estimate": false
