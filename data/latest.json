@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-16T16:43:45.567570+08:00",
+  "updated": "2026-09-16T18:04:38.046930+08:00",
   "range": [
     "2026-09-14",
     "2026-09-20"
@@ -83,6 +83,16 @@
       "date": "2026-09-15",
       "type": "法說會",
       "market_cap": 196.53,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "1449",
+      "name": "佳和",
+      "market": "上市",
+      "industry": "紡織纖維",
+      "date": "2026-09-17",
+      "type": "法說會",
+      "market_cap": 15.32,
       "cap_is_estimate": false
     },
     {
@@ -496,6 +506,16 @@
       "cap_is_estimate": false
     },
     {
+      "id": "2912",
+      "name": "統一超",
+      "market": "上市",
+      "industry": "貿易百貨業",
+      "date": "2026-09-17",
+      "type": "法說會",
+      "market_cap": 2235.19,
+      "cap_is_estimate": false
+    },
+    {
       "id": "3017",
       "name": "奇鋐",
       "market": "上市",
@@ -750,7 +770,7 @@
       "name": "聯茂",
       "market": "上市",
       "industry": "電子零組件業",
-      "date": "2026-09-15",
+      "date": "2026-09-16",
       "type": "法說會",
       "market_cap": 1999.59,
       "cap_is_estimate": false
@@ -760,7 +780,7 @@
       "name": "聯茂",
       "market": "上市",
       "industry": "電子零組件業",
-      "date": "2026-09-16",
+      "date": "2026-09-15",
       "type": "法說會",
       "market_cap": 1999.59,
       "cap_is_estimate": false
@@ -1073,6 +1093,16 @@
       "date": "2026-09-14",
       "type": "法說會",
       "market_cap": 2003.12,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "3118",
+      "name": "進階",
+      "market": "上櫃",
+      "industry": "生技醫療業",
+      "date": "2026-09-17",
+      "type": "法說會",
+      "market_cap": 10.19,
       "cap_is_estimate": false
     },
     {
