@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-15T16:51:46.573598+08:00",
+  "updated": "2026-09-16T11:06:20.622593+08:00",
   "range": [
     "2026-09-14",
     "2026-09-20"
@@ -13,6 +13,16 @@
       "date": "2026-09-15",
       "type": "法說會",
       "market_cap": 88.09,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "1219",
+      "name": "福壽",
+      "market": "上市",
+      "industry": "食品工業",
+      "date": "2026-09-16",
+      "type": "法說會",
+      "market_cap": 38.22,
       "cap_is_estimate": false
     },
     {
@@ -143,6 +153,16 @@
       "date": "2026-09-16",
       "type": "法說會",
       "market_cap": 89.71,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "1734",
+      "name": "杏輝",
+      "market": "上市",
+      "industry": "生技醫療業",
+      "date": "2026-09-16",
+      "type": "法說會",
+      "market_cap": 59.53,
       "cap_is_estimate": false
     },
     {
@@ -866,6 +886,16 @@
       "cap_is_estimate": false
     },
     {
+      "id": "7769",
+      "name": "鴻勁",
+      "market": "上市",
+      "industry": "半導體業",
+      "date": "2026-09-16",
+      "type": "法說會",
+      "market_cap": 11038.71,
+      "cap_is_estimate": false
+    },
+    {
       "id": "8028",
       "name": "昇陽半導體",
       "market": "上市",
@@ -883,6 +913,16 @@
       "date": "2026-09-15",
       "type": "法說會",
       "market_cap": 89.42,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "8131",
+      "name": "福懋科",
+      "market": "上市",
+      "industry": "半導體業",
+      "date": "2026-09-17",
+      "type": "法說會",
+      "market_cap": 254.28,
       "cap_is_estimate": false
     },
     {
