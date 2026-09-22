@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-22T16:43:32.253353+08:00",
+  "updated": "2026-09-22T18:06:27.384236+08:00",
   "range": [
     "2026-09-21",
     "2026-09-27"
@@ -170,7 +170,7 @@
       "name": "鴻海",
       "market": "上市",
       "industry": "其他電子業",
-      "date": "2026-09-22",
+      "date": "2026-09-23",
       "type": "法說會",
       "market_cap": 35492.48,
       "cap_is_estimate": false
@@ -180,7 +180,7 @@
       "name": "鴻海",
       "market": "上市",
       "industry": "其他電子業",
-      "date": "2026-09-23",
+      "date": "2026-09-22",
       "type": "法說會",
       "market_cap": 35492.48,
       "cap_is_estimate": false
@@ -203,6 +203,16 @@
       "date": "2026-09-21",
       "type": "法說會",
       "market_cap": 11828.07,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "2332",
+      "name": "友訊",
+      "market": "上市",
+      "industry": "通信網路業",
+      "date": "2026-09-23",
+      "type": "法說會",
+      "market_cap": 121.64,
       "cap_is_estimate": false
     },
     {
