@@ -1,10 +1,20 @@
 {
-  "updated": "2026-10-05T11:11:52.621199+08:00",
+  "updated": "2026-10-05T18:42:43.902627+08:00",
   "range": [
     "2026-10-05",
     "2026-10-11"
   ],
   "events": [
+    {
+      "id": "1402",
+      "name": "遠東新",
+      "market": "上市",
+      "industry": "紡織纖維",
+      "date": "2026-10-06",
+      "type": "法說會",
+      "market_cap": 1485.42,
+      "cap_is_estimate": false
+    },
     {
       "id": "2308",
       "name": "台達電",
@@ -12,7 +22,27 @@
       "industry": "電子零組件業",
       "date": "2026-10-05",
       "type": "法說會",
-      "market_cap": 48963.69,
+      "market_cap": 52080.74,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "2603",
+      "name": "長榮",
+      "market": "上市",
+      "industry": "航運業",
+      "date": "2026-10-08",
+      "type": "法說會",
+      "market_cap": 5077.03,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "2607",
+      "name": "榮運",
+      "market": "上市",
+      "industry": "航運業",
+      "date": "2026-10-08",
+      "type": "法說會",
+      "market_cap": 283.86,
       "cap_is_estimate": false
     },
     {
@@ -22,7 +52,17 @@
       "industry": "光電業",
       "date": "2026-10-08",
       "type": "法說會",
-      "market_cap": 8227.21,
+      "market_cap": 8802.72,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "6120",
+      "name": "達運",
+      "market": "上市",
+      "industry": "光電業",
+      "date": "2026-10-07",
+      "type": "法說會",
+      "market_cap": 85.96,
       "cap_is_estimate": false
     },
     {
@@ -32,7 +72,7 @@
       "industry": "半導體業",
       "date": "2026-10-06",
       "type": "法說會",
-      "market_cap": 1246.07,
+      "market_cap": 1258.17,
       "cap_is_estimate": false
     },
     {
@@ -52,7 +92,7 @@
       "industry": "半導體業",
       "date": "2026-10-06",
       "type": "法說會",
-      "market_cap": 0.0,
+      "market_cap": 256.17,
       "cap_is_estimate": false
     },
     {
@@ -62,7 +102,7 @@
       "industry": "光電業",
       "date": "2026-10-06",
       "type": "法說會",
-      "market_cap": 0.0,
+      "market_cap": 15.63,
       "cap_is_estimate": false
     },
     {
@@ -72,7 +112,7 @@
       "industry": "半導體業",
       "date": "2026-10-07",
       "type": "法說會",
-      "market_cap": 0.0,
+      "market_cap": 338.19,
       "cap_is_estimate": false
     },
     {
@@ -82,7 +122,7 @@
       "industry": "電子零組件業",
       "date": "2026-10-07",
       "type": "法說會",
-      "market_cap": 0.0,
+      "market_cap": 154.58,
       "cap_is_estimate": false
     },
     {
@@ -92,7 +132,7 @@
       "industry": "電子零組件業",
       "date": "2026-10-08",
       "type": "法說會",
-      "market_cap": 0.0,
+      "market_cap": 43.34,
       "cap_is_estimate": false
     },
     {
@@ -102,7 +142,7 @@
       "industry": "電子零組件業",
       "date": "2026-10-07",
       "type": "法說會",
-      "market_cap": 0.0,
+      "market_cap": 30.25,
       "cap_is_estimate": false
     },
     {
@@ -112,7 +152,7 @@
       "industry": "綠能環保",
       "date": "2026-10-06",
       "type": "法說會",
-      "market_cap": 0.0,
+      "market_cap": 85.54,
       "cap_is_estimate": false
     }
   ]
