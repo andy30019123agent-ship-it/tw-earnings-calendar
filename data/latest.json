@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-03T20:41:47.776308+08:00",
+  "updated": "2026-10-05T11:11:52.621199+08:00",
   "range": [
     "2026-10-05",
     "2026-10-11"
@@ -52,7 +52,7 @@
       "industry": "半導體業",
       "date": "2026-10-06",
       "type": "法說會",
-      "market_cap": 256.17,
+      "market_cap": 0.0,
       "cap_is_estimate": false
     },
     {
@@ -62,7 +62,7 @@
       "industry": "光電業",
       "date": "2026-10-06",
       "type": "法說會",
-      "market_cap": 15.1,
+      "market_cap": 0.0,
       "cap_is_estimate": false
     },
     {
@@ -72,7 +72,7 @@
       "industry": "半導體業",
       "date": "2026-10-07",
       "type": "法說會",
-      "market_cap": 337.79,
+      "market_cap": 0.0,
       "cap_is_estimate": false
     },
     {
@@ -82,7 +82,7 @@
       "industry": "電子零組件業",
       "date": "2026-10-07",
       "type": "法說會",
-      "market_cap": 151.35,
+      "market_cap": 0.0,
       "cap_is_estimate": false
     },
     {
@@ -92,7 +92,7 @@
       "industry": "電子零組件業",
       "date": "2026-10-08",
       "type": "法說會",
-      "market_cap": 40.55,
+      "market_cap": 0.0,
       "cap_is_estimate": false
     },
     {
@@ -102,7 +102,17 @@
       "industry": "電子零組件業",
       "date": "2026-10-07",
       "type": "法說會",
-      "market_cap": 27.5,
+      "market_cap": 0.0,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "8390",
+      "name": "金益鼎",
+      "market": "上櫃",
+      "industry": "綠能環保",
+      "date": "2026-10-06",
+      "type": "法說會",
+      "market_cap": 0.0,
       "cap_is_estimate": false
     }
   ]
