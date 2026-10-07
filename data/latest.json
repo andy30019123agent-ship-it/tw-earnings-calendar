@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-06T18:36:10.849100+08:00",
+  "updated": "2026-10-07T11:08:37.433300+08:00",
   "range": [
     "2026-10-05",
     "2026-10-11"
@@ -86,6 +86,16 @@
       "cap_is_estimate": false
     },
     {
+      "id": "2221",
+      "name": "大甲",
+      "market": "上櫃",
+      "industry": "其他業",
+      "date": "2026-10-08",
+      "type": "法說會",
+      "market_cap": 78.72,
+      "cap_is_estimate": false
+    },
+    {
       "id": "3265",
       "name": "台星科",
       "market": "上櫃",
@@ -93,6 +103,16 @@
       "date": "2026-10-06",
       "type": "法說會",
       "market_cap": 269.12,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "3354",
+      "name": "律勝",
+      "market": "上櫃",
+      "industry": "電子零組件業",
+      "date": "2026-10-08",
+      "type": "法說會",
+      "market_cap": 22.51,
       "cap_is_estimate": false
     },
     {
