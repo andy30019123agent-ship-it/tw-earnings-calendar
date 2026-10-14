@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-14T16:57:43.594125+08:00",
+  "updated": "2026-10-14T18:25:16.711090+08:00",
   "range": [
     "2026-10-12",
     "2026-10-18"
@@ -73,6 +73,16 @@
       "date": "2026-10-13",
       "type": "法說會",
       "market_cap": 249.6,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "2317",
+      "name": "鴻海",
+      "market": "上市",
+      "industry": "其他電子業",
+      "date": "2026-10-15",
+      "type": "法說會",
+      "market_cap": 34089.62,
       "cap_is_estimate": false
     },
     {
@@ -353,6 +363,26 @@
       "date": "2026-10-14",
       "type": "法說會",
       "market_cap": 29.08,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "3224",
+      "name": "三顧",
+      "market": "上櫃",
+      "industry": "電子通路業",
+      "date": "2026-10-15",
+      "type": "法說會",
+      "market_cap": 24.35,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "3230",
+      "name": "錦明",
+      "market": "上櫃",
+      "industry": "光電業",
+      "date": "2026-10-15",
+      "type": "法說會",
+      "market_cap": 25.12,
       "cap_is_estimate": false
     },
     {
