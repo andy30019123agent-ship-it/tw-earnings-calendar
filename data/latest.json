@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-21T16:48:58.291224+08:00",
+  "updated": "2026-10-22T11:10:07.401331+08:00",
   "range": [
     "2026-10-19",
     "2026-10-25"
@@ -13,6 +13,16 @@
       "date": "2026-10-22",
       "type": "法說會",
       "market_cap": 28.23,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "1721",
+      "name": "國慶科技",
+      "market": "上市",
+      "industry": "化學工業",
+      "date": "2026-10-23",
+      "type": "法說會",
+      "market_cap": 45.85,
       "cap_is_estimate": false
     },
     {
@@ -163,6 +173,16 @@
       "date": "2026-10-21",
       "type": "法說會",
       "market_cap": 3087.44,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "6902",
+      "name": "GOGOLOOK",
+      "market": "上市",
+      "industry": "數位雲端",
+      "date": "2026-10-22",
+      "type": "法說會",
+      "market_cap": 54.72,
       "cap_is_estimate": false
     },
     {
