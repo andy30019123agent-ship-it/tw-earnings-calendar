@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-09T19:53:42.881647+08:00",
+  "updated": "2026-11-09T22:06:06.721567+08:00",
   "range": [
     "2026-11-09",
     "2026-11-15"
@@ -50,7 +50,7 @@
       "name": "東元",
       "market": "上市",
       "industry": "電機機械",
-      "date": "2026-11-10",
+      "date": "2026-11-12",
       "type": "法說會",
       "market_cap": 1558.95,
       "cap_is_estimate": false
@@ -60,7 +60,7 @@
       "name": "東元",
       "market": "上市",
       "industry": "電機機械",
-      "date": "2026-11-12",
+      "date": "2026-11-10",
       "type": "法說會",
       "market_cap": 1558.95,
       "cap_is_estimate": false
@@ -1123,6 +1123,16 @@
       "date": "2026-11-10",
       "type": "法說會",
       "market_cap": 977.86,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "5536",
+      "name": "聖暉*",
+      "market": "上櫃",
+      "industry": "其他電子業",
+      "date": "2026-11-12",
+      "type": "法說會",
+      "market_cap": 867.33,
       "cap_is_estimate": false
     },
     {
