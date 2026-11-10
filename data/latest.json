@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-09T22:06:06.721567+08:00",
+  "updated": "2026-11-10T11:12:02.976263+08:00",
   "range": [
     "2026-11-09",
     "2026-11-15"
@@ -50,7 +50,7 @@
       "name": "東元",
       "market": "上市",
       "industry": "電機機械",
-      "date": "2026-11-12",
+      "date": "2026-11-10",
       "type": "法說會",
       "market_cap": 1558.95,
       "cap_is_estimate": false
@@ -60,7 +60,7 @@
       "name": "東元",
       "market": "上市",
       "industry": "電機機械",
-      "date": "2026-11-10",
+      "date": "2026-11-12",
       "type": "法說會",
       "market_cap": 1558.95,
       "cap_is_estimate": false
@@ -376,6 +376,16 @@
       "cap_is_estimate": false
     },
     {
+      "id": "2855",
+      "name": "統一證",
+      "market": "上市",
+      "industry": "金融保險業",
+      "date": "2026-11-11",
+      "type": "法說會",
+      "market_cap": 802.31,
+      "cap_is_estimate": false
+    },
+    {
       "id": "2881",
       "name": "富邦金",
       "market": "上市",
@@ -391,6 +401,16 @@
       "market": "上市",
       "industry": "金融保險業",
       "date": "2026-11-10",
+      "type": "法說會",
+      "market_cap": 16282.82,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "2882",
+      "name": "國泰金",
+      "market": "上市",
+      "industry": "金融保險業",
+      "date": "2026-11-11",
       "type": "法說會",
       "market_cap": 16282.82,
       "cap_is_estimate": false
@@ -523,6 +543,16 @@
       "date": "2026-11-13",
       "type": "法說會",
       "market_cap": 1918.72,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "3591",
+      "name": "艾笛森",
+      "market": "上市",
+      "industry": "光電業",
+      "date": "2026-11-12",
+      "type": "法說會",
+      "market_cap": 33.58,
       "cap_is_estimate": false
     },
     {
