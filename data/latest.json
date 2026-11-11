@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-11T19:19:23.879437+08:00",
+  "updated": "2026-11-11T20:52:06.023138+08:00",
   "range": [
     "2026-11-09",
     "2026-11-15"
@@ -846,6 +846,16 @@
       "cap_is_estimate": false
     },
     {
+      "id": "5258",
+      "name": "虹堡",
+      "market": "上市",
+      "industry": "電腦及週邊設備業",
+      "date": "2026-11-13",
+      "type": "法說會",
+      "market_cap": 41.0,
+      "cap_is_estimate": false
+    },
+    {
       "id": "5269",
       "name": "祥碩",
       "market": "上市",
@@ -1213,6 +1223,16 @@
       "date": "2026-11-09",
       "type": "法說會",
       "market_cap": 62.84,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "2926",
+      "name": "誠品生活",
+      "market": "上櫃",
+      "industry": "文化創意業",
+      "date": "2026-11-12",
+      "type": "法說會",
+      "market_cap": 14.26,
       "cap_is_estimate": false
     },
     {
