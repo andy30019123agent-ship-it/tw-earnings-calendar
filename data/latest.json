@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-12T19:40:29.212862+08:00",
+  "updated": "2026-11-12T21:58:06.674449+08:00",
   "range": [
     "2026-11-09",
     "2026-11-15"
@@ -1153,6 +1153,16 @@
       "date": "2026-11-13",
       "type": "法說會",
       "market_cap": 366.62,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "6902",
+      "name": "GOGOLOOK",
+      "market": "上市",
+      "industry": "數位雲端",
+      "date": "2026-11-13",
+      "type": "法說會",
+      "market_cap": 44.06,
       "cap_is_estimate": false
     },
     {
