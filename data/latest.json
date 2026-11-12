@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-11T20:52:06.023138+08:00",
+  "updated": "2026-11-12T11:10:01.986217+08:00",
   "range": [
     "2026-11-09",
     "2026-11-15"
@@ -460,7 +460,7 @@
       "name": "富邦金",
       "market": "上市",
       "industry": "金融保險業",
-      "date": "2026-11-11",
+      "date": "2026-11-09",
       "type": "法說會",
       "market_cap": 22341.75,
       "cap_is_estimate": false
@@ -470,7 +470,7 @@
       "name": "富邦金",
       "market": "上市",
       "industry": "金融保險業",
-      "date": "2026-11-09",
+      "date": "2026-11-11",
       "type": "法說會",
       "market_cap": 22341.75,
       "cap_is_estimate": false
@@ -1306,6 +1306,16 @@
       "cap_is_estimate": false
     },
     {
+      "id": "3357",
+      "name": "臺慶科",
+      "market": "上櫃",
+      "industry": "電子零組件業",
+      "date": "2026-11-13",
+      "type": "法說會",
+      "market_cap": 199.07,
+      "cap_is_estimate": false
+    },
+    {
       "id": "3483",
       "name": "力致",
       "market": "上櫃",
@@ -1333,6 +1343,16 @@
       "date": "2026-11-12",
       "type": "法說會",
       "market_cap": 39.43,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "4304",
+      "name": "勝昱",
+      "market": "上櫃",
+      "industry": "塑膠工業",
+      "date": "2026-11-12",
+      "type": "法說會",
+      "market_cap": 10.38,
       "cap_is_estimate": false
     },
     {
