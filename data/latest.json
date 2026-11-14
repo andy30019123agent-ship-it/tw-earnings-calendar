@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-14T19:37:51.515317+08:00",
+  "updated": "2026-11-14T22:19:30.590090+08:00",
   "range": [
     "2026-11-16",
     "2026-11-22"
@@ -1061,6 +1061,16 @@
       "market": "上櫃",
       "industry": "其他電子業",
       "date": "2026-11-18",
+      "type": "法說會",
+      "market_cap": 1061.08,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "3324",
+      "name": "雙鴻",
+      "market": "上櫃",
+      "industry": "其他電子業",
+      "date": "2026-11-16",
       "type": "法說會",
       "market_cap": 1061.08,
       "cap_is_estimate": false
