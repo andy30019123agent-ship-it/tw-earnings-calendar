@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-16T21:52:54.441400+08:00",
+  "updated": "2026-11-17T11:11:25.128835+08:00",
   "range": [
     "2026-11-16",
     "2026-11-22"
@@ -173,6 +173,16 @@
       "date": "2026-11-17",
       "type": "法說會",
       "market_cap": 31.87,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "1736",
+      "name": "喬山",
+      "market": "上市",
+      "industry": "運動休閒",
+      "date": "2026-11-18",
+      "type": "法說會",
+      "market_cap": 330.7,
       "cap_is_estimate": false
     },
     {
@@ -836,6 +846,16 @@
       "cap_is_estimate": false
     },
     {
+      "id": "4989",
+      "name": "榮科",
+      "market": "上市",
+      "industry": "電子零組件業",
+      "date": "2026-11-18",
+      "type": "法說會",
+      "market_cap": 74.81,
+      "cap_is_estimate": false
+    },
+    {
       "id": "5007",
       "name": "三星",
       "market": "上市",
@@ -1323,6 +1343,16 @@
       "date": "2026-11-18",
       "type": "法說會",
       "market_cap": 29.54,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "3402",
+      "name": "漢科",
+      "market": "上櫃",
+      "industry": "其他電子業",
+      "date": "2026-11-18",
+      "type": "法說會",
+      "market_cap": 79.26,
       "cap_is_estimate": false
     },
     {
