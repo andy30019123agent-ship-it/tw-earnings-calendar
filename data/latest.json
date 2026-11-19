@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-18T22:22:03.807517+08:00",
+  "updated": "2026-11-19T11:11:27.311517+08:00",
   "range": [
     "2026-11-16",
     "2026-11-22"
@@ -96,6 +96,16 @@
       "cap_is_estimate": false
     },
     {
+      "id": "1457",
+      "name": "宜進",
+      "market": "上市",
+      "industry": "紡織纖維",
+      "date": "2026-11-20",
+      "type": "法說會",
+      "market_cap": 43.87,
+      "cap_is_estimate": false
+    },
+    {
       "id": "1477",
       "name": "聚陽",
       "market": "上市",
@@ -113,6 +123,16 @@
       "date": "2026-11-18",
       "type": "法說會",
       "market_cap": 1413.98,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "1514",
+      "name": "亞力",
+      "market": "上市",
+      "industry": "電機機械",
+      "date": "2026-11-20",
+      "type": "法說會",
+      "market_cap": 215.21,
       "cap_is_estimate": false
     },
     {
@@ -1880,7 +1900,7 @@
       "name": "信驊",
       "market": "上櫃",
       "industry": "半導體業",
-      "date": "2026-11-18",
+      "date": "2026-11-16",
       "type": "法說會",
       "market_cap": 3666.86,
       "cap_is_estimate": false
@@ -1890,7 +1910,7 @@
       "name": "信驊",
       "market": "上櫃",
       "industry": "半導體業",
-      "date": "2026-11-16",
+      "date": "2026-11-18",
       "type": "法說會",
       "market_cap": 3666.86,
       "cap_is_estimate": false
@@ -2300,6 +2320,16 @@
       "name": "萊德光電-KY",
       "market": "上櫃",
       "industry": "通信網路業",
+      "date": "2026-11-19",
+      "type": "法說會",
+      "market_cap": 141.54,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "7717",
+      "name": "萊德光電-KY",
+      "market": "上櫃",
+      "industry": "通信網路業",
       "date": "2026-11-17",
       "type": "法說會",
       "market_cap": 141.54,
@@ -2316,16 +2346,6 @@
       "cap_is_estimate": false
     },
     {
-      "id": "7717",
-      "name": "萊德光電-KY",
-      "market": "上櫃",
-      "industry": "通信網路業",
-      "date": "2026-11-19",
-      "type": "法說會",
-      "market_cap": 141.54,
-      "cap_is_estimate": false
-    },
-    {
       "id": "7767",
       "name": "仁大資訊",
       "market": "上櫃",
@@ -2333,16 +2353,6 @@
       "date": "2026-11-18",
       "type": "法說會",
       "market_cap": 16.01,
-      "cap_is_estimate": false
-    },
-    {
-      "id": "7782",
-      "name": "光速火箭",
-      "market": "上櫃",
-      "industry": "居家生活",
-      "date": "2026-11-19",
-      "type": "法說會",
-      "market_cap": 4.99,
       "cap_is_estimate": false
     },
     {
