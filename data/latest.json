@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-21T23:29:00.585837+08:00",
+  "updated": "2026-11-23T11:14:09.424926+08:00",
   "range": [
     "2026-11-23",
     "2026-11-29"
@@ -76,6 +76,16 @@
       "cap_is_estimate": false
     },
     {
+      "id": "1504",
+      "name": "東元",
+      "market": "上市",
+      "industry": "電機機械",
+      "date": "2026-11-24",
+      "type": "法說會",
+      "market_cap": 1233.37,
+      "cap_is_estimate": false
+    },
+    {
       "id": "1560",
       "name": "中砂",
       "market": "上市",
@@ -106,6 +116,16 @@
       "cap_is_estimate": false
     },
     {
+      "id": "2020",
+      "name": "美亞",
+      "market": "上市",
+      "industry": "鋼鐵工業",
+      "date": "2026-11-24",
+      "type": "法說會",
+      "market_cap": 54.61,
+      "cap_is_estimate": false
+    },
+    {
       "id": "2301",
       "name": "光寶科",
       "market": "上市",
@@ -130,7 +150,7 @@
       "name": "仁寶",
       "market": "上市",
       "industry": "電腦及週邊設備業",
-      "date": "2026-11-26",
+      "date": "2026-11-23",
       "type": "法說會",
       "market_cap": 1112.8,
       "cap_is_estimate": false
@@ -140,7 +160,7 @@
       "name": "仁寶",
       "market": "上市",
       "industry": "電腦及週邊設備業",
-      "date": "2026-11-23",
+      "date": "2026-11-26",
       "type": "法說會",
       "market_cap": 1112.8,
       "cap_is_estimate": false
@@ -946,6 +966,16 @@
       "cap_is_estimate": false
     },
     {
+      "id": "8101",
+      "name": "華冠",
+      "market": "上市",
+      "industry": "通信網路業",
+      "date": "2026-11-24",
+      "type": "法說會",
+      "market_cap": 4.46,
+      "cap_is_estimate": false
+    },
+    {
       "id": "8464",
       "name": "億豐",
       "market": "上市",
@@ -953,6 +983,16 @@
       "date": "2026-11-24",
       "type": "法說會",
       "market_cap": 1019.71,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "8499",
+      "name": "鼎炫-KY",
+      "market": "上市",
+      "industry": "其他電子業",
+      "date": "2026-11-24",
+      "type": "法說會",
+      "market_cap": 65.86,
       "cap_is_estimate": false
     },
     {
@@ -1113,6 +1153,16 @@
       "date": "2026-11-26",
       "type": "法說會",
       "market_cap": 29.23,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "3615",
+      "name": "安可",
+      "market": "上櫃",
+      "industry": "光電業",
+      "date": "2026-11-24",
+      "type": "法說會",
+      "market_cap": 16.19,
       "cap_is_estimate": false
     },
     {
@@ -1311,6 +1361,16 @@
       "market": "上櫃",
       "industry": "半導體業",
       "date": "2026-11-23",
+      "type": "法說會",
+      "market_cap": 3488.13,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "6223",
+      "name": "旺矽",
+      "market": "上櫃",
+      "industry": "半導體業",
+      "date": "2026-11-27",
       "type": "法說會",
       "market_cap": 3488.13,
       "cap_is_estimate": false
