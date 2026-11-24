@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-23T21:23:33.717614+08:00",
+  "updated": "2026-11-24T11:14:05.284804+08:00",
   "range": [
     "2026-11-23",
     "2026-11-29"
@@ -1126,6 +1126,16 @@
       "cap_is_estimate": false
     },
     {
+      "id": "6988",
+      "name": "威力暘-創",
+      "market": "上市",
+      "industry": "汽車工業",
+      "date": "2026-11-26",
+      "type": "法說會",
+      "market_cap": 4.76,
+      "cap_is_estimate": false
+    },
+    {
       "id": "7765",
       "name": "中華資安",
       "market": "上市",
@@ -1303,6 +1313,16 @@
       "date": "2026-11-24",
       "type": "法說會",
       "market_cap": 15.5,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "3285",
+      "name": "微端",
+      "market": "上櫃",
+      "industry": "其他電子業",
+      "date": "2026-11-25",
+      "type": "法說會",
+      "market_cap": 21.35,
       "cap_is_estimate": false
     },
     {
@@ -1746,6 +1766,16 @@
       "cap_is_estimate": false
     },
     {
+      "id": "6649",
+      "name": "台生材",
+      "market": "上櫃",
+      "industry": "生技醫療業",
+      "date": "2026-11-25",
+      "type": "法說會",
+      "market_cap": 12.33,
+      "cap_is_estimate": false
+    },
+    {
       "id": "6680",
       "name": "鑫創電子",
       "market": "上櫃",
@@ -1913,6 +1943,16 @@
       "date": "2026-11-25",
       "type": "法說會",
       "market_cap": 22.99,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "9962",
+      "name": "有益",
+      "market": "上櫃",
+      "industry": "鋼鐵工業",
+      "date": "2026-11-27",
+      "type": "法說會",
+      "market_cap": 8.28,
       "cap_is_estimate": false
     }
   ]
