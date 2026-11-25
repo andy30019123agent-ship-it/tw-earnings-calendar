@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-24T22:07:22.179912+08:00",
+  "updated": "2026-11-25T11:16:04.327827+08:00",
   "range": [
     "2026-11-23",
     "2026-11-29"
@@ -146,6 +146,16 @@
       "cap_is_estimate": false
     },
     {
+      "id": "1541",
+      "name": "錩泰",
+      "market": "上市",
+      "industry": "電機機械",
+      "date": "2026-11-27",
+      "type": "法說會",
+      "market_cap": 14.62,
+      "cap_is_estimate": false
+    },
+    {
       "id": "1560",
       "name": "中砂",
       "market": "上市",
@@ -233,6 +243,16 @@
       "date": "2026-11-23",
       "type": "法說會",
       "market_cap": 12212.25,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "2316",
+      "name": "楠梓電",
+      "market": "上市",
+      "industry": "電子零組件業",
+      "date": "2026-11-26",
+      "type": "法說會",
+      "market_cap": 197.36,
       "cap_is_estimate": false
     },
     {
@@ -1176,6 +1196,16 @@
       "cap_is_estimate": false
     },
     {
+      "id": "6658",
+      "name": "聯策",
+      "market": "上市",
+      "industry": "其他電子業",
+      "date": "2026-11-27",
+      "type": "法說會",
+      "market_cap": 46.01,
+      "cap_is_estimate": false
+    },
+    {
       "id": "6770",
       "name": "力積電",
       "market": "上市",
@@ -1613,6 +1643,16 @@
       "date": "2026-11-25",
       "type": "法說會",
       "market_cap": 16.75,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "4121",
+      "name": "優盛",
+      "market": "上櫃",
+      "industry": "生技醫療業",
+      "date": "2026-11-26",
+      "type": "法說會",
+      "market_cap": 8.98,
       "cap_is_estimate": false
     },
     {
@@ -2213,6 +2253,16 @@
       "date": "2026-11-25",
       "type": "法說會",
       "market_cap": 23.61,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "8437",
+      "name": "大地-KY",
+      "market": "上櫃",
+      "industry": "其他業",
+      "date": "2026-11-26",
+      "type": "法說會",
+      "market_cap": 5.22,
       "cap_is_estimate": false
     },
     {
