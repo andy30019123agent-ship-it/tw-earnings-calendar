@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-25T21:19:29.347269+08:00",
+  "updated": "2026-11-26T11:12:34.704547+08:00",
   "range": [
     "2026-11-23",
     "2026-11-29"
@@ -1576,6 +1576,16 @@
       "cap_is_estimate": false
     },
     {
+      "id": "9905",
+      "name": "大華",
+      "market": "上市",
+      "industry": "其他業",
+      "date": "2026-11-27",
+      "type": "法說會",
+      "market_cap": 61.15,
+      "cap_is_estimate": false
+    },
+    {
       "id": "9907",
       "name": "統一實",
       "market": "上市",
@@ -1946,6 +1956,16 @@
       "cap_is_estimate": false
     },
     {
+      "id": "4154",
+      "name": "樂威科-KY",
+      "market": "上櫃",
+      "industry": "其他業",
+      "date": "2026-11-27",
+      "type": "法說會",
+      "market_cap": 3.82,
+      "cap_is_estimate": false
+    },
+    {
       "id": "4207",
       "name": "環泰",
       "market": "上櫃",
@@ -2223,6 +2243,16 @@
       "date": "2026-11-27",
       "type": "法說會",
       "market_cap": 12.82,
+      "cap_is_estimate": false
+    },
+    {
+      "id": "6221",
+      "name": "晉泰",
+      "market": "上櫃",
+      "industry": "資訊服務業",
+      "date": "2026-11-27",
+      "type": "法說會",
+      "market_cap": 52.09,
       "cap_is_estimate": false
     },
     {
